@@ -1,16 +1,13 @@
-# React + Vite
+# ShadowSlave-Dle
 
-This template provides a minimal setup to get React working in Vite with HMR and some Oxlint rules.
+This is a Wordle style guessing game that is inspired by the various Wordle variants. Shadowslave-dle revolves around the webnovel "Shadow Slave" by Guiltythree, where the aim of the game is to guess which Shadow Slave character said the quote. 
 
-Currently, two official plugins are available:
+This project is currently in progress and will receive consistent updates in the following days and weeks. 
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Oxc](https://oxc.rs)
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/)
+Aim of this project is to learn React and produce a game that I find fun that can be shared to other Shadow Slave readers.
 
-## React Compiler
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+## Tech
+- React + Vite
 
-## Expanding the Oxlint configuration
-
-If you are developing a production application, we recommend using TypeScript with type-aware lint rules enabled. Check out the [TS template](https://github.com/vitejs/vite/tree/main/packages/create-vite/template-react-ts) for information on how to integrate TypeScript and Oxlint's TypeScript related rules in your project.
+Bootstrapped with Vite
