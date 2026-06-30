@@ -12,7 +12,16 @@ import VolumeClue from './VolumeClue'
 
 function App() {
 
-  const [currentQuote] = useState(() => quotes[Math.floor(Math.random() * quotes.length)])
+    function getDailyIndex(arrayLength) {
+    const today = new Date().toISOString().slice(0, 10) // "2026-06-30"
+    let hash = 0
+    for (let i = 0; i < today.length; i++) {
+      hash = today.charCodeAt(i) + ((hash << 5) - hash)
+    }
+    return Math.abs(hash) % arrayLength
+  }
+
+  const [currentQuote] = useState(() => quotes[getDailyIndex(quotes.length)])
 
   const quote = currentQuote.quote
   const recipientName = currentQuote.recipient
