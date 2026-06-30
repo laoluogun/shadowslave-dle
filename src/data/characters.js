@@ -7,4 +7,5 @@ export const characters = {
   Effie: { image: "/images/effie.png" },
   Mordret: { image: "/images/mordret.png" },
   Rain: { image: "/images/rain.png" },
+  "Soul Stealer": { image: "/images/soul-stealer.png" },
 }
