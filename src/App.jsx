@@ -3,6 +3,7 @@ import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
 import './App.css'
+import {quotes} from './data/quotes'
 
 import QuoteCard from './QuoteCard'
 import RecipientClue from './RecipientClue'
@@ -12,11 +13,12 @@ function App() {
 
   const characterList = ["Sunless", "Nephis", "Cassie", "Jet", "Kai", "Effie"]
 
+  const [currentQuote] = useState(() => quotes[Math.floor(Math.random() * quotes.length)])
 
-  const todaysQuote = "Nephis... all the gods and all the demons in the world won't be able to make me leave you again. So don't you leave me behind, either."
-  const todaysRecipientName = "Nephis"
-  const todaysVolume = "The Song of Ariadne"
-  const todaysChar = "Sunless"
+  const todaysQuote = currentQuote.quote
+  const todaysRecipientName = currentQuote.recipient
+  const todaysVolume = currentQuote.chapter
+  const todaysChar = currentQuote.speaker
   
   const [guess, setGuess] = useState('')
   const [feedback, setFeedback] = useState('')
