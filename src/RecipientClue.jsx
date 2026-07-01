@@ -1,10 +1,10 @@
-function RecipientClue({recipientName, recipientImg}) {
+function RecipientClue({recipientName, recipientImage}) {
     return (
-        <div className="recipient-card">
-            <h2>{recipientName}</h2>
-            <img src={recipientImg} alt="recipientname"/>
-        </div>
-    )
+                <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 mt-3 text-center text-white">
+                  <p className="font-semibold text-lg">{recipientName}</p>
+                  <img src={recipientImage} alt={recipientName} className="w-20 h-20 object-cover rounded-md mx-auto mt-2"/>
+                </div>
+              )
 }
 
 export default RecipientClue

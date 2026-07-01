@@ -9,6 +9,7 @@ import {characters} from './data/characters'
 import QuoteCard from './QuoteCard'
 import RecipientClue from './RecipientClue'
 import VolumeClue from './VolumeClue'
+import ClueButtons from './ClueButtons'
 
 function App() {
 
@@ -102,52 +103,21 @@ function App() {
               <QuoteCard quote={quote} />
 
               {/*Display the recipient's name and image after 2 guesses, and the volume and chapter after 3 guesses */}
-              <div className="flex gap-3">
-                {/* Recipient clue button, only enabled after 2 guesses */}
-                <button
-                  onClick={() => totalGuesses >= 2 && setActiveClue(activeClue === 'recipient' ? null : 'recipient')}
-                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border transition-colors
-                    ${totalGuesses >= 2 
-                      ? 'border-gray-500 bg-gray-800/80 hover:bg-gray-700 cursor-pointer text-white' 
-                      : 'border-gray-700 bg-gray-900/50 cursor-not-allowed text-gray-600'}`}
-                >
-                  <span className="text-2xl">💬</span>
-                  <span className="text-xs font-bold tracking-widest uppercase">Recipient Clue</span>
-                  <span className="text-xs text-gray-400">
-                    {totalGuesses >= 2 ? '' : `Unlocks in ${2 - totalGuesses} guess`}
-                  </span>
-                </button>
-
-                 {/* Display the chapter clue button, which becomes available after 3 guesses */}
-                <button
-                  onClick={() => totalGuesses >= 3 && setActiveClue(activeClue === 'chapter' ? null : 'chapter')}
-                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border transition-colors
-                    ${totalGuesses >= 3 
-                      ? 'border-gray-500 bg-gray-800/80 hover:bg-gray-700 cursor-pointer text-white' 
-                      : 'border-gray-700 bg-gray-900/50 cursor-not-allowed text-gray-600'}`}
-                >
-                  <span className="text-2xl">📖</span>
-                  <span className="text-xs font-bold tracking-widest uppercase">Chapter Clue</span>
-                  <span className="text-xs text-gray-400">
-                    {totalGuesses >= 3 ? '' : `Unlocks in ${3 - totalGuesses} guess${3 - totalGuesses !== 1 ? 'es' : ''}`}
-                  </span>
-                </button>
-              </div>
+              <ClueButtons 
+                totalGuesses={totalGuesses} 
+                setActiveClue={setActiveClue} 
+                activeClue={activeClue} 
+              />
 
               {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}
               {activeClue === 'recipient' && (
-                <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 mt-3 text-center text-white">
-                  <p className="font-semibold text-lg">{recipientName}</p>
-                  <img src={recipientImage} alt={recipientName} className="w-20 h-20 object-cover rounded-md mx-auto mt-2"/>
-                </div>
+                <RecipientClue recipientName={recipientName} recipientImage={recipientImage} />
               )}
 
               {activeClue === 'chapter' && (
-                <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 mt-3 text-center text-white">
-                  <p className="text-gray-300">{volume} - {chapter}</p>
-                </div>
+                <VolumeClue volume={volume} chapter={chapter} />
               )}
-            </div>
+        </div>
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}
                 <input 
                   value={guess} 
