@@ -26,6 +26,7 @@ function App() {
   const quote = currentQuote.quote
   const recipientName = currentQuote.recipient
   const recipientImage = characters[currentQuote.recipient].image
+  const volume = currentQuote.volume
   const chapter = currentQuote.chapter
   const speaker = currentQuote.speaker
   
@@ -41,7 +42,7 @@ function App() {
   }
 
   const suggestions = Object.keys(characters).filter(name =>
-    name.toLowerCase().includes(guess.toLowerCase())
+   name.toLowerCase().startsWith(guess.toLowerCase())
   )
 
   const hasSelectedCharacter = Object.keys(characters).some(name =>
@@ -66,46 +67,53 @@ function App() {
 
   return (
     <>
-    <div className="max-w-xl mx-auto p-6 font-sans">
-      <div className="bg-white rounded-lg shadow-md p-6 mb-6 text-center">
-        <h2 className="text-sm uppercase text-gray-500 mb-2">Which character said this?</h2>
-        <p className="text-lg italic">"{quote}"</p>
-      </div>
+     <h1 className="text-center text-3xl font-bold tracking-widest text-white uppercase">
+        Shadow Slave Dle
+      </h1>
+    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="w-full max-w-xl bg-black/75 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-2xl p-8 flex flex-col gap-6">
+      <>
       <div>
-        <div className="bg-gray-50 border border-gray-200 rounded p-4 mb-3 text-center">
-          {totalGuesses >= 1 && (
-            <>
-              <p className="text-lg">{recipientName}</p> 
-              <img src={recipientImage} alt={recipientName} className="w-24 h-24 object-cover rounded-md mx-auto"/>
-            </>
+              <div className="bg-transparent rounded-lg shadow-md p-6 mb-6 text-center">
+                <h2 className="text-sm uppercase text-gray-500 mb-2">Which character said this?</h2>
+                <p className="text-lg text-white italic">❝ {quote} ❞</p>
+              </div>
+              {totalGuesses >= 2 && <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 text-center text-white">
+                
+                {totalGuesses >= 2 && (
+                  <>
+                    <p className="text-lg">{recipientName}</p>
+                    <img src={recipientImage} alt={recipientName} className="w-24 h-24 object-cover rounded-md mx-auto" />
+                  </>
 
-            )
+                )}
+                {totalGuesses >= 3 &&
+                  <p className="text-md">{volume} - {chapter}</p>
+                }
+              </div>}
+            </div>
+                <input 
+                  value={guess} 
+                  onChange={handleChange}
+                  className="w-full bg-gray-800/80 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder:text-gray-400 focus:outline-none focus:border-gray-400 transition"
+                  placeholder="Type your guess here..."
+                />
+            </>
+        {
+          guess !== '' && !hasSelectedCharacter && 
+          <ul className="border border-gray-600 rounded-lg bg-gray-800 mt-1 max-h-40 overflow-y-auto">
+              {
+                suggestions.map((name, index) => (
+                <li key={index} onClick={() => setGuess(name)} className="px-3 py-2 cursor-pointer hover:bg-gray-700 text-white">
+                  {name}
+                </li>
+              )
+            ) 
           }
-          {
-              totalGuesses >= 2 && 
-              <p className="text-md">{chapter}</p>
-            }
-        </div>
-      </div>
-      <div class="w-full py-4 max-w-sm min-w-[200px]">
-        <input value={guess} onChange={handleChange} class="p-4 w-full bg-transparent placeholder:text-slate-400 text-slate-700 text-sm border border-slate-200 rounded-md px-3 py-2 transition duration-300 ease focus:outline-none focus:border-slate-400 hover:border-slate-300 shadow-sm focus:shadow" placeholder="Type your guess here..."/>
-      </div>
-        {guess !== '' && !hasSelectedCharacter && <ul className="border border-gray-200 rounded shadow-sm bg-white mt-1 max-h-40 overflow-y-auto">
-        {suggestions.map((name, index) => (
-          <li
-            key={index}
-            onClick={() => setGuess(name)}
-            className="px-3 py-2 cursor-pointer hover:bg-gray-100"
-          >
-            {name}
-          </li>
-             )
-            )
-          }
-          </ul>
+        </ul>
         }
       {gameOver == false && 
-        <button onClick={ () => checkGuess()} class="bg-white hover:bg-gray-100 text-gray-800 font-semibold py-2 px-4 border border-gray-400 rounded shadow">
+        <button onClick={ () => checkGuess()} className="w-full py-2 rounded-lg bg-gray-900 hover:bg-gray-700 text-white font-semibold tracking-wide transition-colors">
           Submit
         </button>}
       <p className={`text-center font-semibold mt-4 ${
@@ -117,13 +125,13 @@ function App() {
           {guessHistory.map((pastGuess, index) => (
             <li
               key={index}
-              className="px-3 py-2 bg-gray-50 border border-gray-200 rounded flex justify-between items-center"
-            >
+              className="px-3 py-2 bg-gray-800/80 border border-gray-600 rounded-lg flex justify-between items-center text-white">
               <span>{pastGuess}</span>
               <span>{pastGuess === speaker ? '✅' : '❌'}</span>
             </li>
           ))}
         </ol>
+      </div>
     </div>
     </>
     

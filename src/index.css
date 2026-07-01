@@ -1,2 +1,9 @@
 @import "tailwindcss";
 
+body {
+  background-size: cover;  
+  background-image: url('/images/vtb.jpg');
+  background-position: center;
+  background-attachment: fixed;
+  min-height: 100vh;
+}
