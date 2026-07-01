@@ -94,15 +94,12 @@ function App() {
         Shadow Slave-dle
       </h1>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
-    <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="min-h-screen flex items-center justify-center p-4">
       <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-2xl p-8 flex flex-col gap-6">
       <>
         <div>
               {/*Display the quote */}
-              <div className="bg-transparent rounded-lg shadow-md p-6 mb-6 text-center">
-                <h2 className="text-sm uppercase text-gray-500 mb-2">Which character said this?</h2>
-                <p className="text-lg text-white italic">❝ {quote} ❞</p>
-              </div>
+              <QuoteCard quote={quote} />
 
               {/*Display the recipient's name and image after 2 guesses, and the volume and chapter after 3 guesses */}
               <div className="flex gap-3">
