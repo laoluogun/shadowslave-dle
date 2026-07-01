@@ -41,6 +41,11 @@ function App() {
   const [totalGuesses, setGuesses] = useState(0)
   const [guessHistory, setGuessHistory] = useState([])
   const [gameOver, setGameOver] = useState(false)
+
+  // State variables to control the visibility of recipient and chapter clues
+  const [recipientRevealed, setRecipientRevealed] = useState(false)
+  const [chapterRevealed, setChapterRevealed] = useState(false)
+  const [activeClue, setActiveClue] = useState(null) // null | 'recipient' | 'chapter'
   
 
   function handleChange(e) {
@@ -77,13 +82,12 @@ function App() {
   return (
     <> 
       {/** Main title of the game displayed at the top of the page */}
-
-     <h1 className="text-center text-3xl font-bold tracking-widest text-white uppercase">
-        Shadow Slave Dle
+     <h1 className="text-center text-3xl font-bold tracking-widest text-white">
+        Shadow Slave-dle
       </h1>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
     <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-xl bg-black/75 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-2xl p-8 flex flex-col gap-6">
       <>
         <div>
               {/*Display the quote */}
@@ -93,19 +97,51 @@ function App() {
               </div>
 
               {/*Display the recipient's name and image after 2 guesses, and the volume and chapter after 3 guesses */}
-              {totalGuesses >= 2 && <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 text-center text-white">
-                
-                {totalGuesses >= 2 && (
-                  <>
-                    <p className="text-lg">{recipientName}</p>
-                    <img src={recipientImage} alt={recipientName} className="w-24 h-24 object-cover rounded-md mx-auto" />
-                  </>
+              <div className="flex gap-3">
+                {/* Recipient clue button, only enabled after 2 guesses */}
+                <button
+                  onClick={() => totalGuesses >= 2 && setActiveClue(activeClue === 'recipient' ? null : 'recipient')}
+                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border transition-colors
+                    ${totalGuesses >= 2 
+                      ? 'border-gray-500 bg-gray-800/80 hover:bg-gray-700 cursor-pointer text-white' 
+                      : 'border-gray-700 bg-gray-900/50 cursor-not-allowed text-gray-600'}`}
+                >
+                  <span className="text-2xl">💬</span>
+                  <span className="text-xs font-bold tracking-widest uppercase">Recipient Clue</span>
+                  <span className="text-xs text-gray-400">
+                    {totalGuesses >= 2 ? 'Available' : `Unlocks in ${2 - totalGuesses} guess`}
+                  </span>
+                </button>
 
-                )}
-                {totalGuesses >= 3 &&
-                  <p className="text-md">{volume} - {chapter}</p>
-                }
-              </div>}
+                 {/* Display the chapter clue button, which becomes available after 3 guesses */}
+                <button
+                  onClick={() => totalGuesses >= 3 && setActiveClue(activeClue === 'chapter' ? null : 'chapter')}
+                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border transition-colors
+                    ${totalGuesses >= 3 
+                      ? 'border-gray-500 bg-gray-800/80 hover:bg-gray-700 cursor-pointer text-white' 
+                      : 'border-gray-700 bg-gray-900/50 cursor-not-allowed text-gray-600'}`}
+                >
+                  <span className="text-2xl">📖</span>
+                  <span className="text-xs font-bold tracking-widest uppercase">Chapter Clue</span>
+                  <span className="text-xs text-gray-400">
+                    {totalGuesses >= 3 ? 'Available' : `Unlocks in ${3 - totalGuesses} guess${3 - totalGuesses !== 1 ? 'es' : ''}`}
+                  </span>
+                </button>
+              </div>
+
+              {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}
+              {activeClue === 'recipient' && (
+                <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 mt-3 text-center text-white">
+                  <p className="font-semibold text-lg">{recipientName}</p>
+                  <img src={recipientImage} alt={recipientName} className="w-20 h-20 object-cover rounded-md mx-auto mt-2"/>
+                </div>
+              )}
+
+              {activeClue === 'chapter' && (
+                <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 mt-3 text-center text-white">
+                  <p className="text-gray-300">{volume} - {chapter}</p>
+                </div>
+              )}
             </div>
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}
                 <input 
@@ -140,13 +176,22 @@ function App() {
         }`}>
           {feedback}
         </p>
-        <ol className="mt-4 space-y-1">
-          {guessHistory.map((pastGuess, index) => (
-            <li
-              key={index}
-              className="px-3 py-2 bg-gray-800/80 border border-gray-600 rounded-lg flex justify-between items-center text-white">
+        <ol className="mt-4 space-y-2 ">
+          {/* Display the history of guesses in reverse order, with styling based on correctness */}
+          {[...guessHistory].reverse().map((pastGuess, index) => (
+                <li
+                  key={index}
+                  className={`px-3 py-2 border rounded-lg flex flex-col items-center justify-between text-white
+                    ${pastGuess === speaker 
+                      ? 'bg-green-800/80 border-green-600' 
+                      : 'bg-red-900/80 border-red-700'}`}
+                >  
+                <div className="flex gap-2 ">
+                  <img src={characters[pastGuess]?.image} 
+                  alt={pastGuess} 
+                  className="w-16 h-16 object-cover rounded-xs" />
+                </div>
               <span>{pastGuess}</span>
-              <span>{pastGuess === speaker ? '✅' : '❌'}</span>
             </li>
           ))}
         </ol>
