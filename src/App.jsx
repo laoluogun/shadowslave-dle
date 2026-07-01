@@ -34,6 +34,7 @@ function App() {
   const volume = currentQuote.volume
   const chapter = currentQuote.chapter
   const speaker = currentQuote.speaker
+  const charactersList = Object.keys(characters)
   
   //State variables for the game logic
   const [guess, setGuess] = useState('')
@@ -64,11 +65,17 @@ function App() {
   )
 
   // Function to check the user's guess against the speaker of the quote
-  function checkGuess() {
+  function checkGuess(nameOverride) {
+    const submittedGuess = nameOverride ?? guess
+    if (!charactersList.includes(submittedGuess)) {
+      setFeedback('Not found. Try again.')
+      displayFeedback()
+      return
+    }
     const newTotal = totalGuesses + 1
     setGuesses(newTotal)
-    setGuessHistory([...guessHistory, guess ])
-    if (guess === speaker){
+    setGuessHistory([...guessHistory, submittedGuess ])
+    if (submittedGuess === speaker){
       setFeedback('Correct! Total Guesses: ' + newTotal)
       setGameOver(true)
     }
@@ -110,7 +117,7 @@ function App() {
                   <span className="text-2xl">💬</span>
                   <span className="text-xs font-bold tracking-widest uppercase">Recipient Clue</span>
                   <span className="text-xs text-gray-400">
-                    {totalGuesses >= 2 ? 'Available' : `Unlocks in ${2 - totalGuesses} guess`}
+                    {totalGuesses >= 2 ? '' : `Unlocks in ${2 - totalGuesses} guess`}
                   </span>
                 </button>
 
@@ -125,7 +132,7 @@ function App() {
                   <span className="text-2xl">📖</span>
                   <span className="text-xs font-bold tracking-widest uppercase">Chapter Clue</span>
                   <span className="text-xs text-gray-400">
-                    {totalGuesses >= 3 ? 'Available' : `Unlocks in ${3 - totalGuesses} guess${3 - totalGuesses !== 1 ? 'es' : ''}`}
+                    {totalGuesses >= 3 ? '' : `Unlocks in ${3 - totalGuesses} guess${3 - totalGuesses !== 1 ? 'es' : ''}`}
                   </span>
                 </button>
               </div>
@@ -154,11 +161,11 @@ function App() {
             </>
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
         {
-          guess !== '' && !hasSelectedCharacter && 
+          guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && 
           <ul className="border border-gray-600 rounded-lg bg-gray-800 mt-1 max-h-40 overflow-y-auto">
               {
                 suggestions.map((name, index) => (
-                <li key={index} onClick={() => setGuess(name)} className="px-3 py-2 cursor-pointer hover:bg-gray-700 text-white">
+                <li key={index} onClick={() => { setGuess(name); checkGuess(name)}} className="px-3 py-2 cursor-pointer hover:bg-gray-700 text-white">
                   {name}
                 </li>
               )
@@ -172,11 +179,13 @@ function App() {
           Submit
         </button>}
         {/* Display feedback to the user based on their guess, with color indicating correctness */}
-      <p className={`text-center font-semibold mt-4 ${
-          feedback.includes('Correct') ? 'text-green-600' : 'text-red-600'
-        }`}>
-          {feedback}
-        </p>
+          {feedback && (
+            <p className={`text-center font-semibold ${
+              feedback.includes('Correct') ? 'text-green-700' : 'text-red-700'
+            }`}>
+              {feedback}
+            </p>
+          )}
         <ol className="mt-4 space-y-2 ">
           {/* Display the history of guesses in reverse order, with styling based on correctness */}
           {[...guessHistory].reverse().map((pastGuess, index) => (
@@ -202,5 +211,6 @@ function App() {
     
   )
 }
+
 
 export default App
