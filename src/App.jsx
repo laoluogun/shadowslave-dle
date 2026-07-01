@@ -54,7 +54,8 @@ function App() {
 
   // Filter the character names based on the current guess for suggestions
   const suggestions = Object.keys(characters).filter(name =>
-   name.toLowerCase().startsWith(guess.toLowerCase())
+   name.toLowerCase().startsWith(guess.toLowerCase()) &&
+   !guessHistory.includes(name)
   )
 
   // Check if the current guess matches any character name (case-insensitive)
