@@ -11,6 +11,7 @@ import RecipientClue from './RecipientClue'
 import VolumeClue from './VolumeClue'
 import ClueButtons from './ClueButtons'
 import InputField from './InputField'
+import Suggestions from './Suggestions'
 
 function App() {
 
@@ -125,16 +126,7 @@ function App() {
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
         {
           guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && 
-          <ul className="border border-gray-600 rounded-lg bg-gray-800 mt-1 max-h-40 overflow-y-auto">
-              {
-                suggestions.map((name, index) => (
-                <li key={index} onClick={() => { setGuess(name); checkGuess(name)}} className="px-3 py-2 cursor-pointer hover:bg-gray-700 text-white">
-                  {name}
-                </li>
-              )
-            ) 
-          }
-        </ul>
+          <Suggestions suggestions={suggestions} setGuess={setGuess} checkGuess={checkGuess} />
         }
         {/* Submit button to check the user's guess, only displayed if the game is not over */}
       {gameOver == false && 
