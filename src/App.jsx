@@ -10,6 +10,7 @@ import QuoteCard from './QuoteCard'
 import RecipientClue from './RecipientClue'
 import VolumeClue from './VolumeClue'
 import ClueButtons from './ClueButtons'
+import InputField from './InputField'
 
 function App() {
 
@@ -119,12 +120,7 @@ function App() {
               )}
         </div>
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}
-                <input 
-                  value={guess} 
-                  onChange={handleChange}
-                  className="w-full bg-gray-800/80 border border-gray-600 rounded-lg px-3 py-2 text-white placeholder:text-gray-400 focus:outline-none focus:border-gray-400 transition"
-                  placeholder="Type your guess here..."
-                />
+              <InputField guess={guess} handleChange={handleChange} />
             </>
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
         {
@@ -166,7 +162,7 @@ function App() {
                 <div className="flex gap-2 ">
                   <img src={characters[pastGuess]?.image} 
                   alt={pastGuess} 
-                  className="w-16 h-16 object-cover rounded-xs" />
+                  className="w-14 h-14 object-cover rounded-xs" />
                 </div>
               <span>{pastGuess}</span>
             </li>
