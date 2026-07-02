@@ -72,7 +72,6 @@ function App() {
     const submittedGuess = nameOverride ?? guess
     if (!charactersList.includes(submittedGuess)) {
       setFeedback('Not found. Try again.')
-      displayFeedback()
       return
     }
     const newTotal = totalGuesses + 1
