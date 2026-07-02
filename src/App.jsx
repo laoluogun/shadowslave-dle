@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import { useState, useEffect } from 'react'
 import reactLogo from './assets/react.svg'
 import viteLogo from './assets/vite.svg'
 import heroImg from './assets/hero.png'
@@ -14,6 +14,14 @@ import InputField from './InputField'
 import Suggestions from './Suggestions'
 
 function App() {
+
+  //Preload images for all characters to ensure they display quickly when needed
+  useEffect(() => {
+    Object.values(characters).forEach(character => {
+      const img = new Image()
+      img.src = character.image
+    })
+  }, [])
 
   //Daily index logic to select a quote based on the current date
 
