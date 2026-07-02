@@ -13,6 +13,7 @@ import ClueButtons from './ClueButtons'
 import InputField from './InputField'
 import Suggestions from './Suggestions'
 import GuessHistory from './GuessHistory'
+import Feedback from './Feedback'
 
 function App() {
 
@@ -142,13 +143,7 @@ function App() {
           Submit
         </button>}
         {/* Display feedback to the user based on their guess, with color indicating correctness */}
-          {feedback && (
-            <p className={`text-center font-semibold ${
-              feedback.includes('Correct') ? 'text-green-700' : 'text-red-700'
-            }`}>
-              {feedback}
-            </p>
-          )}
+          <Feedback feedback={feedback} />
           {/* Display the history of guesses in reverse order, with styling based on correctness */}
         <GuessHistory guessHistory={guessHistory} speaker={speaker} />
       </div>
