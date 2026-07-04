@@ -133,19 +133,21 @@ function App() {
                 <VolumeClue volume={volume} chapter={chapter} />
               )}
         </div>
+        <div className="flex flex-col gap-2">
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}
               <InputField guess={guess} handleChange={handleChange} />
-            </>
+    
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
-        {
-          guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && 
-          <Suggestions suggestions={suggestions} setGuess={setGuess} checkGuess={checkGuess} />
-        }
-        {/* Submit button to check the user's guess, only displayed if the game is not over */}
-      {gameOver == false && 
-        <button onClick={ () => checkGuess()} className="w-full py-2 rounded-none bg-zinc-900 hover:bg-zinc-700 text-white font-semibold tracking-wide transition-colors cursor-pointer">
-          Submit
-        </button>}
+            {
+              guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && 
+              <Suggestions suggestions={suggestions} setGuess={setGuess} checkGuess={checkGuess} />
+            }
+            {/* Submit button to check the user's guess, only displayed if the game is not over */}
+          </div>
+            {gameOver == false && 
+            <button onClick={ () => checkGuess()} className="w-full py-2 rounded-none bg-zinc-900 hover:bg-zinc-700 text-white font-semibold tracking-wide transition-colors cursor-pointer">
+              Submit
+            </button>}
         {/* Display feedback to the user based on their guess, with color indicating correctness */}
           <Feedback feedback={feedback} />
           {/* Display the history of guesses in reverse order, with styling based on correctness */}
@@ -157,6 +159,7 @@ function App() {
             totalGuesses={totalGuesses}
           />
         )}
+        </>
       </div>
     </div>
     {showVictoryModal && (
