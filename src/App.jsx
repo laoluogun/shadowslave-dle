@@ -111,7 +111,7 @@ function App() {
       </h1>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-gray-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
       <>
         <div>
               {/*Display the quote */}
@@ -143,7 +143,7 @@ function App() {
         }
         {/* Submit button to check the user's guess, only displayed if the game is not over */}
       {gameOver == false && 
-        <button onClick={ () => checkGuess()} className="w-full py-2 rounded-lg bg-gray-900 hover:bg-gray-700 text-white font-semibold tracking-wide transition-colors">
+        <button onClick={ () => checkGuess()} className="w-full py-2 rounded-none bg-zinc-900 hover:bg-zinc-700 text-white font-semibold tracking-wide transition-colors">
           Submit
         </button>}
         {/* Display feedback to the user based on their guess, with color indicating correctness */}
