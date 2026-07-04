@@ -14,6 +14,8 @@ import InputField from './InputField'
 import Suggestions from './Suggestions'
 import GuessHistory from './GuessHistory'
 import Feedback from './Feedback'
+import VictoryModal from './VictoryModal'
+import WinnerCard from './WinnerCard'
 
 function App() {
 
@@ -60,6 +62,7 @@ function App() {
   const [recipientRevealed, setRecipientRevealed] = useState(false)
   const [chapterRevealed, setChapterRevealed] = useState(false)
   const [activeClue, setActiveClue] = useState(null) // null | 'recipient' | 'chapter'
+  const [showVictoryModal, setShowVictoryModal] = useState(false)
   
 
   function handleChange(e) {
@@ -90,6 +93,7 @@ function App() {
     if (submittedGuess === speaker){
       setFeedback('Correct! Total Guesses: ' + newTotal)
       setGameOver(true)
+      setShowVictoryModal(true)
     }
     else {
       setFeedback('Try Again! Current Guesses: ' + newTotal)
@@ -107,7 +111,7 @@ function App() {
       </h1>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="min-h-screen flex items-center justify-center p-4">
-      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-gray-700 rounded-2xl shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-gray-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
       <>
         <div>
               {/*Display the quote */}
@@ -146,8 +150,23 @@ function App() {
           <Feedback feedback={feedback} />
           {/* Display the history of guesses in reverse order, with styling based on correctness */}
         <GuessHistory guessHistory={guessHistory} speaker={speaker} />
+        {gameOver && !showVictoryModal && (
+          <WinnerCard
+            speaker={speaker}
+            speakerImage={characters[speaker]?.image}
+            totalGuesses={totalGuesses}
+          />
+        )}
       </div>
     </div>
+    {showVictoryModal && (
+        <VictoryModal
+          speaker={speaker}
+          speakerImage={characters[speaker]?.image}
+          totalGuesses={totalGuesses}
+          onClose={() => setShowVictoryModal(false)}
+        />
+      )}
     </>
     
   )

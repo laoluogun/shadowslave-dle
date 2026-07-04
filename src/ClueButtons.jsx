@@ -4,7 +4,7 @@ function ClueButtons({totalGuesses, setActiveClue, activeClue}) {
                 {/* Recipient clue button, only enabled after 2 guesses */}
                 <button
                   onClick={() => totalGuesses >= 2 && setActiveClue(activeClue === 'recipient' ? null : 'recipient')}
-                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border transition-colors
+                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-none border transition-colors
                     ${totalGuesses >= 2 
                       ? 'border-gray-500 bg-gray-800/80 hover:bg-gray-700 cursor-pointer text-white' 
                       : 'border-gray-700 bg-gray-900/50 cursor-default text-gray-600'}`}
@@ -19,7 +19,7 @@ function ClueButtons({totalGuesses, setActiveClue, activeClue}) {
                  {/* Display the chapter clue button, which becomes available after 3 guesses */}
                 <button
                   onClick={() => totalGuesses >= 3 && setActiveClue(activeClue === 'chapter' ? null : 'chapter')}
-                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-xl border transition-colors
+                  className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-none border transition-colors
                     ${totalGuesses >= 3 
                       ? 'border-gray-500 bg-gray-800/80 hover:bg-gray-700 cursor-pointer text-white' 
                       : 'border-gray-700 bg-gray-900/50 cursor-default text-gray-600'}`}
