@@ -1,8 +1,8 @@
 function RecipientClue({recipientName, recipientImage}) {
     return (
-                <div className="bg-gray-800/80 border border-gray-600 rounded-xl p-4 mt-3 text-center text-white">
+                <div className="bg-zinc-800/80 border border-zinc-600 rounded-none p-4 mt-3 text-center text-white">
                   <p className="font-semibold text-lg">{recipientName}</p>
-                  <img src={recipientImage} alt={recipientName} className="w-20 h-20 object-cover rounded-md mx-auto mt-2"/>
+                  <img src={recipientImage} alt={recipientName} className="w-20 h-20 object-cover rounded-none mx-auto mt-2"/>
                 </div>
               )
 }
