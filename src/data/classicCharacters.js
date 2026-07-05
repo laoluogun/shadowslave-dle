@@ -1,6 +1,6 @@
 export const classicCharacters = {
     Sunless: {
-        image: '/images/sunless.png',
+        image: '/images/portraits/sunless.png',
         gender: 'Male',
         affiliations: ['Nephis\' Cohort', 'First Irregular Company', 'Shadow Company'],
         currentRank: "Supreme",
@@ -9,7 +9,7 @@ export const classicCharacters = {
     },
 
     Nephis: {
-        image: '/images/nephis.png',
+        image: '/images/portraits/nephis.png',
         gender: 'Female',
         affiliations: ['Nephis\' Cohort', 'Immortal Flame Clan', 'Valor Clan'],
         currentRank: "Supreme",
@@ -18,7 +18,7 @@ export const classicCharacters = {
     },
 
     Cassie: {
-        image: '/images/cassie.png',
+        image: '/images/portraits/cassie.png',
         gender: 'Female',
         affiliations: ['Nephis\' Cohort', 'Fire Keepers', 'Valor Clan'],
         currentRank: "Supreme",
@@ -27,7 +27,7 @@ export const classicCharacters = {
     },
 
     Effie: {
-        image: '/images/effie.png',
+        image: '/images/portraits/effie.png',
         gender: 'Female',
         affiliations: ['Nephis\' Cohort', 'Wolves'],
         currentRank: "Transcendent",
@@ -36,7 +36,7 @@ export const classicCharacters = {
     },
 
     Kai: {
-        image: '/images/kai.png',
+        image: '/images/portraits/kai.png',
         gender: 'Male',
         affiliations: ['Nephis\' Cohort', 'Nightsingers'],
         currentRank: "Transcendent",
@@ -45,7 +45,7 @@ export const classicCharacters = {
     },
 
     Jet: {
-        image: '/images/jet.png',
+        image: '/images/portraits/jet.png',
         gender: "Female",
         affiliations: ['Government', 'First Irregular Company', 'Nephis\' Cohort'],
         currentRank: "Transcendent",
@@ -54,7 +54,7 @@ export const classicCharacters = {
     },
 
     Rain: {
-        image: '/images/rain.png',
+        image: '/images/portraits/rain.png',
         gender: "Female",
         affiliations: ['Tamar\'s Cohort', 'Shadow Company'],
         currentRank: "Ascended",
@@ -63,7 +63,7 @@ export const classicCharacters = {
     },
 
     Anvil: {
-        image: '/images/anvil.png',
+        image: '/images/portraits/anvil.png',
         gender: "Male",
         affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
         currentRank: "Supreme",
@@ -72,7 +72,7 @@ export const classicCharacters = {
     },
 
     "Ki Song": {
-        image: '/images/kisong.png',
+        image: '/images/portraits/kisong.png',
         gender: 'Female',
         affiliations: ['Broken Sword\'s Cohort', 'Song Clan'],
         currentRank: "Supreme",
@@ -81,7 +81,7 @@ export const classicCharacters = {
     },
 
     Asterion: {
-        image: '/images/asterion.png',
+        image: '/images/portraits/asterion.png',
         gender: 'Male',
         affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
         currentRank: "Supreme",
@@ -90,7 +90,7 @@ export const classicCharacters = {
     },
 
     Gunlaug: {
-        image: '/images/gunlaug.png',
+        image: '/images/portraits/gunlaug.png',
         gender: 'Male',
         affiliations: ['Bright Castle'],
         currentRank: "Dormant",
@@ -99,7 +99,7 @@ export const classicCharacters = {
     },
 
     Morgan: {
-        image: '/images/morgan.png',
+        image: '/images/portraits/morgan.png',
         gender: 'Female',
         affiliations: ['Valor Clan'],
         currentRank: "Transcendent",
@@ -108,7 +108,7 @@ export const classicCharacters = {
     },
 
     Seishan: {
-        image: '/images/seishan.png',
+        image: '/images/portraits/seishan.png',
         gender: 'Female',
         affiliations: ['Song Clan'],
         currentRank: "Transcendent",
@@ -117,7 +117,7 @@ export const classicCharacters = {
     },
 
     Tyris: {
-        image: '/images/tyris.png',
+        image: '/images/portraits/tyris.png',
         gender: 'Female',
         affiliations: ['White Feather Clan', 'Valor Clan'],
         currentRank: "Transcendent",

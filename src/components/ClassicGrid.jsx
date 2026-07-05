@@ -1,3 +1,5 @@
+import { characters } from "../data/characters"
+
 function Cell({ result, value }) {
   const baseClasses = "flex flex-col items-center justify-center p-2 border rounded-none text-white text-center text-xs font-semibold min-h-16 transition-all"
   
