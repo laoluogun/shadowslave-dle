@@ -1,128 +1,127 @@
 export const classicCharacters = {
     Sunless: {
-        src: '/images/sunless.png',
+        image: '/images/sunless.png',
         gender: 'Male',
-        affiliation: ['Nephis\' Cohort', 'First Irregular Company', 'Shadow Company'],
+        affiliations: ['Nephis\' Cohort', 'First Irregular Company', 'Shadow Company'],
         currentRank: "Supreme",
         hasTrueName: true,
         debutVolume: "Volume 1: Child of Shadows"
     },
 
     Nephis: {
-        src: '/images/nephis.png',
+        image: '/images/nephis.png',
         gender: 'Female',
-        affiliation: ['Nephis\' Cohort', 'Immortal Flame Clan', 'Valor Clan'],
+        affiliations: ['Nephis\' Cohort', 'Immortal Flame Clan', 'Valor Clan'],
         currentRank: "Supreme",
         hasTrueName: true,
         debutVolume: "Volume 1: Child of Shadows"
     },
 
     Cassie: {
-        src: '/images/cassie.png',
+        image: '/images/cassie.png',
         gender: 'Female',
-        affiliation: ['Nephis\' Cohort', 'Fire Keepers', 'Valor Clan'],
+        affiliations: ['Nephis\' Cohort', 'Fire Keepers', 'Valor Clan'],
         currentRank: "Supreme",
         hasTrueName: true,
         debutVolume: "Volume 1: Child of Shadows"
     },
 
     Effie: {
-        src: '/images/effie.png',
+        image: '/images/effie.png',
         gender: 'Female',
-        affiliation: ['Nephis\' Cohort', 'Wolves'],
+        affiliations: ['Nephis\' Cohort', 'Wolves'],
         currentRank: "Transcendent",
         hasTrueName: true,
         debutVolume: "Volume 2: Demon of Change"
     },
 
     Kai: {
-        src: '/images/kai.png',
+        image: '/images/kai.png',
         gender: 'Male',
-        affiliation: ['Nephis\' Cohort', 'Nightsingers'],
+        affiliations: ['Nephis\' Cohort', 'Nightsingers'],
         currentRank: "Transcendent",
         hasTrueName: true,
         debutVolume: "Volume 2: Demon of Change"
     },
 
     Jet: {
-        src: '/images/jet.png',
+        image: '/images/jet.png',
         gender: "Female",
-        affiliation: ['Government', 'First Irregular Company', 'Nephis\' Cohort'],
+        affiliations: ['Government', 'First Irregular Company', 'Nephis\' Cohort'],
         currentRank: "Transcendent",
         hasTrueName: true,
         debutVolume: "Volume 1: Child of Shadows"
     },
 
     Rain: {
-        src: '/images/rain.png',
+        image: '/images/rain.png',
         gender: "Female",
-        affiliation: ['Tamar\'s Cohort', 'Shadow Company'],
+        affiliations: ['Tamar\'s Cohort', 'Shadow Company'],
         currentRank: "Ascended",
         hasTrueName: true,
         debutVolume: "Volume 3: Prince of Nothing"
     },
 
     Anvil: {
-        src: '/images/anvil.png',
+        image: '/images/anvil.png',
         gender: "Male",
-        affiliation: ['Broken Sword\'s Cohort', 'Valor Clan'],
+        affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
         currentRank: "Supreme",
         hasTrueName: false,
         debutVolume: "Volume 7: The Tomb of Ariel"
     },
 
     "Ki Song": {
-        src: '/images/kisong.png',
+        image: '/images/kisong.png',
         gender: 'Female',
-        affiliation: ['Broken Sword\'s Cohort', 'Song Clan'],
+        affiliations: ['Broken Sword\'s Cohort', 'Song Clan'],
         currentRank: "Supreme",
         hasTrueName: true,
         debutVolume: "Volume 8: The Lord of Shadows"
     },
 
     Asterion: {
-        src: '/images/asterion.png',
+        image: '/images/asterion.png',
         gender: 'Male',
-        affiliation: ['Broken Sword\'s Cohort', 'Valor Clan'],
+        affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
         currentRank: "Supreme",
         hasTrueName: false,
         debutVolume: "Volume 8: The Lord of Shadows"
     },
 
     Gunlaug: {
-        src: '/images/gunlaug.png',
+        image: '/images/gunlaug.png',
         gender: 'Male',
-        affiliation: ['Bright Castle'],
+        affiliations: ['Bright Castle'],
         currentRank: "Dormant",
         hasTrueName: false,
         debutVolume: "Volume 2: Demon of Change"
     },
 
     Morgan: {
-        src: '/images/morgan.png',
+        image: '/images/morgan.png',
         gender: 'Female',
-        affiliation: ['Valor Clan'],
+        affiliations: ['Valor Clan'],
         currentRank: "Transcendent",
         hasTrueName: false, 
         debutVolume: "Volume 3: Prince of Nothing"
     },
 
     Seishan: {
-        src: '/images/seishan.png',
+        image: '/images/seishan.png',
         gender: 'Female',
-        affiliation: ['Song Clan'],
+        affiliations: ['Song Clan'],
         currentRank: "Transcendent",
         hasTrueName: false,
         debutVolume: "Volume 2: Demon of Change"
     },
 
     Tyris: {
-        src: '/images/tyris.png',
+        image: '/images/tyris.png',
         gender: 'Female',
-        affiliation: ['White Feather Clan', 'Valor Clan'],
+        affiliations: ['White Feather Clan', 'Valor Clan'],
         currentRank: "Transcendent",
         hasTrueName: true,
         debutVolume: "Volume 3: Prince of Nothing"
     }
 } 
-
