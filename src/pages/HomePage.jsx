@@ -15,7 +15,7 @@ const modes = [
     description: 'Get clues on every try',
     icon: '/images/question-sign.png',
     path: '/classic',
-    available: false,
+    available: true,
   },
 ]
 
