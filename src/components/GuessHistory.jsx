@@ -1,4 +1,4 @@
-import {characters} from './data/characters'
+import {characters} from '../data/characters'
 
 function GuessHistory({ guessHistory, speaker }) {
     return (
