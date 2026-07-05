@@ -21,6 +21,7 @@ function App() {
     <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/quote" element={<QuotePage />} />
+      <Route path="/classic" element={<ClassicPage />} />
     </Routes>
   )
 }
