@@ -4,6 +4,7 @@ import { characters } from './data/characters'
 import './App.css'
 import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
+import ClassicPage from './pages/ClassicPage'
 
 function App() {
 
