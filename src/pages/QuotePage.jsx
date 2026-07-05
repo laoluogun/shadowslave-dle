@@ -27,14 +27,6 @@ import WinnerCard from '../WinnerCard'
 
 function QuotePage() {
 
-  //Preload images for all characters to ensure they display quickly when needed
-  useEffect(() => {
-    Object.values(characters).forEach(character => {
-      const img = new Image()
-      img.src = character.image
-    })
-  }, [])
-
 
   //Find the quote of the day based on the daily index
   const [currentQuote] = useState(() => quotes[getDailyIndex(quotes.length)])
