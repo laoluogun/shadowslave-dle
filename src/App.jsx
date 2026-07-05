@@ -1,4 +1,7 @@
 import { Routes, Route } from 'react-router-dom'
+import { useEffect } from 'react'
+import { characters } from './data/characters'
+import './App.css'
 import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
 
