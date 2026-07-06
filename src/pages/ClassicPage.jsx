@@ -6,6 +6,7 @@ import ClassicGrid from '../components/ClassicGrid'
 import InputField from '../components/InputField'
 import Suggestions from '../components/Suggestions'
 import Feedback from '../components/Feedback'
+import VictoryModal from '../components/VictoryModal'
 
 function getDailyIndex(arrayLength) {
   const today = new Date().toISOString().slice(0, 10)
@@ -26,6 +27,7 @@ function ClassicPage() {
   const [guessHistory, setGuessHistory] = useState([])
   const [feedback, setFeedback] = useState('')
   const [gameOver, setGameOver] = useState(false)
+  const [showVictoryModal, setShowVictoryModal] = useState(false)  
 
   const suggestions = characterNames.filter(name =>
     name.toLowerCase().startsWith(guess.toLowerCase()) &&
@@ -51,6 +53,7 @@ function ClassicPage() {
     if (submittedGuess === answer) {
       setFeedback(`Correct! You found ${answer} in ${guessHistory.length + 1} guess${guessHistory.length !== 0 ? 'es' : ''}!`)
       setGameOver(true)
+      setShowVictoryModal(true)
     } else {
       setFeedback('Try again!')
     }
@@ -100,6 +103,14 @@ function ClassicPage() {
           <ClassicGrid guessResults={guessResults} />
         )}
       </div>
+      {showVictoryModal && (
+        <VictoryModal
+          speaker={answer}
+          speakerImage={classicCharacters[answer]?.image}
+          totalGuesses={guessHistory.length}
+          onClose={() => setShowVictoryModal(false)}
+        />
+      )}
     </div>
   )
 }
