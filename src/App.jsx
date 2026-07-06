@@ -5,12 +5,18 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
 import ClassicPage from './pages/ClassicPage'
+import { classicCharacters } from './data/classicCharacters'
 
 function App() {
 
   //Preload images for all characters to ensure they display quickly when needed
   useEffect(() => {
     Object.values(characters).forEach(character => {
+      const img = new Image()
+      img.src = character.image
+    })
+
+    Object.values(classicCharacters).forEach(character => {
       const img = new Image()
       img.src = character.image
     })
