@@ -1,4 +1,5 @@
 import { useState, useEffect } from 'react'
+import { useNavigate } from 'react-router-dom'
 import '../App.css'
 import {quotes} from '../data/quotes'
 import {characters} from '../data/characters'
@@ -27,6 +28,8 @@ import WinnerCard from '../components/WinnerCard'
 
 function QuotePage() {
 
+  //Create navigation to home page
+  const navigate = useNavigate()
 
   //Find the quote of the day based on the daily index
   const [currentQuote] = useState(() => quotes[getDailyIndex(quotes.length)])
@@ -92,7 +95,14 @@ function QuotePage() {
 
 
   return (
-    <> 
+
+    <div className="min-h-screen flex flex-col items-center p-4 gap-6">
+      <button
+        onClick={() => navigate('/')}
+        className="self-start text-zinc-400 hover:text-white text-sm transition"
+      >
+        ← Back
+      </button>
       {/** Main title of the game displayed at the top of the page */}
      <h1 className="text-center text-3xl font-bold tracking-widest text-white">
         Shadow Slave-dle
@@ -156,8 +166,7 @@ function QuotePage() {
           onClose={() => setShowVictoryModal(false)}
         />
       )}
-    </>
-    
+   </div> 
   )
 }
 
