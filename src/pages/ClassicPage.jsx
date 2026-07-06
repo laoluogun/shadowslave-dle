@@ -7,6 +7,7 @@ import InputField from '../components/InputField'
 import Suggestions from '../components/Suggestions'
 import Feedback from '../components/Feedback'
 import VictoryModal from '../components/VictoryModal'
+import WinnerCard from '../components/WinnerCard'
 
 function getDailyIndex(arrayLength) {
   const today = new Date().toISOString().slice(0, 10)
@@ -101,6 +102,13 @@ function ClassicPage() {
         
         {guessResults.length > 0 && (
           <ClassicGrid guessResults={guessResults} />
+        )}
+        {gameOver && !showVictoryModal && (
+          <WinnerCard
+            speaker={answer}
+            speakerImage={classicCharacters[answer]?.image}
+            totalGuesses={guessHistory.length}
+          />
         )}
       </div>
       {showVictoryModal && (
