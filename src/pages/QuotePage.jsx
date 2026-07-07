@@ -2,7 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
 import {quotes} from '../data/quotes'
-import {characters} from '../data/characters'
+import {quoteCharacters} from '../data/quoteCharacters'
 
 import QuoteCard from '../components/QuoteCard'
 import RecipientClue from '../components/RecipientClue'
@@ -38,11 +38,11 @@ function QuotePage() {
   //Extract the relevant information from the current quote
   const quote = currentQuote.quote
   const recipientName = currentQuote.recipient
-  const recipientImage = characters[currentQuote.recipient].image
+  const recipientImage = quoteCharacters[currentQuote.recipient].image
   const volume = currentQuote.volume
   const chapter = currentQuote.chapter
   const speaker = currentQuote.speaker
-  const charactersList = Object.keys(characters)
+  const quoteCharactersList = Object.keys(quoteCharacters)
   
   //State variables for the game logic
   const [guess, setGuess] = useState('')
@@ -61,20 +61,20 @@ function QuotePage() {
   }
 
   // Filter the character names based on the current guess for suggestions
-  const suggestions = Object.keys(characters).filter(name =>
+  const suggestions = Object.keys(quoteCharacters).filter(name =>
    name.toLowerCase().startsWith(guess.toLowerCase()) &&
    !guessHistory.includes(name)
   )
 
   // Check if the current guess matches any character name (case-insensitive)
-  const hasSelectedCharacter = Object.keys(characters).some(name =>
+  const hasSelectedCharacter = Object.keys(quoteCharacters).some(name =>
     name.toLowerCase() === guess.toLowerCase()
   )
 
   // Function to check the user's guess against the speaker of the quote
   function checkGuess(nameOverride) {
     const submittedGuess = nameOverride ?? guess
-    if (!charactersList.includes(submittedGuess)) {
+    if (!quoteCharactersList.includes(submittedGuess)) {
       setFeedback('Not found. Try again.')
       return
     }
@@ -152,7 +152,7 @@ function QuotePage() {
         {gameOver && !showVictoryModal && (
           <WinnerCard
             speaker={speaker}
-            speakerImage={characters[speaker]?.image}
+            speakerImage={quoteCharacters[speaker]?.image}
             totalGuesses={totalGuesses}
           />
         )}
@@ -161,7 +161,7 @@ function QuotePage() {
     {showVictoryModal && (
         <VictoryModal
           speaker={speaker}
-          speakerImage={characters[speaker]?.image}
+          speakerImage={quoteCharacters[speaker]?.image}
           totalGuesses={totalGuesses}
           onClose={() => setShowVictoryModal(false)}
         />

@@ -1,6 +1,6 @@
 import { Routes, Route } from 'react-router-dom'
 import { useEffect } from 'react'
-import { characters } from './data/characters'
+import { quoteCharacters } from './data/quoteCharacters'
 import './App.css'
 import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
@@ -11,7 +11,7 @@ function App() {
 
   //Preload images for all characters to ensure they display quickly when needed
   useEffect(() => {
-    Object.values(characters).forEach(character => {
+    Object.values(quoteCharacters).forEach(character => {
       const img = new Image()
       img.src = character.image
     })
