@@ -1,4 +1,6 @@
 import { characters } from "../data/characters"
+import upArrow from "../../public/images/up-arrow.png";
+import downArrow from "../../public/images/down-arrow.png";
 
 function Cell({ result, value }) {
   const baseClasses = "flex flex-col items-center justify-center p-2 border rounded-none text-white text-center text-xs font-semibold min-h-16 transition-all"
@@ -11,15 +13,15 @@ function Cell({ result, value }) {
     lower: 'bg-red-900/80 border-red-700',
   }
 
-  const arrow = result === 'higher' ? '⬆️' : result === 'lower' ? '⬇️' : null
+  const arrow = result === 'higher' ? upArrow : result === 'lower' ? downArrow : null
 
   const displayValue = Array.isArray(value) ? value.join(', ') : 
     typeof value === 'boolean' ? (value ? 'Yes' : 'No') : value
 
   return (
     <div className={`${baseClasses} ${colorClasses[result]}`}>
-      {arrow && <span className="text-base">{arrow}</span>}
-      <span>{displayValue}</span>
+      <span>{displayValue}</span>      
+      {arrow && <img src={arrow} alt={result} className="w-4 h-4" />}
     </div>
   )
 }
