@@ -1,11 +1,13 @@
 import { useNavigate } from 'react-router-dom'
+import quote from '../assets/images/quote.png'
+import questionSign from  '../assets/images/question-sign.png'
 
 const modes = [
   {
     id: 'classic',
     title: 'Classic',
     description: 'Guess the daily character',
-    icon: '/src/assets/images/question-sign.png',
+    icon: questionSign,
     path: '/classic',
     available: true,
   },
@@ -13,7 +15,7 @@ const modes = [
     id: 'quote',
     title: 'Quote',
     description: 'Guess the character from a daily quote',
-    icon: '/src/assets/images/quote.png',
+    icon: quote,
     path: '/quote',
     available: true,
   },
