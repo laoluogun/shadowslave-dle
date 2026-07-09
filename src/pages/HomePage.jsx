@@ -2,19 +2,19 @@ import { useNavigate } from 'react-router-dom'
 
 const modes = [
   {
+    id: 'classic',
+    title: 'Classic',
+    description: 'Guess the daily character',
+    icon: '/images/question-sign.png',
+    path: '/classic',
+    available: true,
+  },
+  {
     id: 'quote',
     title: 'Quote',
     description: 'Guess the character from a daily quote',
     icon: '/images/quote.png',
     path: '/quote',
-    available: true,
-  },
-  {
-    id: 'classic',
-    title: 'Classic',
-    description: 'Get clues on every try',
-    icon: '/images/question-sign.png',
-    path: '/classic',
     available: true,
   },
 ]
