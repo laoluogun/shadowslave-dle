@@ -1,4 +1,4 @@
-const prefix = '/src/assets/images/portraits/'
+const prefix = 'portraits/'
 
 export const classicCharacters = {
 
