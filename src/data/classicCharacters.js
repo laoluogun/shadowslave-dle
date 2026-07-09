@@ -123,5 +123,14 @@ export const classicCharacters = {
         currentRank: "Transcendent",
         hasTrueName: true,
         debutVolume: "Volume 3: Prince of Nothing"
+    },
+
+    Mordret: {
+        image: '/images/portraits/mordret.png',
+        gender: 'Male',
+        affiliations: ['Valor Clan', 'Song Clan'],
+        currentRank: "Supreme",
+        hasTrueName: false,
+        debutVolume: "Volume 3: Prince of Nothing"
     }
 } 
