@@ -108,7 +108,7 @@ function QuotePage() {
         Shadow Slave-dle
       </h1>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
-      <div className="min-h-screen flex items-center justify-center p-4">
+      <div className="flex items-center justify-center p-4">
       <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
               {/*Display the quote */}
