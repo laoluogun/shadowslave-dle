@@ -1,8 +1,8 @@
 import { classicCharacters } from "../data/classicCharacters"
 import { createPortal } from 'react-dom'
 import { useState, useRef, useEffect } from "react"
-import upArrow from "../../public/images/up-arrow.png";
-import downArrow from "../../public/images/down-arrow.png";
+import upArrow from "/images/up-arrow.png";
+import downArrow from "/images/down-arrow.png";
 
 import InfoPopover from "./InfoPopover";
 
