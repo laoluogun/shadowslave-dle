@@ -83,7 +83,7 @@ export const classicCharacters = {
     Asterion: {
         image: '/images/portraits/asterion.png',
         gender: 'Male',
-        affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
+        affiliations: ['Broken Sword\'s Cohort'],
         currentRank: "Supreme",
         hasTrueName: false,
         debutVolume: "Volume 8: The Lord of Shadows"
