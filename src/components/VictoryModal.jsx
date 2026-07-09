@@ -32,7 +32,7 @@ function VictoryModal({ speaker, speakerImage, totalGuesses, onClose }) {
         <img 
           src={speakerImage} 
           alt={speaker}
-          className="w-28 h-28 object-cover rounded-none border border-zinc-600"
+          className="w-28 h-35 object-cover rounded-none border border-zinc-600"
         />
         <div>
           <p className="text-zinc-400 text-sm">You guessed</p>
