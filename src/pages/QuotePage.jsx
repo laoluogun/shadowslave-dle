@@ -132,7 +132,8 @@ function QuotePage() {
         </div>
         <div className="flex flex-col gap-2">
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}
-              <InputField guess={guess} handleChange={handleChange} />
+              {gameOver == false && 
+              <InputField guess={guess} handleChange={handleChange} />}
     
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
             {
