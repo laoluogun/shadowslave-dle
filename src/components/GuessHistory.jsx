@@ -15,7 +15,7 @@ function GuessHistory({ guessHistory, speaker }) {
                       <div className="flex gap-2 ">
                         <img src={quoteCharacters[pastGuess]?.image} 
                         alt={pastGuess} 
-                        className="w-20 h-20 object-cover rounded-none border border-zinc-600" />
+                        className="w-20 h-25 object-cover rounded-none border border-zinc-600" />
                       </div>
                     <span className='text-md'>{pastGuess}</span>
                   </li>

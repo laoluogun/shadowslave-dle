@@ -23,7 +23,7 @@ function WinnerCard({ speaker, speakerImage, totalGuesses }) {
   return (
     <div className="bg-zinc-900 border border-green-900 rounded-none p-6 text-center flex flex-col items-center gap-3">
       <h2 className="text-xl font-bold tracking-widest text-white uppercase">Victory!</h2>
-      <img src={speakerImage} alt={speaker} className="w-24 h-24 object-cover rounded-none border border-zinc-600"/>
+      <img src={speakerImage} alt={speaker} className="w-24 h-30 object-cover rounded-none border border-zinc-600"/>
       <div>
         <p className="text-zinc-400 text-sm">You guessed</p>
         <p className="text-white font-bold text-lg">{speaker}</p>
