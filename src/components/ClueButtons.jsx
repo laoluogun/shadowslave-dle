@@ -9,7 +9,7 @@ function ClueButtons({totalGuesses, setActiveClue, activeClue}) {
                       ? 'border-zinc-400 bg-zinc-700/80 hover:bg-zinc-700 cursor-pointer text-white' 
                       : 'border-zinc-500 bg-zinc-800/80 cursor-default text-zinc-600'}`}
                 >
-                  <img src="/images/talk.png" alt="talk" className="w-6 h-6"/>
+                  <img src="/src/assets/images/talk.png" alt="talk" className="w-6 h-6"/>
                   <span className="text-xs font-bold text-zinc-400 tracking-widest uppercase">Recipient Clue</span>
                   <span className="text-xs text-zinc-400">
                     {totalGuesses >= 2 ? '' : `Unlocks in ${2 - totalGuesses} guess`}
@@ -24,7 +24,7 @@ function ClueButtons({totalGuesses, setActiveClue, activeClue}) {
                       ? 'border-zinc-400 bg-zinc-700/80 hover:bg-zinc-700 cursor-pointer text-white' 
                       : 'border-zinc-500 bg-zinc-800/80 cursor-default text-zinc-600'}`}
                 >
-                  <img src="/images/book.png" alt="open book" className="w-6 h-6"/>
+                  <img src="/src/assets/images/book.png" alt="open book" className="w-6 h-6"/>
                   <span className="text-xs font-bold text-zinc-400 tracking-widest uppercase">Chapter Clue</span>
                   <span className="text-xs text-zinc-400">
                     {totalGuesses >= 3 ? '' : `Unlocks in ${3 - totalGuesses} guess${3 - totalGuesses !== 1 ? 'es' : ''}`}

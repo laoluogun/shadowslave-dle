@@ -2,7 +2,7 @@
 
 body {
   background-size: cover;  
-  background-image: url('/images/vtb.jpg');
+  background-image: url('/src/assets/images/vtb.jpg');
   background-position: center;
   background-color: #0a0a0f;
   background-attachment: fixed;
