@@ -1,6 +1,10 @@
 import { classicCharacters } from "../data/classicCharacters"
+import { createPortal } from 'react-dom'
+import { useState, useRef, useEffect } from "react"
 import upArrow from "../../public/images/up-arrow.png";
 import downArrow from "../../public/images/down-arrow.png";
+
+import InfoPopover from "./InfoPopover";
 
 function Cell({ result, value, showArrow = false }) {
   const baseClasses = "flex flex-col items-center justify-center p-2 border rounded-none text-white text-center text-md font-semibold min-h-16 transition-all"
@@ -23,7 +27,8 @@ function Cell({ result, value, showArrow = false }) {
 
   const displayValue = Array.isArray(value) ? value.join(', ') :
     typeof value === 'boolean' ? (value ? 'Yes' : 'No') : value
-    
+  
+  
   return (
     <div className={`${baseClasses} ${colorClasses[result]} relative overflow-hidden`}>
       {arrowImage && (
@@ -42,16 +47,23 @@ function Cell({ result, value, showArrow = false }) {
 function ClassicGrid({ guessResults }) {
   const columns = ['name', 'gender', 'affiliations', 'currentRank', 'hasTrueName', 'debutVolume']
   const headers = ['Character', 'Gender', 'Affiliations', 'Rank', 'True Name', 'Debut']
-
+  const debutInfo = 'If a character has appeared in the story, then their volume debut will be when that appearance is. \nIf a character has not appeared in the story but has been mentioned, their first mention will be their volume debut.\nFor example, Asterion was first mentioned in Chapter 367, but his first appearence was chapter 1840. Therefore his debut volume will be Volume 8.  \nWhereas Broken Sword has not appeared outside of anyone\'s memories or conversations, therefore his first mention in Chapter 27 will dictate his volume.'
+  
   return (
     <div className="w-full overflow-x-auto">
       {/* Header row */}
-      <div className="grid grid-cols-6 gap-1 mb-1 min-w-[600px]">
+      <div className="grid grid-cols-6 gap-2 mb-1 min-w-[600px]">
         {headers.map(header => (
-          <div key={header} className="text-center text-xs uppercase tracking-widest text-zinc-400 py-1">
-            {header}
+          <div key={header} className="flex justify-center text-center text-xs uppercase tracking-widest text-zinc-400 py-1 gap-2">
+            <p>{header}</p>
+            <div>{
+            header == 'Debut' && 
+            <InfoPopover text={debutInfo} />
+            }
+            </div>
           </div>
-        ))}
+        )
+        )}
       </div>
 
       {/* Guess rows */}
