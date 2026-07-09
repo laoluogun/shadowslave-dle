@@ -8,6 +8,7 @@ import ClassicPage from './pages/ClassicPage'
 import { classicCharacters } from './data/classicCharacters'
 import ArtistCredits from './components/ArtistCredits'
 
+
 function App() {
 
   //Preload images for all characters to ensure they display quickly when needed
