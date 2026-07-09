@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
 import ClassicPage from './pages/ClassicPage'
 import { classicCharacters } from './data/classicCharacters'
+import ArtistCredits from './components/ArtistCredits'
 
 function App() {
 
@@ -25,11 +26,13 @@ function App() {
 
 
   return (
-    <Routes>
+    <><Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/quote" element={<QuotePage />} />
       <Route path="/classic" element={<ClassicPage />} />
     </Routes>
+    <ArtistCredits/>
+    </>
   )
 }
 export default App
