@@ -23,8 +23,6 @@ function Cell({ result, value, showArrow = false }) {
 
   const displayValue = Array.isArray(value) ? value.join(', ') :
     typeof value === 'boolean' ? (value ? 'Yes' : 'No') : value
-
-    console.log('result:', result, 'arrowImage:', arrowImage);
     
   return (
     <div className={`${baseClasses} ${colorClasses[result]} relative overflow-hidden`}>
