@@ -27,7 +27,8 @@ const artists = [
   { character: 'Tamar', artist: 'ObsCureArty', url:'https://x.com/d68369620/status/2001113654305948015/photo/1'},
   { character: 'Samara', artist: 'TwilightDraws04', url: 'https://x.com/TwilightDraws04/status/1999904624158068829/photo/1'},
   { character: 'Smile of Heaven', artist: 'TwilightDraws04', url: 'https://x.com/TwilightDraws04/status/1934832736944181277?s=20'},
-  { character: 'Broken Sword', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1896428732308664831?s=20'}
+  { character: 'Broken Sword', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1896428732308664831?s=20'},
+  { character: 'Weavers Mask', artist: 'Shadow Slave Wiki', url: 'https://shadowslave.fandom.com/wiki/Mask_of_Weaver?file=Mask7.jpg'}
 ]
 
 function ArtistCredits() {
