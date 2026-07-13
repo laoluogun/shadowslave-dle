@@ -105,8 +105,12 @@ function QuotePage() {
       </button>
       {/** Main title of the game displayed at the top of the page */}
      <h1 className="text-center text-3xl font-bold tracking-widest text-white">
-        Shadow Slave-dle
+        QUOTES
       </h1>
+       <div className='flex flex-col items-center justify-center'>
+        <p className="text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
+        <p className="text-zinc-400 text-sm italic tracking-wide">Data up until Chapter 3005</p>
+      </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
       <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
