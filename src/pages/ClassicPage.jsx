@@ -80,7 +80,7 @@ function ClassicPage() {
         <p className="text-zinc-400 font-mountain-king text-sm tracking-wide">Guess today's Shadow Slave character</p>
         <p className="text-zinc-400 font-mountain-king text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
-      <div className="w-full max-w-4xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
+      <div className="w-full max-w-5xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
         {!gameOver && (
           <div className="flex flex-col gap-2">
             <InputField guess={guess} handleChange={handleChange} />

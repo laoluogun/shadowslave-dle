@@ -3,7 +3,6 @@ import { createPortal } from 'react-dom'
 import { useState, useRef, useEffect } from "react"
 import upArrow from "../assets/images/up-arrow.png";
 import downArrow from "../assets/images/down-arrow.png";
-
 import InfoPopover from "./InfoPopover";
 
 function Cell({ result, value, showArrow = false }) {
@@ -45,13 +44,13 @@ function Cell({ result, value, showArrow = false }) {
 
 function ClassicGrid({ guessResults }) {
   const columns = ['name', 'gender', 'affiliations', 'currentRank', 'hasTrueName', 'debutVolume']
-  const headers = ['Character', 'Gender', 'Affiliations', 'Rank', 'True Name', 'Debut']
+  const headers = ['Character', 'Gender', 'Race', 'Affiliations', 'Rank', 'True Name', 'Debut']
   const debutInfo = 'If a character has appeared in the story, then their volume debut will be when that appearance is. \nIf a character has not appeared in the story but has been mentioned, then their volume debut will be when their first mention is.\nFor example, Asterion was first mentioned in Chapter 367, but his first appearence was chapter 1840. Therefore his debut volume will be Volume 8.  \nWhereas Broken Sword has not appeared outside of anyone\'s memories or conversations, and his first mention was in Chapter 27 so his volume debut will be Volume 1.'
   
   return (
     <div className="w-full overflow-x-auto">
       {/* Header row */}
-      <div className="grid grid-cols-6 gap-2 mb-1 min-w-150">
+      <div className="grid grid-cols-7 gap-2 mb-1 min-w-150">
         {headers.map(header => (
           <div key={header} className="flex justify-center text-center text-xs uppercase tracking-widest text-zinc-400 py-1 gap-2">
             <p>{header}</p>
@@ -68,7 +67,7 @@ function ClassicGrid({ guessResults }) {
       {/* Guess rows */}
       <div className="flex flex-col gap-1 min-w-150">
         {guessResults.map((result, index) => (
-          <div key={index} className="grid grid-cols-6 gap-1">
+          <div key={index} className="grid grid-cols-7 gap-1">
             {/* Character cell — always show image + name, no color */}
             <div className="flex flex-col items-center justify-center bg-zinc-800/80 border border-zinc-600 rounded-none p-2 min-h-16">
               <img src={result.image} alt={result.name} className="w-12 h-15 object-cover rounded-none border border-zinc-600 mb-1"/>
@@ -76,6 +75,7 @@ function ClassicGrid({ guessResults }) {
             </div>
 
             <Cell result={result.gender} value={result.genderValue} />
+            <Cell result={result.race} value={result.raceValue} />
             <Cell result={result.affiliations} value={result.affiliationsValue} />
             <Cell result={result.currentRank} value={result.currentRankValue} showArrow />
             <Cell result={result.hasTrueName} value={result.hasTrueNameValue} />

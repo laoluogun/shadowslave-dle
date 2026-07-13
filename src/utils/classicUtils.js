@@ -4,6 +4,10 @@ export function compareGender(guess, answer) {
   return guess === answer ? 'correct' : 'incorrect'
 }
 
+export function compareRace(guess, answer) {
+  return guess === answer ? 'correct' : 'incorrect'
+}
+
 export function compareAffiliations(guessAffiliations, answerAffiliations) {
   const guessSet = new Set(guessAffiliations)
   const answerSet = new Set(answerAffiliations)
@@ -46,11 +50,13 @@ export function compareCharacters(guessName, answerName, classicCharacters) {
     name: guessName,
     image: guess.image,
     gender: compareGender(guess.gender, answer.gender),
+    race: compareRace(guess.race, answer.race),
     affiliations: compareAffiliations(guess.affiliations, answer.affiliations),
     currentRank: compareRank(guess.currentRank, answer.currentRank),
     hasTrueName: compareTrueName(guess.hasTrueName, answer.hasTrueName),
     debutVolume: compareDebutVolume(guess.debutVolume, answer.debutVolume),
     genderValue: guess.gender,
+    raceValue: guess.race,
     affiliationsValue: guess.affiliations,
     currentRankValue: guess.currentRank,
     hasTrueNameValue: guess.hasTrueName,
