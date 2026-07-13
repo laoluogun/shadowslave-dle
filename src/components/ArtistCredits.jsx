@@ -48,7 +48,7 @@ function ArtistCredits() {
       {/* Persistent tab at the bottom */}
       <button
         onClick={() => setOpen(true)}
-        className="fixed bottom-0 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-700 border-b-0 text-zinc-400 hover:text-white text-xs tracking-widest uppercase px-6 py-2 transition-colors"
+        className="fixed bottom-0 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-700 border-b-0 text-zinc-400 hover:text-white text-xs tracking-widest uppercase px-6 py-2 transition-colors cursor-pointer"
       >
         Art Credits
       </button>
@@ -59,7 +59,7 @@ function ArtistCredits() {
           <div className="bg-zinc-900 border border-zinc-700 rounded-none shadow-2xl p-6 max-w-md w-full max-h-[80vh] flex flex-col gap-4">
             <div className="flex justify-between items-center">
               <h2 className="text-white font-bold tracking-widest uppercase text-sm">Art Credits</h2>
-              <button onClick={() => setOpen(false)} className="text-zinc-400 hover:text-white transition">✕</button>
+              <button onClick={() => setOpen(false)} className="text-zinc-400 hover:text-white transition cursor-pointer">✕</button>
             </div>
             <p className="text-zinc-500 text-xs">All character art belongs to their respective artists. Please support them and their amazing work! Some art was found on pinterest so if I cannot find the direct source the pinterest link will be connected. </p>
             <div className="overflow-y-auto flex flex-col gap-2 pr-6">
