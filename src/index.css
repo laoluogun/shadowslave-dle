@@ -11,7 +11,7 @@ body {
 
 @font-face {
   font-family: 'Mountain-King';
-  src: url('./styles/font/MountainKingRegular-woBYn.ttf'), format('ttf');
+  src: url('./styles/font/MountainKingRegular-woBYn.ttf'), format('truetype');
   font-weight: normal;
   font-style: normal;
   font-display: swap;
