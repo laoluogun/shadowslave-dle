@@ -104,12 +104,12 @@ function QuotePage() {
         ← Back
       </button>
       {/** Main title of the game displayed at the top of the page */}
-     <h1 className="text-center text-3xl font-bold tracking-widest text-white">
+     <h1 className="font-mountain-king text-center text-3xl font-bold tracking-widest text-white">
         QUOTES
       </h1>
        <div className='flex flex-col items-center justify-center'>
-        <p className="text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
-        <p className="text-zinc-400 text-sm italic tracking-wide">Data up until Chapter 3005</p>
+        <p className="font-mountain-king text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
+        <p className="font-mountain-king text-zinc-400 text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">

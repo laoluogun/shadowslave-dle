@@ -73,12 +73,12 @@ function ClassicPage() {
         ← Back
       </button>
 
-      <h1 className="text-3xl font-bold tracking-widest text-white uppercase">
+      <h1 className="font-mountain-king text-3xl font-bold tracking-widest text-white uppercase">
         Classic
       </h1>
       <div className='flex flex-col items-center justify-center'>
-        <p className="text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
-        <p className="text-zinc-400 text-sm italic tracking-wide">Data up until Chapter 3005</p>
+        <p className="text-zinc-400 font-mountain-king text-sm tracking-wide">Guess today's Shadow Slave character</p>
+        <p className="text-zinc-400 font-mountain-king text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
       <div className="w-full max-w-4xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
         {!gameOver && (

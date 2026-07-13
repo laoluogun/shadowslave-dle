@@ -27,10 +27,10 @@ function HomePage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 gap-8">
       <div className="text-center">
-        <h1 className="text-5xl font-bold tracking-widest text-white uppercase">
+        <h1 className="font-mountain-king text-5xl font-bold tracking-widest text-white uppercase">
           Shadow Slave dle
         </h1>
-        <p className="text-zinc-400 tracking-widest uppercase text-sm mt-2">
+        <p className="font-mountain-king text-zinc-400 tracking-widest uppercase text-sm mt-2">
           Daily Guessing Games
         </p>
       </div>
@@ -48,7 +48,7 @@ function HomePage() {
           >
             <img src={mode.icon} alt={mode.title} className="w-12 h-12" />
             <div>
-              <p className="font-bold text-lg tracking-wide uppercase">{mode.title}</p>
+              <p className="font-mountain-king font-bold text-lg tracking-wide uppercase">{mode.title}</p>
               <p className="text-sm mt-0.5 text-zinc-400">{mode.description}</p>
               {!mode.available && (
                 <p className="text-xs text-zinc-600 mt-1">Coming soon</p>
