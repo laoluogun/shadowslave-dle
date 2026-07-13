@@ -28,7 +28,11 @@ const artists = [
   { character: 'Samara', artist: 'TwilightDraws04', url: 'https://x.com/TwilightDraws04/status/1999904624158068829/photo/1'},
   { character: 'Smile of Heaven', artist: 'TwilightDraws04', url: 'https://x.com/TwilightDraws04/status/1934832736944181277?s=20'},
   { character: 'Broken Sword', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1896428732308664831?s=20'},
-  { character: 'Weavers Mask', artist: 'Shadow Slave Wiki', url: 'https://shadowslave.fandom.com/wiki/Mask_of_Weaver?file=Mask7.jpg'}
+  { character: 'Weavers Mask', artist: 'Shadow Slave Wiki', url: 'https://shadowslave.fandom.com/wiki/Mask_of_Weaver?file=Mask7.jpg'},
+  { character: 'Torment', artist: 'NerdGhost', url: 'https://www.tiktok.com/@nerdghost_art/video/7539236081560980754'},
+  { character: 'Dread Lord', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2063228782744375728/photo/1'},
+  { character: 'Undying Slaughter', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2061767877405860286/photo/1'},
+  { character: 'Devouring Beast', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2061500957268025581/photo/1'},
 ]
 
 function ArtistCredits() {
