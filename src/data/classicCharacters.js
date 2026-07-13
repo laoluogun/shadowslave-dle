@@ -320,6 +320,36 @@ export const classicCharacters = {
         affiliations: ['Six Plagues'],
         hasTrueName: false,
         debutVolume: "Volume 7: The Tomb of Ariel"
+    },
+
+    "Weaver": {
+        image: prefix + 'weaver.png',
+        gender: 'Unknown',
+        race: 'Daemon',
+        currentRank: 'Divine',
+        affiliations: [''],
+        hasTrueName: false,
+        debutVolume: "Volume 1: Child of Shadows"
+    },
+
+     "Hope": {
+        image: prefix + 'hope.png',
+        gender: 'Female',
+        race: 'Daemon',
+        currentRank: 'Divine',
+        affiliations: [''],
+        hasTrueName: false,
+        debutVolume: "Volume 3: Prince of Nothing"
+    },
+
+     "Nether": {
+        image: prefix + 'nether.png',
+        gender: 'Male',
+        race: 'Daemon',
+        currentRank: 'Divine',
+        affiliations: [''],
+        hasTrueName: false,
+        debutVolume: "Volume 1: Child of Shadows"
     }
 
 } 
