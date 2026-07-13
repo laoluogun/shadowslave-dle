@@ -300,6 +300,26 @@ export const classicCharacters = {
         affiliations: ['Six Plagues'],
         hasTrueName: false,
         debutVolume: "Volume 7: The Tomb of Ariel"
+    },
+
+    "Torment": {
+        image: prefix + 'torment.png',
+        gender: 'None',
+        race: 'True Defiled',
+        currentRank: 'Corrupted',
+        affiliations: ['Six Plagues'],
+        hasTrueName: false,
+        debutVolume: "Volume 7: The Tomb of Ariel"
+    },
+
+    "Mad Prince": {
+        image: prefix + 'mad-prince.png',
+        gender: 'None',
+        race: 'True Defiled',
+        currentRank: 'Corrupted',
+        affiliations: ['Six Plagues'],
+        hasTrueName: false,
+        debutVolume: "Volume 7: The Tomb of Ariel"
     }
 
 } 
