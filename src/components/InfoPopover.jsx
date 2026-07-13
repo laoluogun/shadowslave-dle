@@ -95,7 +95,7 @@ export default function InfoPopover({text}) {
                             ? 'translate(-50%, 0)'
                             : 'translate(-50%, -100%)',
                     }}
-                    className="w-64 bg-zinc-900/95 text-zinc-100 text-xs rounded-none p-3 shadow-2xl z-[999] border border-zinc-700"
+                    className="w-64 bg-zinc-900/95 text-zinc-100 text-xs rounded-none p-3 shadow-2xl z-999 border border-zinc-700"
                 >
                     <button
                         onClick={() => setShowModal(false)}

@@ -51,7 +51,7 @@ function ClassicGrid({ guessResults }) {
   return (
     <div className="w-full overflow-x-auto">
       {/* Header row */}
-      <div className="grid grid-cols-6 gap-2 mb-1 min-w-[600px]">
+      <div className="grid grid-cols-6 gap-2 mb-1 min-w-150">
         {headers.map(header => (
           <div key={header} className="flex justify-center text-center text-xs uppercase tracking-widest text-zinc-400 py-1 gap-2">
             <p>{header}</p>
@@ -66,7 +66,7 @@ function ClassicGrid({ guessResults }) {
       </div>
 
       {/* Guess rows */}
-      <div className="flex flex-col gap-1 min-w-[600px]">
+      <div className="flex flex-col gap-1 min-w-150">
         {guessResults.map((result, index) => (
           <div key={index} className="grid grid-cols-6 gap-1">
             {/* Character cell — always show image + name, no color */}
