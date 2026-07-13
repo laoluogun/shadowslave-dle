@@ -11,7 +11,7 @@ const artists = [
   { character: 'Morgan', artist: 'ellieaedon', url: 'https://x.com/ellieaedon/status/2018140415552270561/photo/1'},
   { character: 'Gunlaug', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1892051329310151011?s=20'},
   { character: 'Ki Song', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1891730738774433999/photo/3'},
-  { character: 'Soul Stealer', artist: 'mustafa', url: 'https://www.reddit.com/r/ShadowSlave/comments/1jpw9o4/mordretsoul_stealer/'},
+  { character: 'Soul Stealer', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2062134199235092796/photo/1'},
   { character: 'Anvil', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1906038941502849312'},
   { character: 'Asterion', artist: 'Anjens', url: 'https://x.com/Anjens_real/status/2014443178506490082/photo/1'},
   { character: 'Rain', artist: 'Kyta', url: 'https://x.com/Kyta_5/status/1869274883466883392/photo/1'},
