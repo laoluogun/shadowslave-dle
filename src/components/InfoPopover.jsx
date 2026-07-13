@@ -1,51 +1,80 @@
-import { useState, useRef, useEffect } from 'react';
+import { useState, useRef, useLayoutEffect } from 'react';
 import { createPortal } from 'react-dom';
 
 export default function InfoPopover({text}) {
     const [showModal, setShowModal] = useState(false)
     const [coords, setCoords] = useState({ top: 0, left: 0 })
     const ref = useRef(null);
+    const popoverRef = useRef(null)
 
-    function handleOpen() {
+    function computeCoords() {
+        if (!ref.current) return
         const rect = ref.current.getBoundingClientRect()
-        setCoords({
-            top: rect.top,               // top of the icon
-            left: rect.left + rect.width / 2, // horizontal center of the icon
-        })
-        if (showModal){
-            setShowModal(false)
+        const vw = window.innerWidth
+        const vh = window.innerHeight
+        const margin = 12
+
+        const popEl = popoverRef.current
+        const popW = popEl ? popEl.offsetWidth : 256
+        const popH = popEl ? popEl.offsetHeight : 200
+
+        let left = rect.left + rect.width / 2
+        let top = rect.top - margin
+        let placement = 'above'
+
+        // Flip below the icon if there isn't enough room above it
+        if (top - popH < margin) {
+            top = rect.bottom + margin
+            placement = 'below'
         }
-        else{
-            setShowModal(true)
+
+        // Clamp horizontally so it never runs off either edge (keeps it "centered enough" on narrow screens)
+        const halfW = popW / 2
+        left = Math.min(Math.max(left, halfW + margin), vw - halfW - margin)
+
+        // Clamp vertically so it's always fully on-screen
+        if (placement === 'below') {
+            top = Math.min(top, vh - popH - margin)
+        } else {
+            top = Math.max(top, popH + margin)
         }
+
+        setCoords({ top, left, placement })
     }
 
-    useEffect(() => {
+    function handleToggle() {
+        if (showModal) {
+            setShowModal(false)
+                } 
+        else {
+            setShowModal(true)
+         }
+    }
+    
+
+    useLayoutEffect(() => {
         if (!showModal) return
 
-        function updateCoords(){
-         const rect = ref.current.getBoundingClientRect()
-        setCoords({
-            top: rect.top,               // top of the icon
-            left: rect.left + rect.width / 2, // horizontal center of the icon
-        })
-    }
+        computeCoords()
 
-    updateCoords();
+    window.addEventListener('scroll', computeCoords, true) // `true` = capture phase, so it also catches scroll on inner containers like your overflow-x-auto grid
+    window.addEventListener('resize', computeCoords)
 
-    window.addEventListener('scroll', updateCoords, true) // `true` = capture phase, so it also catches scroll on inner containers like your overflow-x-auto grid
-    window.addEventListener('resize', updateCoords)
+    //Catch layout shifts
+    const observer = new ResizeObserver(computeCoords)
+    observer.observe(document.body)
 
     return () => {
-        window.removeEventListener('scroll', updateCoords, true)
-        window.removeEventListener('resize', updateCoords)
+        window.removeEventListener('scroll', computeCoords, true)
+        window.removeEventListener('resize', computeCoords)
+        observer.disconnect()
     }
     
     }, [showModal])
 
     return (
         <>
-            <button ref={ref} onClick={handleOpen} className='text-zinc-400 hover:text-white cursor-pointer'>
+            <button ref={ref} onClick={handleToggle} className='text-zinc-400 hover:text-white cursor-pointer'>
                  <svg
                     viewBox="0 0 32 32"
                     fill="currentColor"
@@ -57,14 +86,16 @@ export default function InfoPopover({text}) {
 
             {showModal && createPortal(
                 <div
+                    ref={popoverRef}
                     style={{
                         position: 'fixed',
                         top: coords.top,
                         left: coords.left,
-                        transform: 'translate(-50%, -100%)', // shift up by its own height, center horizontally
-                        marginTop: '-8px', // small gap between popover and icon
+                         transform: coords.placement === 'below'
+                            ? 'translate(-50%, 0)'
+                            : 'translate(-50%, -100%)',
                     }}
-                    className="w-64 bg-zinc-900 text-zinc-100 text-xs rounded-none p-3 shadow-2xl z-[999] border border-zinc-700"
+                    className="w-64 bg-zinc-900/95 text-zinc-100 text-xs rounded-none p-3 shadow-2xl z-[999] border border-zinc-700"
                 >
                     <button
                         onClick={() => setShowModal(false)}
