@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import quote from '../assets/images/quote.png'
 import questionSign from  '../assets/images/question-sign.png'
+import AboutModal from '../components/AboutModal'
 
 const modes = [
   {
@@ -57,6 +58,7 @@ function HomePage() {
           </button>
         ))}
       </div>
+      <AboutModal />
     </div>
   )
 }
