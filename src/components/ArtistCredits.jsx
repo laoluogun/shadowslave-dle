@@ -33,6 +33,7 @@ const artists = [
   { character: 'Dread Lord', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2063228782744375728/photo/1'},
   { character: 'Undying Slaughter', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2061767877405860286/photo/1'},
   { character: 'Devouring Beast', artist: 'Gloxart', url: 'https://x.com/GloxartX/status/2061500957268025581/photo/1'},
+  { character: 'Mad Prince', aritst: 'L3XARTS', url: 'https://www.reddit.com/r/ShadowSlave/comments/1hk2lo6/the_mad_prince/'}
 ]
 
 function ArtistCredits() {
