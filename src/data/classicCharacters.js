@@ -350,6 +350,16 @@ export const classicCharacters = {
         affiliations: ['None'],
         hasTrueName: false,
         debutVolume: "Volume 2: Demon of Change"
+    },
+
+    "Mountain King Larva": {
+        image: prefix + 'mountain-king-larva.png',
+        gender: 'None',
+        race: 'Nightmare Creature',
+        currentRank: 'Dormant',
+        affiliations: ['None'],
+        hasTrueName: false,
+        debutVolume: "Volume 1: Child of Shadows"
     }
 
 } 

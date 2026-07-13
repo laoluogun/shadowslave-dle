@@ -37,6 +37,7 @@ const artists = [
   { character: 'Weaver', artist: 'Sayg15000', url: 'https://x.com/sayg15000/status/2006828172386664685/photo/1' },
   { character: 'Nether', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1929036401716117878/photo/1'},
   { character: 'Hope', artist: 'Varyl', url: 'https://x.com/VaryielJadestar/status/1787003979697885301/photo/1'},
+  { character: 'Mountain King Larva', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1922517620789518721/photo/1'}
 ]
 
 function ArtistCredits() {
