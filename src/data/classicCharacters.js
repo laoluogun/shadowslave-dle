@@ -327,7 +327,7 @@ export const classicCharacters = {
         gender: 'Unknown',
         race: 'Daemon',
         currentRank: 'Divine',
-        affiliations: [''],
+        affiliations: ['None'],
         hasTrueName: false,
         debutVolume: "Volume 1: Child of Shadows"
     },
@@ -337,7 +337,7 @@ export const classicCharacters = {
         gender: 'Female',
         race: 'Daemon',
         currentRank: 'Divine',
-        affiliations: [''],
+        affiliations: ['None'],
         hasTrueName: false,
         debutVolume: "Volume 3: Prince of Nothing"
     },
@@ -347,9 +347,9 @@ export const classicCharacters = {
         gender: 'Male',
         race: 'Daemon',
         currentRank: 'Divine',
-        affiliations: [''],
+        affiliations: ['None'],
         hasTrueName: false,
-        debutVolume: "Volume 1: Child of Shadows"
+        debutVolume: "Volume 2: Demon of Change"
     }
 
 } 
