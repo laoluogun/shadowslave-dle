@@ -253,7 +253,7 @@ export const classicCharacters = {
     },
 
     "Smile of Heaven": {
-        image: prefix + 'swordofheaven.png', 
+        image: prefix + 'smileofheaven.png', 
         gender: 'Female', 
         race: 'Human',
         currentRank: 'Ascended',
