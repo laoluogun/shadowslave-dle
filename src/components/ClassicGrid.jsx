@@ -35,7 +35,7 @@ function Cell({ result, value, showArrow = false }) {
           src={arrowImage}
           alt=""
           aria-hidden="true"
-          className="absolute inset-0 m-auto w-32 h-32 object-contain opacity-50 pointer-events-none select-none"
+          className="absolute inset-0 m-auto w-20 h-20 object-contain opacity-50 pointer-events-none select-none"
         />
       )}
       <span className="relative z-10">{displayValue}</span>
