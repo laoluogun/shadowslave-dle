@@ -1,7 +1,9 @@
 export const rankOrder = [
-  "Dormant", 
-  "Awakened",
-  "Ascended",
-  "Transcendent",
-  "Supreme"
+ ["Dormant"],
+  ["Awakened"],
+  ["Ascended", "Fallen"],
+  ["Transcendent", "Corrupted"],
+  ["Supreme", "Great"],
+  ["Sacred", "Cursed"],
+  ["Divine", "Unholy"]
 ]

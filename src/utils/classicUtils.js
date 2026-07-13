@@ -15,9 +15,13 @@ export function compareAffiliations(guessAffiliations, answerAffiliations) {
   return 'incorrect'
 }
 
+function getRankTier(rank) {
+  return rankOrder.findIndex(group => group.includes(rank))
+}
+
 export function compareRank(guessRank, answerRank) {
-  const guessIndex = rankOrder.indexOf(guessRank)
-  const answerIndex = rankOrder.indexOf(answerRank)
+  const guessIndex = getRankTier(guessRank)
+  const answerIndex = getRankTier(answerRank)
   if (guessIndex === answerIndex) return 'correct'
   if (guessIndex < answerIndex) return 'higher'
   return 'lower'
