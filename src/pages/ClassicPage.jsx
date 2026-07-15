@@ -10,7 +10,6 @@ import VictoryModal from '../components/VictoryModal'
 import WinnerCard from '../components/WinnerCard'
 import TopBar from '../components/TopBar'
 import patchnotetext from '../data/classicPatchNote'
-
 import ClassicHelp from '../components/ClassicHelp'
 
 
@@ -88,6 +87,7 @@ function ClassicPage() {
   //State variable to control the visibility of victory modal
   const [showVictoryModal, setShowVictoryModal] = useState(false)  
 
+  //Suggestions of characters beginning with user input
   const suggestions = characterNames.filter(name =>
     name.toLowerCase().startsWith(guess.toLowerCase()) &&
     !guessHistory.includes(name)
@@ -99,6 +99,7 @@ function ClassicPage() {
 
   //Function to check the guess of the user input
   function checkGuess(nameOverride) {
+    //Name override is when the user selects a character instead of typing it fully themselves
     const submittedGuess = nameOverride ?? guess
     if (!characterNames.includes(submittedGuess)) {
       setFeedback('Not found. Try again.')
