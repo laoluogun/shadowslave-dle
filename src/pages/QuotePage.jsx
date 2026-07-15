@@ -30,15 +30,15 @@ function QuotePage() {
 
     //Reset local storage every day when a new character is selected
   useEffect(() => {
-    const savedDate = localStorage.getItem('classic-date')
+    const savedDate = localStorage.getItem('quote-date')
     const today = new Date().toISOString().slice(0, 10)
     
     if (savedDate !== today) {
-      localStorage.removeItem('classic-guessResults')
+      localStorage.removeItem('quote-guessCount')
       localStorage.removeItem('classic-guessHistory')
-      localStorage.removeItem('classic-feedback')
-      localStorage.removeItem('classic-gameOver')
-      localStorage.setItem('classic-date', today)
+      localStorage.removeItem('quote-feedback')
+      localStorage.removeItem('quote-gameOver')
+      localStorage.setItem('quote-date', today)
     }
   }, [])
 
