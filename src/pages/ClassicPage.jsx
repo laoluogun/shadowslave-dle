@@ -9,6 +9,9 @@ import Feedback from '../components/Feedback'
 import VictoryModal from '../components/VictoryModal'
 import WinnerCard from '../components/WinnerCard'
 
+
+
+//Function for choosing a new character daily
 function getDailyIndex(arrayLength) {
   const today = new Date().toISOString().slice(0, 10)
   let hash = 0
@@ -19,15 +22,68 @@ function getDailyIndex(arrayLength) {
 }
 
 function ClassicPage() {
+  //Reset local storage every day when a new character is selected
+  useEffect(() => {
+    const savedDate = localStorage.getItem('classic-date')
+    const today = new Date().toISOString().slice(0, 10)
+    
+    if (savedDate !== today) {
+      localStorage.removeItem('classic-guessResults')
+      localStorage.removeItem('classic-guessHistory')
+      localStorage.removeItem('classic-feedback')
+      localStorage.removeItem('classic-gameOver')
+      localStorage.setItem('classic-date', today)
+    }
+  }, [])
+
   const navigate = useNavigate()
   const characterNames = Object.keys(classicCharacters)
 
+  //State variables to control the logic of the game
+
   const [answer] = useState(() => characterNames[getDailyIndex(characterNames.length)])
   const [guess, setGuess] = useState('')
-  const [guessResults, setGuessResults] = useState([])
-  const [guessHistory, setGuessHistory] = useState([])
-  const [feedback, setFeedback] = useState('')
-  const [gameOver, setGameOver] = useState(false)
+
+  //Add local storage to guess results, guess history, feedback message, and game over state so user can swap between pages.
+
+  const [guessResults, setGuessResults] = useState(() => {
+    const saved = localStorage.getItem('classic-guessResults')
+    return saved ? JSON.parse(saved) : []
+  })
+
+
+  const [guessHistory, setGuessHistory] = useState(() => {
+    const saved = localStorage.getItem('classic-guessHistory')
+    return saved ? JSON.parse(saved) : []
+  })
+
+
+  const [feedback, setFeedback] = useState(() => {
+    return localStorage.getItem('classic-feedback') || ''
+  })
+
+
+  const [gameOver, setGameOver] = useState(() => {
+    return localStorage.getItem('classic-gameOver') === 'true'
+  })
+
+
+  useEffect(() => {
+    localStorage.setItem('classic-guessResults', JSON.stringify(guessResults))
+  }, [guessResults])
+
+  useEffect(() => {
+    localStorage.setItem('classic-guessHistory', JSON.stringify(guessHistory))
+  }, [guessHistory])
+
+  useEffect(() => {
+    localStorage.setItem('classic-feedback', feedback)
+  }, [feedback])
+
+  useEffect(() => {
+    localStorage.setItem('classic-gameOver', gameOver)
+  }, [gameOver])
+
   const [showVictoryModal, setShowVictoryModal] = useState(false)  
 
   const suggestions = characterNames.filter(name =>
