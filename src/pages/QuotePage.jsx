@@ -16,6 +16,8 @@ import WinnerCard from '../components/WinnerCard'
 import TopBar from '../components/TopBar'
 import patchnotetext from '../data/quotePatchNote'
 import QuoteHelp from '../components/QuoteHelp'
+import { useStats } from '../hooks/useStats'
+import StatsDisplay from '../components/StatsDisplay'
 
 
 //Daily index logic to select a quote based on the current date
@@ -44,6 +46,9 @@ function QuotePage() {
       localStorage.setItem('quote-date', today)
     }
   }, [])
+
+  //Initialize user stats that should not be reset each day.
+  const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('quote')
 
   //Create navigation to home page
   const navigate = useNavigate()
@@ -135,6 +140,7 @@ function QuotePage() {
     setGuessCount(newTotal)
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === speaker){
+      recordWin(newTotal)
       setFeedback('Correct! Total Guesses: ' + newTotal)
       setGameOver(true)
       setShowVictoryModal(true)
@@ -166,11 +172,17 @@ function QuotePage() {
       </div>
           {/* Bar containing stat information, patch notes, help notes, and current streak */}
       <TopBar
-        statsContent={<p>Games played, win rate etc — we'll fill this in</p>}
+        statsContent={<StatsDisplay
+                      gamesPlayed={gamesPlayed}
+                      gamesWon={gamesWon}
+                      avgGuesses={avgGuesses}
+                      winRate={winRate}
+                      currentStreak={currentStreak}
+                      maxStreak={maxStreak}
+                    />}
+        currentStreak={currentStreak}
         patchContent={patchnotetext}
-        helpContent={
-          <QuoteHelp />
-        }/>
+        helpContent={<QuoteHelp />}/>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
       <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">

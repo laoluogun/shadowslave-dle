@@ -11,6 +11,8 @@ import WinnerCard from '../components/WinnerCard'
 import TopBar from '../components/TopBar'
 import patchnotetext from '../data/classicPatchNote'
 import ClassicHelp from '../components/ClassicHelp'
+import { useStats } from '../hooks/useStats'
+import StatsDisplay from '../components/StatsDisplay'
 
 
 
@@ -38,6 +40,9 @@ function ClassicPage() {
       localStorage.setItem('classic-date', today)
     }
   }, [])
+
+    //Initialize user stats that should not be reset each day.
+  const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('classic')
 
   const navigate = useNavigate()
   const characterNames = Object.keys(characters)
@@ -112,6 +117,7 @@ function ClassicPage() {
     setGuess('')
 
     if (submittedGuess === answer) {
+      recordWin(guessHistory.length + 1)
       setFeedback(`Correct! You found ${answer} in ${guessHistory.length + 1} guess${guessHistory.length !== 0 ? 'es' : ''}!`)
       setGameOver(true)
       setShowVictoryModal(true)
@@ -144,7 +150,15 @@ function ClassicPage() {
       </div>
       {/* Bar containing stat information, patch notes, help notes, and current streak */}
       <TopBar
-        statsContent={<p>Games played, win rate etc — we'll fill this in</p>}
+        statsContent={<StatsDisplay
+                      gamesPlayed={gamesPlayed}
+                      gamesWon={gamesWon}
+                      avgGuesses={avgGuesses}
+                      winRate={winRate}
+                      currentStreak={currentStreak}
+                      maxStreak={maxStreak}
+                    />}
+        currentStreak={currentStreak}            
         patchContent={patchnotetext}
         helpContent={
           <ClassicHelp />
