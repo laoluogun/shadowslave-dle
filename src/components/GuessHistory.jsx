@@ -1,4 +1,4 @@
-import {quoteCharacters} from '../data/quoteCharacters'
+import {characters} from '../data/characters'
 
 function GuessHistory({ guessHistory, speaker }) {
     return (
@@ -13,7 +13,7 @@ function GuessHistory({ guessHistory, speaker }) {
                             : 'bg-red-950/90 border-red-800'}`}
                       >  
                       <div className="flex gap-2 ">
-                        <img src={quoteCharacters[pastGuess]?.image} 
+                        <img src={characters[pastGuess]?.image} 
                         alt={pastGuess} 
                         className="w-20 h-25 object-cover rounded-none border border-zinc-600" />
                       </div>

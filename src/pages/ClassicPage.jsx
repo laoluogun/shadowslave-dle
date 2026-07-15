@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
-import { classicCharacters } from '../data/classicCharacters'
+import { characters } from '../data/characters'
 import { compareCharacters } from '../utils/classicUtils'
 import ClassicGrid from '../components/ClassicGrid'
 import InputField from '../components/InputField'
@@ -8,6 +8,10 @@ import Suggestions from '../components/Suggestions'
 import Feedback from '../components/Feedback'
 import VictoryModal from '../components/VictoryModal'
 import WinnerCard from '../components/WinnerCard'
+import TopBar from '../components/TopBar'
+import patchnotetext from '../data/classicPatchNote'
+
+import ClassicHelp from '../components/ClassicHelp'
 
 
 
@@ -37,7 +41,7 @@ function ClassicPage() {
   }, [])
 
   const navigate = useNavigate()
-  const characterNames = Object.keys(classicCharacters)
+  const characterNames = Object.keys(characters)
 
   //State variables to control the logic of the game
 
@@ -101,7 +105,7 @@ function ClassicPage() {
       return
     }
 
-    const result = compareCharacters(submittedGuess, answer, classicCharacters)
+    const result = compareCharacters(submittedGuess, answer, characters)
     setGuessResults(prev => [result, ...prev])
     setGuessHistory(prev => [...prev, submittedGuess])
     setGuess('')
@@ -137,6 +141,14 @@ function ClassicPage() {
         <p className="text-zinc-400 font-mountain-king text-sm tracking-wide">Guess today's Shadow Slave character</p>
         <p className="text-zinc-400 font-mountain-king text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
+      {/* Bar containing stat information, patch notes, help notes, and current streak */}
+      <TopBar
+        statsContent={<p>Games played, win rate etc — we'll fill this in</p>}
+        patchContent={patchnotetext}
+        helpContent={
+          <ClassicHelp />
+        }
+      />
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="w-full max-w-5xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
         {!gameOver && (
@@ -170,7 +182,7 @@ function ClassicPage() {
         {gameOver && !showVictoryModal && (
           <WinnerCard
             speaker={answer}
-            speakerImage={classicCharacters[answer]?.image}
+            speakerImage={characters[answer]?.image}
             totalGuesses={guessHistory.length}
           />
         )}
@@ -179,7 +191,7 @@ function ClassicPage() {
       {showVictoryModal && (
         <VictoryModal
           speaker={answer}
-          speakerImage={classicCharacters[answer]?.image}
+          speakerImage={characters[answer]?.image}
           totalGuesses={guessHistory.length}
           onClose={() => setShowVictoryModal(false)}
         />

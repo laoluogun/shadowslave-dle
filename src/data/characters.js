@@ -1,6 +1,6 @@
 const prefix = 'portraits/'
 
-export const classicCharacters = {
+export const characters = {
 
     Sunless: {
         image: prefix + 'sunless.png',

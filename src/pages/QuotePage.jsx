@@ -2,8 +2,7 @@ import { useState, useEffect } from 'react'
 import { useNavigate } from 'react-router-dom'
 import '../App.css'
 import {quotes} from '../data/quotes'
-import {quoteCharacters} from '../data/quoteCharacters'
-
+import {characters} from '../data/characters'
 import QuoteCard from '../components/QuoteCard'
 import RecipientClue from '../components/RecipientClue'
 import VolumeClue from '../components/VolumeClue'
@@ -14,6 +13,10 @@ import GuessHistory from '../components/GuessHistory'
 import Feedback from '../components/Feedback'
 import VictoryModal from '../components/VictoryModal'
 import WinnerCard from '../components/WinnerCard'
+import TopBar from '../components/TopBar'
+import patchnotetext from '../data/quotePatchNote'
+import QuoteHelp from '../components/QuoteHelp'
+
 
 //Daily index logic to select a quote based on the current date
 
@@ -35,7 +38,7 @@ function QuotePage() {
     
     if (savedDate !== today) {
       localStorage.removeItem('quote-guessCount')
-      localStorage.removeItem('classic-guessHistory')
+      localStorage.removeItem('quote-guessHistory')
       localStorage.removeItem('quote-feedback')
       localStorage.removeItem('quote-gameOver')
       localStorage.setItem('quote-date', today)
@@ -52,11 +55,11 @@ function QuotePage() {
   //Extract the relevant information from the current quote
   const quote = currentQuote.quote
   const recipientName = currentQuote.recipient
-  const recipientImage = quoteCharacters[currentQuote.recipient].image
+  const recipientImage = characters[currentQuote.recipient].image
   const volume = currentQuote.volume
   const chapter = currentQuote.chapter
   const speaker = currentQuote.speaker
-  const quoteCharactersList = Object.keys(quoteCharacters)
+  const quoteCharactersList = Object.keys(characters)
   
   //State variables for the game logic
   
@@ -70,8 +73,7 @@ function QuotePage() {
   })
 
     const [guessCount, setGuessCount] = useState(() => {
-    const saved = localStorage.getItem('quote-guessCount')
-    return saved ? JSON.parse(saved) : []
+    return localStorage.getItem('quote-guessCount') || '0'
   })
 
   const [gameOver, setGameOver] = useState(() => {
@@ -110,13 +112,13 @@ function QuotePage() {
   }
 
   // Filter the character names based on the current guess for suggestions
-  const suggestions = Object.keys(quoteCharacters).filter(name =>
+  const suggestions = Object.keys(characters).filter(name =>
    name.toLowerCase().startsWith(guess.toLowerCase()) &&
    !guessHistory.includes(name)
   )
 
   // Check if the current guess matches any character name (case-insensitive)
-  const hasSelectedCharacter = Object.keys(quoteCharacters).some(name =>
+  const hasSelectedCharacter = Object.keys(characters).some(name =>
     name.toLowerCase() === guess.toLowerCase()
   )
 
@@ -127,7 +129,9 @@ function QuotePage() {
       setFeedback('Not found. Try again.')
       return
     }
-    const newTotal = guessCount + 1
+    console.log(guessCount)
+    const newTotal = parseInt(guessCount) + 1
+    console.log(newTotal)
     setGuessCount(newTotal)
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === speaker){
@@ -160,6 +164,13 @@ function QuotePage() {
         <p className="font-mountain-king text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
         <p className="font-mountain-king text-zinc-400 text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
+          {/* Bar containing stat information, patch notes, help notes, and current streak */}
+      <TopBar
+        statsContent={<p>Games played, win rate etc — we'll fill this in</p>}
+        patchContent={patchnotetext}
+        helpContent={
+          <QuoteHelp />
+        }/>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
       <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
@@ -206,7 +217,7 @@ function QuotePage() {
         {gameOver && !showVictoryModal && (
           <WinnerCard
             speaker={speaker}
-            speakerImage={quoteCharacters[speaker]?.image}
+            speakerImage={characters[speaker]?.image}
             totalGuesses={guessCount}
           />
         )}
@@ -215,7 +226,7 @@ function QuotePage() {
     {showVictoryModal && (
         <VictoryModal
           speaker={speaker}
-          speakerImage={quoteCharacters[speaker]?.image}
+          speakerImage={characters[speaker]?.image}
           totalGuesses={guessCount}
           onClose={() => setShowVictoryModal(false)}
         />

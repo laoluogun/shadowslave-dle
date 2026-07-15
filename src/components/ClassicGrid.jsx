@@ -1,4 +1,4 @@
-import { classicCharacters } from "../data/classicCharacters"
+import { characters } from "../data/characters"
 import { createPortal } from 'react-dom'
 import { useState, useRef, useEffect } from "react"
 import upArrow from "../assets/images/up-arrow.png";

@@ -5,7 +5,7 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
 import ClassicPage from './pages/ClassicPage'
-import { classicCharacters } from './data/classicCharacters'
+import { characters } from './data/characters'
 import ArtistCredits from './components/ArtistCredits'
 
 
@@ -18,7 +18,7 @@ function App() {
       img.src = character.image
     })
 
-    Object.values(classicCharacters).forEach(character => {
+    Object.values(characters).forEach(character => {
       const img = new Image()
       img.src = character.image
     })
