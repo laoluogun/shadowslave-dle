@@ -22,7 +22,7 @@ function getDailyIndex(arrayLength) {
 }
 
 function ClassicPage() {
-  //Reset local storage every day when a new character is selected
+  //Reset `local` storage every day when a new character is selected
   useEffect(() => {
     const savedDate = localStorage.getItem('classic-date')
     const today = new Date().toISOString().slice(0, 10)
@@ -51,23 +51,20 @@ function ClassicPage() {
     return saved ? JSON.parse(saved) : []
   })
 
-
   const [guessHistory, setGuessHistory] = useState(() => {
     const saved = localStorage.getItem('classic-guessHistory')
     return saved ? JSON.parse(saved) : []
   })
 
-
   const [feedback, setFeedback] = useState(() => {
     return localStorage.getItem('classic-feedback') || ''
   })
-
 
   const [gameOver, setGameOver] = useState(() => {
     return localStorage.getItem('classic-gameOver') === 'true'
   })
 
-
+  //Sync effects
   useEffect(() => {
     localStorage.setItem('classic-guessResults', JSON.stringify(guessResults))
   }, [guessResults])
@@ -84,6 +81,7 @@ function ClassicPage() {
     localStorage.setItem('classic-gameOver', gameOver)
   }, [gameOver])
 
+  //State variable to control the visibility of victory modal
   const [showVictoryModal, setShowVictoryModal] = useState(false)  
 
   const suggestions = characterNames.filter(name =>
@@ -95,6 +93,7 @@ function ClassicPage() {
     name.toLowerCase() === guess.toLowerCase()
   )
 
+  //Function to check the guess of the user input
   function checkGuess(nameOverride) {
     const submittedGuess = nameOverride ?? guess
     if (!characterNames.includes(submittedGuess)) {
@@ -116,6 +115,7 @@ function ClassicPage() {
     }
   }
 
+  //Set guess using input field's value
   function handleChange(e) {
     setGuess(e.target.value)
   }
@@ -128,17 +128,20 @@ function ClassicPage() {
       >
         ← Back
       </button>
-
+      {/** Main title of the game mode displayed at the top of the page */}
       <h1 className="font-mountain-king text-3xl font-bold tracking-widest text-white uppercase">
         Classic
       </h1>
+      {/* Information on how updated the information used in the game is */}
       <div className='flex flex-col items-center justify-center'>
         <p className="text-zinc-400 font-mountain-king text-sm tracking-wide">Guess today's Shadow Slave character</p>
         <p className="text-zinc-400 font-mountain-king text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
+      {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="w-full max-w-5xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
         {!gameOver && (
           <div className="flex flex-col gap-2">
+            {/*Display the input field and the auto-complete suggestions once a user has inputted text */}
             <InputField guess={guess} handleChange={handleChange} />
             {guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && (
               <Suggestions
@@ -147,6 +150,7 @@ function ClassicPage() {
                 checkGuess={checkGuess}
               />
             )}
+            {/* Button to submit an answer */}
             <button
               onClick={() => checkGuess()}
               className="w-full py-2 rounded-none bg-zinc-900 hover:bg-zinc-700 text-white font-semibold tracking-wide transition-colors cursor-pointer"
@@ -155,12 +159,14 @@ function ClassicPage() {
             </button>
           </div>
         )}
-
+        {/* Display feedback depending on whether the guess was (in)correct */}
         <Feedback feedback={feedback} />
         
+        {/* Display all previous guesses the user has chosen */}
         {guessResults.length > 0 && (
           <ClassicGrid guessResults={guessResults} />
         )}
+        {/* Conditionally display winner card once the user found the correct character if the victory modal is not displayed */}
         {gameOver && !showVictoryModal && (
           <WinnerCard
             speaker={answer}
@@ -169,6 +175,7 @@ function ClassicPage() {
           />
         )}
       </div>
+      {/* Display victory modal after the user guessed the correct character */}
       {showVictoryModal && (
         <VictoryModal
           speaker={answer}

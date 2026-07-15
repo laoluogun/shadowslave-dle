@@ -82,7 +82,8 @@ function QuotePage() {
     return localStorage.getItem('quote-feedback') || ''
   })
 
-    useEffect(() => {
+  //Sync effects
+  useEffect(() => {
     localStorage.setItem('quote-guessHistory', JSON.stringify(guessHistory))
   }, [guessHistory])
 
@@ -151,7 +152,7 @@ function QuotePage() {
       >
         ← Back
       </button>
-      {/** Main title of the game displayed at the top of the page */}
+      {/** Main title of the game mode displayed at the top of the page */}
      <h1 className="font-mountain-king text-center text-3xl font-bold tracking-widest text-white">
         QUOTES
       </h1>
