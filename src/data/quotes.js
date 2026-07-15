@@ -129,6 +129,69 @@ export const quotes = [
     recipient: "Sunless",
     chapter: "Chapter 1977 Their Legacy",
     volume: "Volume 9: Throne of War"
+  },
+
+  {
+    id: 17, 
+    quote: "Everything we did, we did to build a better world for those who would follow in our footsteps.",
+    speaker: "Ki Song",
+    recipient: "Cassie",
+    chapter: "Chapter 2193 Greater Good",
+    volume: "Volume 9: Throne of War"
+  },
+
+  {
+    id: 18,
+    quote: "Nephis, Cassie, and you... I've been starved of good opponents for so long, and now there are three. And you are all so different, as well!",
+    speaker: "Morgan",
+    recipient: "Sunless",
+    chapter: "Chapter 1136 Friendly Duel",
+    volume: "Volume 6: All the Devils Are Here"
+  },
+
+  {
+    id: 19,
+    quote: "Is it worth it, to do the wrong thing for the right reason? No. Life is unpredictable, and the future is unclear. All we can strive for is to act according to our principles, and do what we consider right. The rest doesn't matter.",
+    speaker: "Tyris",
+    recipient: "Sunless",
+    chapter: "Chapter 1005 The Fall of Falcon Scott (23)",
+    volume: "Volume 5: Dread Night"
+  },
+
+  {
+    id: 20,
+    quote: "Ah, Sunless… fate is the funniest thing in the world, don't you think? You and I… I have a feeling that we are going to be great friends, Sunless. Believe it!",
+    speaker: "Noctis",
+    recipient: "Sunless",
+    chapter: "Chapter 631 The Funniest Thing in the World",
+    volume: "Volume 4: Chain Breaker"
+  },
+
+  {
+    id: 21, 
+    quote: "If things were different, I would have gladly faced that monster to let you escape. But my life... does not belong to me alone. There is an unencompassable duty I am sworn to fulfill. Until it’s done, I cannot allow myself to die.",
+    speaker: "Auro",
+    recipient: "Sunless",
+    chapter: "Chapter 13 Moment of Truth",
+    volume: "Volume 1: Child of Shadows"
+  },
+
+  {
+    id: 22,
+    quote: "We've been together in this for so long, you and I. But now it seems that I have spent you completely. You'll never leave this tomb. You have been buried here, forever. It serves you right, for what you did to me... oh, but don't fret. Once I'm outside, I will remember you fondly.",
+    speaker: "Mad Prince",
+    recipient: "Torment",
+    chapter: "Chapter 2833 Fuel For Her Darkness",
+    volume: "Volume 11: The Song of Ariadne"
+  },
+
+  {
+    id: 23,
+    quote: "Because we are their Flaw.",
+    speaker: "Hope",
+    recipient: "Sunless",
+    chapter: "Chapter 742 Hope",
+    volume: "Volume 4: Chain Breaker"
   }
 
 
