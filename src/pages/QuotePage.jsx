@@ -31,6 +31,7 @@ import QuoteHelp from '../components/QuoteHelp'
 
 function QuotePage() {
 
+
     //Reset local storage every day when a new character is selected
   useEffect(() => {
     const savedDate = localStorage.getItem('quote-date')
@@ -55,7 +56,7 @@ function QuotePage() {
   //Extract the relevant information from the current quote
   const quote = currentQuote.quote
   const recipientName = currentQuote.recipient
-  const recipientImage = characters[currentQuote.recipient].image
+  const recipientImage = characters[recipientName].image
   const volume = currentQuote.volume
   const chapter = currentQuote.chapter
   const speaker = currentQuote.speaker
@@ -223,6 +224,7 @@ function QuotePage() {
         )}
       </div>
     </div>
+    {/** Display victory modal after successfully guessing quote speaker*/}
     {showVictoryModal && (
         <VictoryModal
           speaker={speaker}
