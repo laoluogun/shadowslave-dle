@@ -50,6 +50,7 @@ export const quotes = [
     chapter: "Chapter 1560 Freedom of Choice" ,
     volume: "Volume 7: The Tomb of Ariel"
   },
+  /** Other Mordret does not have an image therefore does not work
   {
     id: 7,
     quote: "To be honest, I am a bit devious. And l am a bit eerie. Treacherous... that too, I think. I just hide it better than most — maybe better than anyone. But I am really trying my best.",
@@ -57,7 +58,7 @@ export const quotes = [
     recipient: "The Other Mordret",
     chapter: "Chapter 2903 To See, to Know, to Remember",
     volume: "Volume 11: The Song of Ariadne"
-  },
+  },*/
   {
     id: 8,
     quote: "It takes a certain kind of person to face the very depths of despair, and still continue to fight.",
