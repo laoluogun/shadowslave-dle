@@ -28,6 +28,7 @@ function HomePage() {
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 gap-8">
       <div className="text-center">
+        {/* Display main title and subtitle */}
         <h1 className="font-mountain-king text-5xl font-bold tracking-widest text-white uppercase">
           Shadow Slave dle
         </h1>
@@ -36,6 +37,7 @@ function HomePage() {
         </p>
       </div>
 
+      {/* Display the two modes that ShadowSlaveDle currently has */}
       <div className="flex flex-col gap-4 w-full max-w-md">
         {modes.map(mode => (
           <button
@@ -58,6 +60,7 @@ function HomePage() {
           </button>
         ))}
       </div>
+      {/* Include an about button that opens up a modal with some additional information on the project for users */}
       <AboutModal />
     </div>
   )
