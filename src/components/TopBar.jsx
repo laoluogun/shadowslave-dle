@@ -32,11 +32,11 @@ function TopBar({ statsContent, patchContent, helpContent }) {
           <div className="bg-zinc-700 border border-zinc-500 rounded-none shadow-2xl p-6 max-w-md w-full flex flex-col gap-4">
             <div className="flex justify-between items-center">
               <h2 className="text-white font-bold tracking-widest uppercase text-sm">
-                {openModal === 'stats' ? 'Stats' : openModal === 'patch' ? 'Patch Notes' : 'How to Play'}
+                {openModal === 'stats' ? 'Stats' : openModal === 'streak' ? 'Current Streak' : openModal === 'patch' ? 'Patch Notes' : 'How to Play'}
               </h2>
               <button onClick={() => setOpenModal(null)} className="text-zinc-400 hover:text-white transition">✕</button>
             </div>
-            <div className="text-zinc-300 text-sm">
+            <div className="text-zinc-100 ">
               {openModal === 'stats' && statsContent}
               {openModal === 'streaks' && streakContent}
               {openModal === 'patch' && patchContent}
