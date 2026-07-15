@@ -31,7 +31,6 @@ import QuoteHelp from '../components/QuoteHelp'
 
 function QuotePage() {
 
-
     //Reset local storage every day when a new character is selected
   useEffect(() => {
     const savedDate = localStorage.getItem('quote-date')
