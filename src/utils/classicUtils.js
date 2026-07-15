@@ -26,7 +26,9 @@ function getRankTier(rank) {
 export function compareRank(guessRank, answerRank) {
   const guessIndex = getRankTier(guessRank)
   const answerIndex = getRankTier(answerRank)
-  if (guessIndex === answerIndex) return 'correct'
+  if (guessIndex === answerIndex) 
+    if (guessRank != answerRank) return 'partial'
+    else return 'correct'
   if (guessIndex < answerIndex) return 'higher'
   return 'lower'
 }
