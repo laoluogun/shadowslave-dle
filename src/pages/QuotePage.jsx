@@ -28,6 +28,20 @@ import WinnerCard from '../components/WinnerCard'
 
 function QuotePage() {
 
+    //Reset local storage every day when a new character is selected
+  useEffect(() => {
+    const savedDate = localStorage.getItem('classic-date')
+    const today = new Date().toISOString().slice(0, 10)
+    
+    if (savedDate !== today) {
+      localStorage.removeItem('classic-guessResults')
+      localStorage.removeItem('classic-guessHistory')
+      localStorage.removeItem('classic-feedback')
+      localStorage.removeItem('classic-gameOver')
+      localStorage.setItem('classic-date', today)
+    }
+  }, [])
+
   //Create navigation to home page
   const navigate = useNavigate()
 
@@ -45,11 +59,45 @@ function QuotePage() {
   const quoteCharactersList = Object.keys(quoteCharacters)
   
   //State variables for the game logic
+  
   const [guess, setGuess] = useState('')
-  const [feedback, setFeedback] = useState('')
-  const [totalGuesses, setGuesses] = useState(0)
-  const [guessHistory, setGuessHistory] = useState([])
-  const [gameOver, setGameOver] = useState(false)
+
+  //Add local storage to guess history, total guesses, feedback message, and game over state so user can swap between pages without losing progress.
+
+  const [guessHistory, setGuessHistory] = useState(() => {
+    const saved = localStorage.getItem('quote-guessHistory')
+    return saved ? JSON.parse(saved) : []
+  })
+
+    const [guessCount, setGuessCount] = useState(() => {
+    const saved = localStorage.getItem('quote-guessCount')
+    return saved ? JSON.parse(saved) : []
+  })
+
+  const [gameOver, setGameOver] = useState(() => {
+    return localStorage.getItem('quote-gameOver') === 'true'
+  })
+
+    const [feedback, setFeedback] = useState(() => {
+    return localStorage.getItem('quote-feedback') || ''
+  })
+
+    useEffect(() => {
+    localStorage.setItem('quote-guessHistory', JSON.stringify(guessHistory))
+  }, [guessHistory])
+
+  useEffect(() => {
+    localStorage.setItem('quote-guessCount', guessCount)
+  }, [guessCount])
+
+  useEffect(() => {
+    localStorage.setItem('quote-feedback', feedback)
+  }, [feedback])
+
+  useEffect(() => {
+    localStorage.setItem('quote-gameOver', gameOver)
+  }, [gameOver])
+
 
   // State variables to control the visibility of recipient and chapter clues
   const [activeClue, setActiveClue] = useState(null) // null | 'recipient' | 'chapter'
@@ -78,8 +126,8 @@ function QuotePage() {
       setFeedback('Not found. Try again.')
       return
     }
-    const newTotal = totalGuesses + 1
-    setGuesses(newTotal)
+    const newTotal = guessCount + 1
+    setGuessCount(newTotal)
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === speaker){
       setFeedback('Correct! Total Guesses: ' + newTotal)
@@ -120,7 +168,7 @@ function QuotePage() {
 
               {/*Display the recipient's name and image after 2 guesses, and the volume and chapter after 3 guesses */}
               <ClueButtons 
-                totalGuesses={totalGuesses} 
+                totalGuesses={guessCount} 
                 setActiveClue={setActiveClue} 
                 activeClue={activeClue} 
               />
@@ -158,7 +206,7 @@ function QuotePage() {
           <WinnerCard
             speaker={speaker}
             speakerImage={quoteCharacters[speaker]?.image}
-            totalGuesses={totalGuesses}
+            totalGuesses={guessCount}
           />
         )}
       </div>
@@ -167,7 +215,7 @@ function QuotePage() {
         <VictoryModal
           speaker={speaker}
           speakerImage={quoteCharacters[speaker]?.image}
-          totalGuesses={totalGuesses}
+          totalGuesses={guessCount}
           onClose={() => setShowVictoryModal(false)}
         />
       )}
