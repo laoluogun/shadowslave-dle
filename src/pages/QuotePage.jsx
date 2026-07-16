@@ -34,18 +34,25 @@ import StatsDisplay from '../components/StatsDisplay'
 function QuotePage() {
 
     //Reset local storage every day when a new character is selected
-  useEffect(() => {
-    const savedDate = localStorage.getItem('quote-date')
-    const today = new Date().toISOString().slice(0, 10)
-    
-    if (savedDate !== today) {
-      localStorage.removeItem('quote-guessCount')
-      localStorage.removeItem('quote-guessHistory')
-      localStorage.removeItem('quote-feedback')
-      localStorage.removeItem('quote-gameOver')
-      localStorage.setItem('quote-date', today)
+   const today = new Date().toISOString().slice(0, 10)
+   const savedDate = localStorage.getItem('quote-date')
+
+  if (savedDate !== null && savedDate !== today) {
+    const wasWon = localStorage.getItem('quote-gameOver') === 'true'
+    const guesses = JSON.parse(localStorage.getItem('quote-guessHistory') || '[]')
+
+    if (!wasWon && guesses.length > 0) {
+      const played = JSON.parse(localStorage.getItem('quote-gamesPlayed') || '0')
+      localStorage.setItem('quote-currentStreak', '0')
+      localStorage.setItem('quote-gamesPlayed', JSON.stringify(played + 1))
     }
-  }, [])
+
+    localStorage.removeItem('quote-guessResults')
+    localStorage.removeItem('quote-guessHistory')
+    localStorage.removeItem('quote-feedback')
+    localStorage.removeItem('quote-gameOver')
+    localStorage.setItem('quote-date', today)
+  }
 
   //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('quote')

@@ -28,18 +28,25 @@ function getDailyIndex(arrayLength) {
 
 function ClassicPage() {
   //Reset `local` storage every day when a new character is selected
-  useEffect(() => {
-    const savedDate = localStorage.getItem('classic-date')
-    const today = new Date().toISOString().slice(0, 10)
-    
-    if (savedDate !== today) {
-      localStorage.removeItem('classic-guessResults')
-      localStorage.removeItem('classic-guessHistory')
-      localStorage.removeItem('classic-feedback')
-      localStorage.removeItem('classic-gameOver')
-      localStorage.setItem('classic-date', today)
+  const today = new Date().toISOString().slice(0, 10)
+  const savedDate = localStorage.getItem('classic-date')
+
+  if (savedDate !== null && savedDate !== today) {
+    const wasWon = localStorage.getItem('classic-gameOver') === 'true'
+    const guesses = JSON.parse(localStorage.getItem('classic-guessHistory') || '[]')
+
+    if (!wasWon && guesses.length > 0) {
+      const played = JSON.parse(localStorage.getItem('classic-gamesPlayed') || '0')
+      localStorage.setItem('classic-currentStreak', '0')
+      localStorage.setItem('classic-gamesPlayed', JSON.stringify(played + 1))
     }
-  }, [])
+
+    localStorage.removeItem('classic-guessResults')
+    localStorage.removeItem('classic-guessHistory')
+    localStorage.removeItem('classic-feedback')
+    localStorage.removeItem('classic-gameOver')
+    localStorage.setItem('classic-date', today)
+  }
 
     //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('classic')
