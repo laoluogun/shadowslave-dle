@@ -134,9 +134,7 @@ function QuotePage() {
       setFeedback('Not found. Try again.')
       return
     }
-    console.log(guessCount)
     const newTotal = parseInt(guessCount) + 1
-    console.log(newTotal)
     setGuessCount(newTotal)
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === speaker){
