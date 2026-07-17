@@ -47,7 +47,7 @@ function QuotePage() {
       localStorage.setItem('quote-gamesPlayed', JSON.stringify(played + 1))
     }
 
-    localStorage.removeItem('quote-guessResults')
+    localStorage.removeItem('quote-guessCount')
     localStorage.removeItem('quote-guessHistory')
     localStorage.removeItem('quote-feedback')
     localStorage.removeItem('quote-gameOver')
