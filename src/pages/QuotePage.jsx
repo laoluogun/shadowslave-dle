@@ -85,7 +85,7 @@ function QuotePage() {
   })
 
     const [guessCount, setGuessCount] = useState(() => {
-    return localStorage.getItem('quote-guessCount') || '0'
+  return parseInt(localStorage.getItem('quote-guessCount') || '0')
   })
 
   const [gameOver, setGameOver] = useState(() => {
@@ -102,7 +102,7 @@ function QuotePage() {
   }, [guessHistory])
 
   useEffect(() => {
-    localStorage.setItem('quote-guessCount', guessCount)
+  localStorage.setItem('quote-guessCount', JSON.stringify(guessCount))
   }, [guessCount])
 
   useEffect(() => {
@@ -141,7 +141,7 @@ function QuotePage() {
       setFeedback('Not found. Try again.')
       return
     }
-    const newTotal = parseInt(guessCount) + 1
+    const newTotal = guessCount + 1
     setGuessCount(newTotal)
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === speaker){
