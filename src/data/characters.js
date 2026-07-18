@@ -6,7 +6,7 @@ export const characters = {
         image: prefix + 'sunless.png',
         gender: 'Male',
         race: 'Shadow',
-        affiliations: ['Nephis\' Cohort', 'First Irregular Company', 'Shadow Company'],
+        affiliations: ['Nephis\' Cohort', 'First Irregular Company', 'Shadow Clan'],
         currentRank: "Supreme",
         hasTrueName: true,
         debutVolume: "Volume 1: Child of Shadows"
@@ -66,7 +66,7 @@ export const characters = {
         image: prefix + 'rain.png',
         gender: 'Female',
         race: 'Human',
-        affiliations: ['Tamar\'s Cohort', 'Shadow Company'],
+        affiliations: ['Tamar\'s Cohort', 'Shadow Clan'],
         currentRank: "Ascended",
         hasTrueName: true,
         debutVolume: "Volume 3: Prince of Nothing"
