@@ -45,8 +45,9 @@ function ClassicPage() {
     localStorage.removeItem('classic-guessHistory')
     localStorage.removeItem('classic-feedback')
     localStorage.removeItem('classic-gameOver')
-    localStorage.setItem('classic-date', today)
   }
+  
+  localStorage.setItem('classic-date', today)
 
     //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('classic')

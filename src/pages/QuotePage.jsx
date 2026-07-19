@@ -51,9 +51,9 @@ function QuotePage() {
     localStorage.removeItem('quote-guessHistory')
     localStorage.removeItem('quote-feedback')
     localStorage.removeItem('quote-gameOver')
-    localStorage.setItem('quote-date', today)
   }
-
+  localStorage.setItem('quote-date', today)  
+  
   //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('quote')
 
