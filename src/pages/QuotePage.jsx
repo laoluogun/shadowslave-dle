@@ -22,14 +22,18 @@ import StatsDisplay from '../components/StatsDisplay'
 
 //Daily index logic to select a quote based on the current date
 
-    function getDailyIndex(arrayLength) {
-    const today = new Date().toISOString().slice(0, 10) // "2026-06-30"
-    let hash = 0
-    for (let i = 0; i < today.length; i++) {
-      hash = today.charCodeAt(i) + ((hash << 5) - hash)
-    }
-    return Math.abs(hash) % arrayLength
-  }
+function getDailyIndex(arrayLength) {
+  const start = new Date('2026-01-01').getTime()
+  const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
+  const dayNumber = Math.floor((today - start) / 86400000)
+
+  let hash = dayNumber
+  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
+  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
+  hash = (hash >> 16) ^ hash
+
+  return Math.abs(hash) % arrayLength
+}
 
 function QuotePage() {
 
