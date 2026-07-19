@@ -1,6 +1,6 @@
 import { useState, useEffect } from 'react'
 
-function WinnerCard({ speaker, speakerImage, totalGuesses }) {
+function WinnerCard({ speaker, speakerImage, totalGuesses, mode }) {
   const [timeLeft, setTimeLeft] = useState('')
 
   useEffect(() => {
@@ -30,7 +30,7 @@ function WinnerCard({ speaker, speakerImage, totalGuesses }) {
       </div>
       <p className="text-zinc-400 text-sm">Number of guesses: <span className="text-white font-semibold">{totalGuesses}</span></p>
       <div>
-        <p className="text-zinc-400 text-sm">Next quote in</p>
+        <p className="text-zinc-400 text-sm">{`Next ${mode === 'QUOTE' ?  'quote' : 'character'} in`}</p>
         <p className="text-white font-mono text-2xl font-bold">{timeLeft}</p>
       </div>
     </div>

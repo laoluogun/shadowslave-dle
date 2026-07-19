@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from 'react'
 
-function VictoryModal({ speaker, speakerImage, totalGuesses, onClose }) {
+function VictoryModal({ speaker, speakerImage, totalGuesses, onClose, mode }) {
   const [timeLeft, setTimeLeft] = useState('')
 
   useEffect(() => {
@@ -40,7 +40,7 @@ function VictoryModal({ speaker, speakerImage, totalGuesses, onClose }) {
         </div>
         <p className="text-zinc-400 text-sm">Number of tries: <span className="text-white font-semibold">{totalGuesses}</span></p>
         <div>
-          <p className="text-zinc-400 text-sm">Next quote in</p>
+          <p className="text-zinc-400 text-sm">{`Next ${mode === 'QUOTE' ?  'quote' : 'character'} in`}</p>
           <p className="text-white font-mono text-3xl font-bold">{timeLeft}</p>
         </div>
         <button 

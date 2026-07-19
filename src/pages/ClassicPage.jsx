@@ -55,6 +55,9 @@ function ClassicPage() {
 
     //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('classic')
+  
+  //Create mode constant that will be used to change page dependent content
+  const MODE  = 'CLASSIC'
 
   const navigate = useNavigate()
   const characterNames = Object.keys(characters)
@@ -211,6 +214,7 @@ function ClassicPage() {
             speaker={answer}
             speakerImage={characters[answer]?.image}
             totalGuesses={guessHistory.length}
+            mode={MODE}
           />
         )}
       </div>
@@ -221,6 +225,7 @@ function ClassicPage() {
           speakerImage={characters[answer]?.image}
           totalGuesses={guessHistory.length}
           onClose={() => setShowVictoryModal(false)}
+          mode={MODE}
         />
       )}
     </div>

@@ -60,7 +60,9 @@ function QuotePage() {
 
   //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('quote')
-
+  
+  //Create mode constant that will be used to change page dependent content
+  const MODE  = 'QUOTE'
   //Create navigation to home page
   const navigate = useNavigate()
 
@@ -241,6 +243,7 @@ function QuotePage() {
             speaker={speaker}
             speakerImage={characters[speaker]?.image}
             totalGuesses={guessCount}
+            mode={MODE}
           />
         )}
       </div>
@@ -252,6 +255,7 @@ function QuotePage() {
           speakerImage={characters[speaker]?.image}
           totalGuesses={guessCount}
           onClose={() => setShowVictoryModal(false)}
+          mode={MODE}
         />
       )}
    </div> 
