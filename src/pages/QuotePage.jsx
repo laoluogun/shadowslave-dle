@@ -53,7 +53,7 @@ function QuotePage() {
     localStorage.removeItem('quote-gameOver')
   }
   localStorage.setItem('quote-date', today)  
-  
+
   //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('quote')
 
@@ -199,7 +199,8 @@ function QuotePage() {
               <ClueButtons 
                 totalGuesses={guessCount} 
                 setActiveClue={setActiveClue} 
-                activeClue={activeClue} 
+                activeClue={activeClue}
+                gameOver={gameOver}
               />
 
               {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}
