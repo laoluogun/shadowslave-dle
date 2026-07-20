@@ -33,7 +33,7 @@ function HomePage() {
           Shadow Slave dle
         </h1>
         <p className="font-mountain-king text-zinc-400 tracking-widest uppercase text-sm mt-2">
-          Daily Guessing Games
+          Test Your Shadow Slave Knowledge
         </p>
       </div>
 
