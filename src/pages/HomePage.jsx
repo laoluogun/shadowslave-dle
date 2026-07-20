@@ -50,7 +50,7 @@ function HomePage() {
                 : 'bg-zinc-900/40 border-zinc-800 cursor-default text-zinc-600'
               }`}
           >
-            <img src={mode.icon} alt={mode.title} className="w-12 h-12" />
+            <img src={mode.icon} alt={mode.title} className="w-12 h-12 invert" />
             <div>
               <p className="font-mountain-king font-bold text-lg tracking-wide uppercase">{mode.title}</p>
               <p className="text-sm mt-0.5 text-zinc-400">{mode.description}</p>
