@@ -44,6 +44,7 @@ function HomePage() {
             key={mode.id}
             onClick={() => mode.available && navigate(mode.path)}
             className={`w-full p-5 border rounded-none text-left transition flex items-center gap-4
+                       duration-150 hover:scale-105 cursor-pointer
               ${mode.available
                 ? 'bg-zinc-900 border-zinc-700 hover:bg-zinc-800 cursor-pointer text-white'
                 : 'bg-zinc-900/40 border-zinc-800 cursor-default text-zinc-600'
