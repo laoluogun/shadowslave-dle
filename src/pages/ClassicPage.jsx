@@ -201,8 +201,6 @@ function ClassicPage() {
             </button>
           </div>
         )}
-        {/* Display feedback depending on whether the guess was (in)correct */}
-        <Feedback feedback={feedback} />
         
         {/* Display all previous guesses the user has chosen */}
         {guessResults.length > 0 && (
