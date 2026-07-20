@@ -9,8 +9,7 @@ export default function AboutModal() {
                 onClick={() => setOpen(true)}
                 aria-label="About"
                 className="w-12 h-12 rounded-full flex items-center justify-center
-                          bg-zinc-900 border border-zinc-700 text-zinc-400
-                          hover:text-white hover:border-zinc-500
+                         bg-zinc-900 border border-zinc-700 text-zinc-400 hover:border-zinc-500
                           transition-all duration-150 hover:scale-110 cursor-pointer"
             >
                 <img src='src/assets/images/info.png'  className='w-6 h-6 invert' />
@@ -60,7 +59,7 @@ export default function AboutModal() {
                                     This is an attempt of creating a personal project so I can improve my web design abilities.
                                     If there are any bugs or suggestions you have, please reach out to my discord! You can send messages to ._laolu_. on discord.
 
-                                    Also! Please let me know about any quotes you'd want introduced because it is very difficult hand picking them out. 
+                                    Also! Please let me know about any quotes you'd want introduced because it is very tedious hand picking them out. 
                                     And let me know about any characters you want introduced! I tried to add any character that had fan art created for them, rather than every character listed in the Wiki, so if you find anything missing and feel like it'd be a good addition, let me know!
                                 </p>
                             </div>
