@@ -44,7 +44,7 @@ function Cell({ result, value, showArrow = false }) {
 
 function ClassicGrid({ guessResults }) {
   const columns = ['name', 'gender', 'affiliations', 'currentRank', 'hasTrueName', 'debutVolume']
-  const headers = ['Character', 'Gender', 'Race', 'Affiliations', 'Rank', 'True Name', 'Debut']
+  const headers = ['Character', 'Gender', 'Race', 'Affiliations', 'Rank', 'Has True Name', 'Debut']
   const debutInfo = 'If a character has appeared in the story, then their volume debut will be when that appearance is. \nIf a character has not appeared in the story but has been mentioned, then their volume debut will be when their first mention is.\nFor example, Asterion was first mentioned in Chapter 367, but his first appearence was chapter 1840. Therefore his debut volume will be Volume 8.  \nWhereas Broken Sword has not appeared outside of anyone\'s memories or conversations, and his first mention was in Chapter 27 so his volume debut will be Volume 1.'
   
   return (
