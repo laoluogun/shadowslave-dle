@@ -234,8 +234,6 @@ function QuotePage() {
             <button onClick={ () => checkGuess()} className="w-full py-2 rounded-none bg-zinc-900 hover:bg-zinc-700 text-white font-semibold tracking-wide transition-colors cursor-pointer">
               Submit
             </button>}
-        {/* Display feedback to the user based on their guess, with color indicating correctness */}
-          <Feedback feedback={feedback} />
           {/* Display the history of guesses in reverse order, with styling based on correctness */}
         <GuessHistory guessHistory={guessHistory} speaker={speaker} />
         {gameOver && !showVictoryModal && (
