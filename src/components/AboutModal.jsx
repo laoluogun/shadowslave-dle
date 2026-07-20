@@ -63,7 +63,7 @@ export default function AboutModal() {
                                     If there are any bugs or suggestions you have, please reach out to my discord! You can send messages to ._laolu_. on discord.
 
                                     Also! Please let me know about any quotes you'd want introduced because it is very difficult hand picking them out. 
-                                    And let me know about any characters you want introduced! I tried to add any character that had fan art created for them so if you find anything missing and feel like it'd be a good addition, let me know!
+                                    And let me know about any characters you want introduced! I tried to add any character that had fan art created for them, rather than every character listed in the Wiki, so if you find anything missing and feel like it'd be a good addition, let me know!
                                 </p>
                             </div>
                         </div>
