@@ -180,7 +180,7 @@ function ClassicPage() {
         }
       />
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
-      <div className="w-full max-w-5xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
+      <div className="w-full max-w-5xl bg-black/20 backdrop-blur-3xl border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
         {!gameOver && (
           <div className="flex flex-col gap-2">
             {/*Display the input field and the auto-complete suggestions once a user has inputted text */}
