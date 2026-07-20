@@ -17,10 +17,10 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
         <button
           key={button.id}
           onClick={() => !button.noModal && setOpenModal(button.id)}
-          className={`p-2 rounded-none transition
+          className={`p-2 rounded-none
             ${button.noModal 
               ? 'border-transparent cursor-default' 
-              : 'hover:bg-zinc-600 cursor-pointer hover:scale-105 duration-150'}`}
+              : 'transition hover:bg-zinc-600 cursor-pointer hover:scale-105 duration-150'}`}
         >
           {button.id === 'streak' ? (
             <div className="relative inline-flex items-center justify-center w-8 h-8">
