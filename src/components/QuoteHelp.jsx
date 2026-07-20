@@ -1,4 +1,4 @@
-function classicHelp() {
+function quoteHelp() {
     return (
     <div className="flex flex-col gap-1">
             <h1 className="underline font-semibold">Shadow Slave-Dle Quote Guide</h1>
@@ -12,4 +12,4 @@ function classicHelp() {
      </div>
 )}
 
-export default classicHelp
+export default quoteHelp
