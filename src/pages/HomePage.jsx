@@ -1,6 +1,7 @@
 import { useNavigate } from 'react-router-dom'
 import quote from '../assets/images/quote.png'
 import questionSign from  '../assets/images/question-sign.png'
+import brokenPlate from '../assets/images/broken-plate.png'
 import AboutModal from '../components/AboutModal'
 
 const modes = [
@@ -15,7 +16,7 @@ const modes = [
   {
     id: 'quote',
     title: 'Quote',
-    description: 'Guess the character from a daily quote',
+    description: 'Guess the daily character from a quote',
     icon: quote,
     path: '/quote',
     available: true,
@@ -24,8 +25,8 @@ const modes = [
    {
     id: 'flaw',
     title: 'Flaw',
-    description: 'Guess the character from a daily flaw',
-    icon: quote,
+    description: 'Guess the daily character from their flaw',
+    icon: brokenPlate,
     path: '/flaw',
     available: true,
   },
