@@ -20,6 +20,15 @@ const modes = [
     path: '/quote',
     available: true,
   },
+
+   {
+    id: 'flaw',
+    title: 'Flaw',
+    description: 'Guess the character from a daily flaw',
+    icon: quote,
+    path: '/flaw',
+    available: true,
+  },
 ]
 
 function HomePage() {

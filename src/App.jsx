@@ -5,6 +5,7 @@ import './App.css'
 import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
 import ClassicPage from './pages/ClassicPage'
+import FlawsPage from './pages/FlawsPage'
 import ArtistCredits from './components/ArtistCredits'
 
 
@@ -25,6 +26,7 @@ function App() {
       <Route path="/" element={<HomePage />} />
       <Route path="/quote" element={<QuotePage />} />
       <Route path="/classic" element={<ClassicPage />} />
+      <Route path='/flaw' element={<FlawsPage  />} />
     </Routes>
     <ArtistCredits/>
     </>
