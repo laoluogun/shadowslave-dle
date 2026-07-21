@@ -19,6 +19,9 @@ import QuoteHelp from '../components/QuoteHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
 
+import talkIcon from '../assets/images/talk.png'
+import bookIcon from '../assets/images/book.png'
+
 
 //Daily index logic to select a quote based on the current date
 
@@ -78,7 +81,11 @@ function QuotePage() {
   const chapter = currentQuote.chapter
   const speaker = currentQuote.speaker
   const quoteCharactersList = Object.keys(characters)
-  
+  const quoteClues = [
+  { id: 'recipient', label: 'Recipient Clue', icon: talkIcon, unlockAt: 3 },
+  { id: 'chapter', label: 'Chapter Clue', icon: bookIcon, unlockAt: 5 },
+]
+
   //State variables for the game logic
   
   const [guess, setGuess] = useState('')
@@ -207,6 +214,7 @@ function QuotePage() {
                 setActiveClue={setActiveClue} 
                 activeClue={activeClue}
                 gameOver={gameOver}
+                clues={quoteClues}
               />
 
               {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}

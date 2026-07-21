@@ -4,7 +4,7 @@ import '../App.css'
 import {flaws} from '../data/flaws'
 import {characters} from '../data/characters'
 import FlawCard from '../components/FlawCard'
-import FlawsClueButtons from '../components/FlawClueButtons'
+import ClueButtons from '../components/ClueButtons'
 import RankClue from '../components/RankClue'
 import TrueNameClue from '../components/TrueNameClue'
 import InputField from '../components/InputField'
@@ -18,6 +18,10 @@ import patchnotetext from '../data/flawPatchNote'
 import FlawHelp from '../components/FlawHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
+
+
+import signatureIcon from '../assets/images/signature.png'
+import rankIcon from '../assets/images/ranking.png'
 
 
 //Daily index logic to select a flaw based on the current date
@@ -74,7 +78,10 @@ function FlawsPage() {
   const character = currentFlaw.character
   const characterImage = characters[character].image
   const flawCharacterList = Object.keys(characters)
-
+  const flawClues = [
+  { id: 'trueName', label: 'True Name Clue', icon: signatureIcon, unlockAt: 3 },
+  { id: 'rank', label: 'Rank Clue', icon: rankIcon, unlockAt: 5 },
+]
   //State variables for the game logic
   
   const [guess, setGuess] = useState('')
@@ -198,11 +205,12 @@ function FlawsPage() {
               <FlawCard flaw={flaw} />
 
               {/*Display the character's true name status after 3 images and rank after 5 guesses */}
-              <FlawsClueButtons 
+              <ClueButtons 
                 totalGuesses={guessCount} 
                 setActiveClue={setActiveClue} 
                 activeClue={activeClue}
                 gameOver={gameOver}
+                clues={flawClues}
               />    
               
               {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}
