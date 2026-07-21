@@ -56,7 +56,6 @@ export default function AboutModal() {
                                     Feedback / Questions
                                 </h3>
                                 <p>
-                                    This is an attempt of creating a personal project so I can improve my web design abilities.
                                     If there are any bugs or suggestions you have, please reach out to my discord! You can send messages to ._laolu_. on discord.
 
                                     Also! Please let me know about any quotes you'd want introduced because it is very tedious hand picking them out. 
