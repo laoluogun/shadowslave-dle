@@ -193,6 +193,15 @@ export const quotes = [
     recipient: "Sunless",
     chapter: "Chapter 742 Hope",
     volume: "Volume 4: Chain Breaker"
+  }, 
+
+  {
+    id: 24,
+    quote: "You… you have no… no honor.",
+    speaker: "Caster",
+    recipient: "Sunless",
+    chapter: "Chapter 340 Honor",
+    volume: "Volume 2: Demon of Change"
   }
 
 
