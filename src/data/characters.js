@@ -360,6 +360,26 @@ export const characters = {
         affiliations: ['None'],
         hasTrueName: false,
         debutVolume: "Volume 1: Child of Shadows"
+    }, 
+
+    Caster: {
+        image: prefix + 'caster.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank:  'Dormant',
+        affiliations: 'Han Li Clan',
+        hasTrueName: 'false',
+        debutVolume: "Volume 1: Child of Shadows"
+    },
+
+    Jest: {
+        image: prefix + 'jest.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank:  'Transcendent',
+        affiliations: 'Valor Clan',
+        hasTrueName: 'true',
+        debutVolume: "Volume 9: Throne off War"
     }
 
 } 
