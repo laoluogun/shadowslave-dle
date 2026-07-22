@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import { characters } from '../data/characters'
 
 const artists = [
   { character: 'Sunless', artist: 'alyssak437', url: 'https://www.tiktok.com/@alyssak437/photo/7491062585001839878?is_from_webapp=1&sender_device=pc' },
@@ -37,7 +38,9 @@ const artists = [
   { character: 'Weaver', artist: 'Sayg15000', url: 'https://x.com/sayg15000/status/2006828172386664685/photo/1' },
   { character: 'Nether', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1929036401716117878/photo/1'},
   { character: 'Hope', artist: 'Varyl', url: 'https://x.com/VaryielJadestar/status/1787003979697885301/photo/1'},
-  { character: 'Mountain King Larva', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1922517620789518721/photo/1'}
+  { character: 'Mountain King Larva', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1922517620789518721/photo/1'},
+  { character: 'Caster', artist: 'appapie_', url: 'https://www.tiktok.com/@appapie_/photo/7578426621766438177'},
+  { character: 'Jest', artist: 'Unlikely_Editor1602', url: 'https://www.reddit.com/r/ShadowSlave/comments/1m7gpux/cassie_vs_jest/'}
 ]
 
 function ArtistCredits() {
