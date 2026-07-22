@@ -98,6 +98,18 @@ export const flaws = [
         character: "Samara",
         flaw: "You have a slow rate of soul essence regeneration.", 
     },
+
+     {
+        id: 17, 
+        character: "Caster",
+        flaw: "Your lifespan shortens when you use your Aspect Ability.", 
+    },
+
+    {
+        id: 18,
+        character:  "Jest",
+        flaw: "You cannot use enchanted items nor possess memories."
+    }
     
     
 ]
