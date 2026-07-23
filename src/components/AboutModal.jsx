@@ -51,17 +51,21 @@ export default function AboutModal() {
                                   information necessary for this project. Massive thanks to the contributors there for their hard work. 
                             </p>
 
-                            <div>
-                                <h3 className="text-white font-bold tracking-wide uppercase text-xs mb-2">
-                                    Feedback / Questions
-                                </h3>
-                                <p>
-                                    If there are any bugs or suggestions you have, please reach out to my discord! You can send messages to ._laolu_. on discord.
 
-                                    Also! Please let me know about any quotes you'd want introduced because it is very tedious hand picking them out. 
-                                    And let me know about any characters you want introduced! I tried to add any character that had fan art created for them, rather than every character listed in the Wiki, so if you find anything missing and feel like it'd be a good addition, let me know!
-                                </p>
-                            </div>
+                            <h3 className="text-white font-bold tracking-wide uppercase text-xs">
+                                Feedback / Questions
+                            </h3>
+                            <p>
+                                If there are any bugs or suggestions you have, please reach out to my discord! You can send messages to shadowslavedle on discord.
+                            </p>
+                            <h3 className="text-white font-bold tracking-wide uppercase text-xs">
+                                Important!
+                            </h3>
+                            <p>
+                                I tried to add any character that had fan art created for them, rather than every character listed in the Wiki, so if you find anything missing and feel like it'd be a good addition, let me know!
+                                Also! Please let me know about any quotes you'd want introduced because it is very tedious hand picking them out. 
+                                And let me know about any characters you want introduced! 
+                            </p>
                         </div>
                     </div>
                 </div>
