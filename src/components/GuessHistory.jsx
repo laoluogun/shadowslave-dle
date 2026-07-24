@@ -7,17 +7,17 @@ function GuessHistory({ guessHistory, speaker }) {
                 {[...guessHistory].reverse().map((pastGuess, index) => (
                       <li
                         key={index}
-                        className={`px-3 py-2 border rounded-none flex flex-col items-center justify-between text-white
+                        className={`px-3 py-2 border-3 rounded-none flex flex-col items-center justify-between text-white
                           ${pastGuess === speaker 
-                            ? 'bg-green-950/90 border-green-800' 
-                            : 'bg-red-950/90 border-red-800'}`}
+                            ? 'bg-green-900/80 border-green-800' 
+                            : 'bg-red-900/80 border-red-800'}`}
                       >  
                       <div className="flex gap-2 ">
                         <img src={characters[pastGuess]?.image} 
                         alt={pastGuess} 
-                        className="w-20 h-25 object-cover rounded-none border border-zinc-600" />
+                        className="w-20 h-25 object-cover rounded-none" />
                       </div>
-                    <span className='text-md'>{pastGuess}</span>
+                    <span className='text-white font-semibold text-md'>{pastGuess}</span>
                   </li>
                 ))}
               </ol>

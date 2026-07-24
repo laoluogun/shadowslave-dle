@@ -21,16 +21,16 @@ function WinnerCard({ speaker, speakerImage, totalGuesses, mode }) {
   }, [])
 
   return (
-    <div className="bg-zinc-900 border border-green-900 rounded-none p-6 text-center flex flex-col items-center gap-3">
+    <div className="bg-zinc-900 border-3 border-green-700 rounded-none p-6 text-center flex flex-col items-center gap-3">
       <h2 className="text-xl font-bold tracking-widest text-white uppercase">Victory!</h2>
-      <img src={speakerImage} alt={speaker} className="w-24 h-30 object-cover rounded-none border border-zinc-600"/>
+      <img src={speakerImage} alt={speaker} className="w-24 h-30 object-cover rounded-none"/>
       <div>
-        <p className="text-zinc-400 text-sm">You guessed</p>
+        <p className="text-white text-sm">You guessed</p>
         <p className="text-white font-bold text-lg">{speaker}</p>
       </div>
-      <p className="text-zinc-400 text-sm">Number of guesses: <span className="text-white font-semibold">{totalGuesses}</span></p>
+      <p className="text-white text-sm">Number of guesses: <span className="text-white font-semibold text-base">{totalGuesses}</span></p>
       <div>
-        <p className="text-zinc-400 text-sm">{`Next ${mode === 'QUOTE' ?  'quote' : 'character'} in`}</p>
+        <p className="text-white text-sm">{`Next ${mode === 'QUOTE' ?  'quote' : 'character'} in`}</p>
         <p className="text-white font-mono text-2xl font-bold">{timeLeft}</p>
       </div>
     </div>
