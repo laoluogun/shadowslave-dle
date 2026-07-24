@@ -12,7 +12,7 @@ function ClueButtons({ totalGuesses, setActiveClue, activeClue, gameOver, clues 
           className={`flex-1 flex flex-col items-center gap-2 p-4 rounded-none border transition-colors
             ${gameOver || totalGuesses >= clue.unlockAt
               ? 'border-zinc-400 bg-zinc-900/80 hover:bg-zinc-700 cursor-pointer' 
-              : 'border-zinc-500 bg-zinc-800/80 cursor-default'}`}
+              : 'border-zinc-500 bg-zinc-900/80 cursor-default'}`}
         >
           <img src={clue.icon} alt={clue.label} className="w-6 h-6 invert brightness-0"/>
           <span className="text-xs font-bold text-white tracking-widest uppercase">{clue.label}</span>
