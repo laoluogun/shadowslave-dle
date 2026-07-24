@@ -181,7 +181,7 @@ function QuotePage() {
         ← Back
       </button>
       {/** Main title of the game mode displayed at the top of the page */}
-     <h1 className="font-mountain-king text-center text-3xl font-bold tracking-widest text-white">
+     <h1 className="font-mountain-king text-center text-5xl font-bold tracking-widest text-white">
         QUOTES
       </h1>
        <div className='flex flex-col items-center justify-center'>

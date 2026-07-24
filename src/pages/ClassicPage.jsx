@@ -155,7 +155,7 @@ function ClassicPage() {
         ← Back
       </button>
       {/** Main title of the game mode displayed at the top of the page */}
-      <h1 className="font-mountain-king text-3xl font-bold tracking-widest text-white uppercase">
+      <h1 className="font-mountain-king text-5xl font-bold tracking-widest text-white uppercase">
         Classic
       </h1>
       {/* Information on how updated the information used in the game is */}
