@@ -6,7 +6,7 @@ import downArrow from "../assets/images/down-arrow.png";
 import InfoPopover from "./InfoPopover";
 
 function Cell({ result, value, showArrow = false }) {
-  const baseClasses = "flex flex-col items-center justify-center p-2 border rounded-none text-white text-center text-md font-semibold min-h-16 transition-all"
+  const baseClasses = "flex flex-col items-center justify-center p-1 sm:p-2 border rounded-none text-white text-center text-xs sm:text-sm md:text-base font-semibold min-h-16 transition-all"
   
   const colorClasses = {
     correct: 'bg-green-800/80 border-green-600',
@@ -69,9 +69,9 @@ function ClassicGrid({ guessResults }) {
         {guessResults.map((result, index) => (
           <div key={index} className="grid grid-cols-7 gap-1">
             {/* Character cell — always show image + name, no color */}
-            <div className="flex flex-col items-center justify-center bg-zinc-800/80 border border-zinc-600 rounded-none p-2 min-h-16">
+            <div className="flex flex-col items-center justify-center bg-zinc-800/80 border border-zinc-600 rounded-none p-1 sm:p-2 min-h-16">
               <img src={result.image} alt={result.name} className="w-12 h-15 object-cover rounded-none border border-zinc-600 mb-1"/>
-              <span className="text-white text-md font-semibold text-center">{result.name}</span>
+              <span className="text-white text-xs md:text-base font-semibold text-center leading-4">{result.name}</span>
             </div>
 
             <Cell result={result.gender} value={result.genderValue} />
