@@ -12,7 +12,7 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-1 border border-zinc-400 bg-zinc-700/80 px-4 py-2">
+      <div className="flex items-center justify-center gap-1 border border-zinc-400 bg-zinc-900/80  px-4 py-2">
         {buttons.map(button => (
         <button
           key={button.id}
@@ -36,7 +36,7 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
               )}
             </div>
           ) : (
-            <img src={button.icon} alt={button.alt} className="w-6 h-6 object-contain" />
+            <img src={button.icon} alt={button.alt} className="w-6 h-6 object-contain brightness-0 invert" />
           )}
         </button>
       ))}

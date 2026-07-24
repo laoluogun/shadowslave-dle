@@ -3,7 +3,7 @@ function InputField({guess, handleChange}) {
     <input 
                   value={guess} 
                   onChange={handleChange}
-                  className="w-full bg-zinc-800/80 border border-zinc-500 rounded-none px-3 py-2 text-white placeholder:text-zinc-400 focus:outline-none focus:border-zinc-400 transition"
+                  className="w-full border border-zinc-400 bg-zinc-900/80 rounded-none px-3 py-2 text-white placeholder:text-white focus:outline-none "
                   placeholder="Type your guess here..."
                 />
     )
