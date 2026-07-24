@@ -199,7 +199,7 @@ function FlawsPage() {
         helpContent={<FlawHelp />}/>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
-      <div className="w-full max-w-xl min-w-80 sm:min-w-120 bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl min-w-base sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
               {/*Display the flaw */}
               <FlawCard flaw={flaw} />
