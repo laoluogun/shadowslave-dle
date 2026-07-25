@@ -1,13 +1,17 @@
 import { useState } from 'react'
+import stats from '../assets/images/graph.png'
+import fire from '../assets/images/fire.png'
+import notes from  '../assets/images/notes.png'
+import question  from '../assets/images/question.png'
 
 function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
   const [openModal, setOpenModal] = useState(null) // null | 'stats' | 'patch' | 'help'
 
   const buttons = [
-    { id: 'stats', icon: 'src/assets/images/graph.png', alt: 'Stats' },
-    { id: 'streak', icon: 'src/assets/images/fire.png', alt: 'Streak', noModal: true},
-    { id: 'patch', icon: 'src/assets/images/notes.png', alt: 'Patch Notes' },
-    { id: 'help', icon: 'src/assets/images/question.png', alt: 'Help' },
+    { id: 'stats', icon: stats, alt: 'Stats' },
+    { id: 'streak', icon: fire, alt: 'Streak', noModal: true},
+    { id: 'patch', icon: notes, alt: 'Patch Notes' },
+    { id: 'help', icon: question, alt: 'Help' },
   ]
 
   return (

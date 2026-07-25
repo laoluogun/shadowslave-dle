@@ -1,4 +1,5 @@
 import { useState } from 'react'
+import info from '../assets/images/info.png'
 
 export default function AboutModal() {
     const [open, setOpen] = useState(false)
@@ -12,12 +13,12 @@ export default function AboutModal() {
                          bg-zinc-900 border border-zinc-700 text-zinc-400 hover:border-zinc-500
                           transition-all duration-150 hover:scale-110 cursor-pointer"
             >
-                <img src='src/assets/images/info.png'  className='w-6 h-6 invert' />
+                <img src={info}  className='w-6 h-6 invert' />
             </button>
 
             {open && (
                 <div
-                    className="fixed inset-0 z-999 flex items-center justify-center p-4 bg-zinc/70 backdrop-blur-xs"
+                    className="fixed inset-0 z-50 flex items-center justify-center p-4 bg-black/70 backdrop-blur-sm"
                     onClick={() => setOpen(false)}
                 >
                     <div
@@ -47,8 +48,17 @@ export default function AboutModal() {
                                Shadow Slave is the property of its original owner, Guiltythree, who does not endorse nor sponsor this personal project!
                             </p>
                             <p>
-                                  The <a href='https://shadowslave.fandom.com/wiki/Shadow_Slave_Wiki'>Shadow Slave Wiki</a> helped me a ton with finding 
-                                  information necessary for this project. Massive thanks to the contributors there for their hard work. 
+                                The{' '} 
+                                <a 
+                                href='https://shadowslave.fandom.com/wiki/Shadow_Slave_Wiki'
+                                target="_blank"
+                                rel="noopener noreferrer"
+                                className="text-white underline hover:text-zinc-300 transition"
+                                >
+                                 Shadow Slave Wiki 
+                                </a> 
+                                {' '}helped me a ton with finding 
+                                information necessary for this project. Massive thanks to the contributors there for their hard work. 
                             </p>
 
 
