@@ -18,6 +18,7 @@ import patchnotetext from '../data/flawPatchNote'
 import FlawHelp from '../components/FlawHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
+import ModeSwitcher from '../components/ModeSwitcher'
 
 
 import signatureIcon from '../assets/images/signature.png'
@@ -182,9 +183,12 @@ function FlawsPage() {
       </h1>
        <div className='flex flex-col items-center justify-center'>
         <p className="font-mountain-king text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
-        <p className="font-mountain-king text-zinc-400 text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
-          {/* Bar containing stat information, patch notes, help notes, and current streak */}
+          <div className="flex flex-row items-center justify-between px-6 py-3 border border-zinc-700 bg-zinc-900/60">
+      {/* Bar containing navigation between game modes */}
+          <ModeSwitcher />
+        <div className="w-px h-8 bg-zinc-600 mx-2" />
+      {/* Bar containing stat information, patch notes, help notes, and current streak */}
       <TopBar
         statsContent={<StatsDisplay
                       gamesPlayed={gamesPlayed}
@@ -194,13 +198,18 @@ function FlawsPage() {
                       currentStreak={currentStreak}
                       maxStreak={maxStreak}
                     />}
-        currentStreak={currentStreak}
+        currentStreak={currentStreak}            
         patchContent={patchnotetext}
-        helpContent={<FlawHelp />}/>
+        helpContent={
+          <FlawHelp />
+        }
+      />
+      </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
       <div className="w-full max-w-xl min-w-base sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
+              <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
               {/*Display the flaw */}
               <FlawCard flaw={flaw} />
 
@@ -214,13 +223,8 @@ function FlawsPage() {
               />    
               
               {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}
-              {activeClue === 'trueName' && (
-                <TrueNameClue  hasTrueName={characters[character].hasTrueName}/>
-              )}
-
-              {activeClue === 'rank' && (
-                <RankClue rank={characters[character].currentRank} />
-              )}
+                <TrueNameClue  hasTrueName={characters[character].hasTrueName} isActive={activeClue === 'trueName'}/>
+                <RankClue rank={characters[character].currentRank} isActive={activeClue === 'rank'} />
         </div>
         <div className="flex flex-col gap-2">
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}

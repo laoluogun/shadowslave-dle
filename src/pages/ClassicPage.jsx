@@ -13,7 +13,7 @@ import patchnotetext from '../data/classicPatchNote'
 import ClassicHelp from '../components/ClassicHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
-
+import ModeSwitcher from '../components/ModeSwitcher'
 
 
 //Function for choosing a new character daily
@@ -161,26 +161,31 @@ function ClassicPage() {
       {/* Information on how updated the information used in the game is */}
       <div className='flex flex-col items-center justify-center'>
         <p className="text-zinc-400 font-mountain-king text-sm tracking-wide">Guess today's Shadow Slave character</p>
-        <p className="text-zinc-400 font-mountain-king text-sm italic tracking-wide">Data up until Chapter 3005</p>
       </div>
+       <div className="flex flex-row items-center justify-between px-6 py-3 border border-zinc-700 bg-zinc-900/60">
+      {/* Bar containing navigation between game modes */}
+            <ModeSwitcher />
+        <div className="w-px h-8 bg-zinc-600 mx-2" />
       {/* Bar containing stat information, patch notes, help notes, and current streak */}
-      <TopBar
-        statsContent={<StatsDisplay
-                      gamesPlayed={gamesPlayed}
-                      gamesWon={gamesWon}
-                      avgGuesses={avgGuesses}
-                      winRate={winRate}
-                      currentStreak={currentStreak}
-                      maxStreak={maxStreak}
-                    />}
-        currentStreak={currentStreak}            
-        patchContent={patchnotetext}
-        helpContent={
-          <ClassicHelp />
-        }
-      />
+        <TopBar
+          statsContent={<StatsDisplay
+                        gamesPlayed={gamesPlayed}
+                        gamesWon={gamesWon}
+                        avgGuesses={avgGuesses}
+                        winRate={winRate}
+                        currentStreak={currentStreak}
+                        maxStreak={maxStreak}
+                      />}
+          currentStreak={currentStreak}
+          patchContent={patchnotetext}
+          helpContent={
+            <ClassicHelp />
+          }
+        />
+      </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="w-full max-w-5xl bg-black/20 backdrop-blur-3xl border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
+      <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
         {!gameOver && (
           <div className="flex flex-col gap-2">
             {/*Display the input field and the auto-complete suggestions once a user has inputted text */}
