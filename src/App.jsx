@@ -16,6 +16,7 @@ import brokenPlateIcon from './assets/images/broken-plate.png'
 import infoIcon from './assets/images/info.png'
 import talkIcon from './assets/images/talk.png'
 import bookIcon from './assets/images/book.png'
+import statsIcon from './assets/images/graph.png'
 
 const UI_ICONS = [
   statsIcon, fireIcon, notesIcon, questionIcon,
