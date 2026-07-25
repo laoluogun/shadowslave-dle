@@ -227,7 +227,7 @@ export const characters = {
         gender: 'Female', 
         race: 'Human',
         currentRank: "Ascended",
-        affiliations: ['Shadow Clan', 'Song Clan'],
+        affiliations: ['Shadow Clan', 'Tamar\'s Cohort'],
         hasTrueName: false,
         debutVolume: "Volume 8: Lord of Shadows"
     },
