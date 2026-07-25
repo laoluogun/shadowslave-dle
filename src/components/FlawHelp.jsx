@@ -11,7 +11,7 @@ function flawHelp() {
             </ol>
             <h2 className="underline font-semibold">Important!</h2>
              <p className="text-sm">Not all characters have their flaws stated, therefore a select few characters are possible answers.</p>
-             <p className="text-sm">Not all characters have an offiical rune for their flaw, therefore its description is written.</p>
+             <p className="text-sm">Not all characters have an offiical name for their flaw, therefore its description is written.</p>
      </div>
 )}
 
