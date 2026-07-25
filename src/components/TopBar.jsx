@@ -12,12 +12,12 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-1 border border-zinc-400 bg-zinc-900/80  px-4 py-2">
+      <div className="flex items-center justify-center gap-1 px-2 py-1">
         {buttons.map(button => (
         <button
           key={button.id}
           onClick={() => !button.noModal && setOpenModal(button.id)}
-          className={`p-2 rounded-none
+          className={` group relative p-1 rounded-none
             ${button.noModal 
               ? 'border-transparent cursor-default' 
               : 'transition hover:bg-zinc-600 cursor-pointer hover:scale-105 duration-150'}`}
@@ -36,8 +36,12 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
               )}
             </div>
           ) : (
-            <img src={button.icon} alt={button.alt} className="w-6 h-6 object-contain brightness-0 invert" />
+            <img src={button.icon} alt={button.alt} className="w-8 h-8 object-contain brightness-0 invert" />
           )}
+         { /* Tooltip */}
+        <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-zinc-800 border border-zinc-600 text-white text-[10px] uppercase tracking-widest px-2 py-1 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
+          {button.alt}
+        </span>
         </button>
       ))}
       </div>
