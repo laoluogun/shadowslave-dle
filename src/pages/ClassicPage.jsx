@@ -71,6 +71,7 @@ function ClassicPage() {
 
   const [answer] = useState(() => characterNames[getDailyIndex(characterNames.length)])
   const [guess, setGuess] = useState('')
+  const [notFound, setNotFound] = useState(false)
 
   //Add local storage to guess results, guess history, feedback message, and game over state so user can swap between pages.
 
@@ -127,10 +128,10 @@ function ClassicPage() {
     //Name override is when the user selects a character instead of typing it fully themselves
     const submittedGuess = nameOverride ?? guess
     if (!characterNames.includes(submittedGuess)) {
-      setFeedback('Not found. Try again.')
+      setNotFound(true)
       return
     }
-
+    setNotFound(false)
     const result = compareCharacters(submittedGuess, answer, characters)
     setGuessResults(prev => [result, ...prev])
     setGuessHistory(prev => [...prev, submittedGuess])
@@ -149,6 +150,7 @@ function ClassicPage() {
   //Set guess using input field's value
   function handleChange(e) {
     setGuess(e.target.value)
+    setNotFound(false)
   }
 
   return (
@@ -195,6 +197,11 @@ function ClassicPage() {
           <div className="flex flex-col gap-2">
             {/*Display the input field and the auto-complete suggestions once a user has inputted text */}
             <InputField guess={guess} handleChange={handleChange} />
+            {notFound && (
+              <div className="w-full bg-red-900/80 border border-red-700 px-3 py-2 text-white text-sm text-center">
+                No character found.
+              </div>
+            )}
             {guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && (
               <Suggestions
                 suggestions={suggestions}

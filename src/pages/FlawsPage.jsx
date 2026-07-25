@@ -90,6 +90,7 @@ function FlawsPage() {
   //State variables for the game logic
   
   const [guess, setGuess] = useState('')
+  const [notFound, setNotFound] = useState(false) 
 
   //Add local storage to guess history, total guesses, feedback message, and game over state so user can swap between pages without losing progress.
 
@@ -153,9 +154,10 @@ function FlawsPage() {
   function checkGuess(nameOverride) {
     const submittedGuess = nameOverride ?? guess
     if (!flawCharacterList.includes(submittedGuess)) {
-      setFeedback('Not found. Try again.')
+      setNotFound(true)
       return
     }
+    setNotFound(false)
     const newTotal = guessCount + 1
     setGuessCount(newTotal)
     setGuessHistory([...guessHistory, submittedGuess ])
@@ -234,7 +236,11 @@ function FlawsPage() {
             {/*Input field for the user to type their guess, with styling for focus and placeholder text */}
               {gameOver == false && 
               <InputField guess={guess} handleChange={handleChange} />}
-    
+              {notFound && (
+                <div className="w-full bg-red-900/80 border border-red-700 px-3 py-2 text-white text-sm text-center">
+                  No character found.
+                </div>
+              )}
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
             {
               guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && 
