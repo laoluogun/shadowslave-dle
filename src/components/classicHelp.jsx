@@ -1,4 +1,4 @@
-function classicHelp() {
+function ClassicHelp() {
     return (
     <div className="flex flex-col gap-1">
             <h1 className="underline font-semibold">Shadow Slave-Dle Classic Guide</h1>
@@ -20,4 +20,4 @@ function classicHelp() {
      </div>
 )}
 
-export default classicHelp
+export default ClassicHelp
