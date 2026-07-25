@@ -40,7 +40,10 @@ function getDailyIndex(arrayLength) {
 }
 
 function QuotePage() {
-
+    //Set title
+  useEffect(() => {
+    document.title = 'Shadow Slave Dle | Quote'
+  }, [])
     //Reset local storage every day when a new character is selected
    const today = new Date().toISOString().slice(0, 10)
    const savedDate = localStorage.getItem('quote-date')

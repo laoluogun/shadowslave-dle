@@ -1,4 +1,5 @@
 import { useNavigate } from 'react-router-dom'
+import {useEffect} from 'react'
 import quote from '../assets/images/quote.png'
 import questionSign from  '../assets/images/question-sign.png'
 import brokenPlate from '../assets/images/broken-plate.png'
@@ -34,6 +35,10 @@ const modes = [
 
 function HomePage() {
   const navigate = useNavigate()
+  //Set title
+  useEffect(() => {
+    document.title = 'Shadow Slave Dle | Home'
+  }, [])
 
   return (
     <div className="min-h-screen flex flex-col items-center justify-center p-6 gap-8">

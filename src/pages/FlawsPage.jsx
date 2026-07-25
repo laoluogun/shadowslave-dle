@@ -41,6 +41,10 @@ function getDailyIndex(arrayLength) {
 }
 
 function FlawsPage() {
+  //Set title
+  useEffect(() => {
+    document.title = 'Shadow Slave Dle | Flaws'
+  }, [])
 
     //Reset local storage every day when a new character is selected
    const today = new Date().toISOString().slice(0, 10)

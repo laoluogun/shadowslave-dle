@@ -31,6 +31,11 @@ function getDailyIndex(arrayLength) {
 }
 
 function ClassicPage() {
+  //Set title
+  useEffect(() => {
+  document.title = 'Shadow Slave Dle | Classic'
+}, [])
+
   //Reset `local` storage every day when a new character is selected
   const today = new Date().toISOString().slice(0, 10)
   const savedDate = localStorage.getItem('classic-date')
