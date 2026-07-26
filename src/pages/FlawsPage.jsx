@@ -46,7 +46,6 @@ function FlawsPage() {
 
     localStorage.removeItem('flaw-guessCount')
     localStorage.removeItem('flaw-guessHistory')
-    localStorage.removeItem('flaw-feedback')
     localStorage.removeItem('flaw-gameOver')
   }
   localStorage.setItem('flaw-date', today)  
@@ -82,7 +81,7 @@ function FlawsPage() {
   const [guess, setGuess] = useState('')
   const [notFound, setNotFound] = useState(false) 
 
-  //Add local storage to guess history, total guesses, feedback message, and game over state so user can swap between pages without losing progress.
+  //Add local storage to guess history, total guesses, and game over state so user can swap between pages without losing progress.
 
   const [guessHistory, setGuessHistory] = useState(() => {
     const saved = localStorage.getItem('flaw-guessHistory')
@@ -98,10 +97,6 @@ function FlawsPage() {
     return localStorage.getItem('flaw-gameOver') === 'true'
   })
 
-  const [feedback, setFeedback] = useState(() => {
-    return localStorage.getItem('flaw-feedback') || ''
-  })
-
   //Sync effects
   useEffect(() => {
     localStorage.setItem('flaw-guessHistory', JSON.stringify(guessHistory))
@@ -114,10 +109,6 @@ function FlawsPage() {
   useEffect(() => {
     localStorage.setItem('flaw-gameOver', gameOver)
   }, [gameOver])
-
-    useEffect(() => {
-    localStorage.setItem('flaw-feedback', feedback)
-  }, [feedback])
 
 
   // State variables to control the visibility of recipient and chapter clues
@@ -153,14 +144,11 @@ function FlawsPage() {
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === character){
       recordWin(newTotal)
-      setFeedback('Correct! Total Guesses: ' + newTotal)
       setGameOver(true)
       setShowVictoryModal(true)
     }
     else {
-      setFeedback('Try Again! Current Guesses: ' + newTotal)
       setGuess('')
-
     }
   }
 
@@ -203,7 +191,7 @@ function FlawsPage() {
       </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
-      <div className="w-full max-w-xl min-w-base sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl min-w-md sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
               <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
               {/*Display the flaw */}

@@ -3,6 +3,7 @@ import {useEffect} from 'react'
 import quote from '../assets/images/quote.png'
 import questionSign from  '../assets/images/question-sign.png'
 import brokenPlate from '../assets/images/broken-plate.png'
+import signature from '../assets/images/signature.png'
 import AboutModal from '../components/AboutModal'
 
 const modes = [
@@ -20,6 +21,15 @@ const modes = [
     description: 'Guess the daily character from a quote',
     icon: quote,
     path: '/quote',
+    available: true,
+  },
+
+  {
+    id: 'trueName',
+    title: 'True Name',
+    description: 'Guess the daily character from their true name',
+    icon: signature,
+    path: '/trueName',
     available: true,
   },
 

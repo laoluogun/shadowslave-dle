@@ -15,6 +15,7 @@ import StatsDisplay from '../components/StatsDisplay'
 import ModeSwitcher from '../components/ModeSwitcher'
 import { classicSchedule } from '../data/classicSchedule'
 
+
 function ClassicPage() {
   //Set title
   useEffect(() => {
@@ -37,7 +38,6 @@ function ClassicPage() {
 
     localStorage.removeItem('classic-guessResults')
     localStorage.removeItem('classic-guessHistory')
-    localStorage.removeItem('classic-feedback')
     localStorage.removeItem('classic-gameOver')
   }
   
@@ -68,7 +68,7 @@ function ClassicPage() {
   const [guess, setGuess] = useState('')
   const [notFound, setNotFound] = useState(false)
 
-  //Add local storage to guess results, guess history, feedback message, and game over state so user can swap between pages.
+  //Add local storage to guess results, guess history, and game over state so user can swap between pages.
 
   const [guessResults, setGuessResults] = useState(() => {
     const saved = localStorage.getItem('classic-guessResults')
@@ -78,10 +78,6 @@ function ClassicPage() {
   const [guessHistory, setGuessHistory] = useState(() => {
     const saved = localStorage.getItem('classic-guessHistory')
     return saved ? JSON.parse(saved) : []
-  })
-
-  const [feedback, setFeedback] = useState(() => {
-    return localStorage.getItem('classic-feedback') || ''
   })
 
   const [gameOver, setGameOver] = useState(() => {
@@ -96,10 +92,6 @@ function ClassicPage() {
   useEffect(() => {
     localStorage.setItem('classic-guessHistory', JSON.stringify(guessHistory))
   }, [guessHistory])
-
-  useEffect(() => {
-    localStorage.setItem('classic-feedback', feedback)
-  }, [feedback])
 
   useEffect(() => {
     localStorage.setItem('classic-gameOver', gameOver)
@@ -134,12 +126,9 @@ function ClassicPage() {
 
     if (submittedGuess === answer) {
       recordWin(guessHistory.length + 1)
-      setFeedback(`Correct! You found ${answer} in ${guessHistory.length + 1} guess${guessHistory.length !== 0 ? 'es' : ''}!`)
       setGameOver(true)
       setShowVictoryModal(true)
-    } else {
-      setFeedback('Try again!')
-    }
+    } 
   }
 
   //Set guess using input field's value

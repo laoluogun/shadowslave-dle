@@ -44,7 +44,6 @@ function QuotePage() {
 
     localStorage.removeItem('quote-guessCount')
     localStorage.removeItem('quote-guessHistory')
-    localStorage.removeItem('quote-feedback')
     localStorage.removeItem('quote-gameOver')
   }
   localStorage.setItem('quote-date', today)  
@@ -85,7 +84,7 @@ function QuotePage() {
   const [guess, setGuess] = useState('')
   const [notFound, setNotFound] = useState(false)
 
-  //Add local storage to guess history, total guesses, feedback message, and game over state so user can swap between pages without losing progress.
+  //Add local storage to guess history, total guesses, and game over state so user can swap between pages without losing progress.
 
   const [guessHistory, setGuessHistory] = useState(() => {
     const saved = localStorage.getItem('quote-guessHistory')
@@ -100,10 +99,6 @@ function QuotePage() {
     return localStorage.getItem('quote-gameOver') === 'true'
   })
 
-    const [feedback, setFeedback] = useState(() => {
-    return localStorage.getItem('quote-feedback') || ''
-  })
-
   //Sync effects
   useEffect(() => {
     localStorage.setItem('quote-guessHistory', JSON.stringify(guessHistory))
@@ -112,10 +107,6 @@ function QuotePage() {
   useEffect(() => {
   localStorage.setItem('quote-guessCount', JSON.stringify(guessCount))
   }, [guessCount])
-
-  useEffect(() => {
-    localStorage.setItem('quote-feedback', feedback)
-  }, [feedback])
 
   useEffect(() => {
     localStorage.setItem('quote-gameOver', gameOver)
@@ -156,14 +147,11 @@ function QuotePage() {
     setGuessHistory([...guessHistory, submittedGuess ])
     if (submittedGuess === speaker){
       recordWin(newTotal)
-      setFeedback('Correct! Total Guesses: ' + newTotal)
       setGameOver(true)
       setShowVictoryModal(true)
     }
     else {
-      setFeedback('Try Again! Current Guesses: ' + newTotal)
       setGuess('')
-
     }
   }
 
@@ -207,7 +195,7 @@ function QuotePage() {
       </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="flex items-center justify-center p-4">
-      <div className="w-full max-w-xl min-w-base sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl min-w-md sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
               <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
               {/*Display the quote */}
