@@ -88,12 +88,6 @@ export const flaws = [
     },
 
     {
-        id: 15, 
-        character: "Revel",
-        flaw: "You cannot step into sunlight.", 
-    },
-
-    {
         id: 16, 
         character: "Samara",
         flaw: "You have a slow rate of soul essence regeneration.", 
