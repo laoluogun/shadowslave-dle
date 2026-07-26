@@ -136,7 +136,7 @@ export const characters = {
         image: prefix + 'tyris.png',
         gender: 'Female', 
         race: 'Human',
-        affiliations: ['White Feather Clan', 'Valor Clan'],
+        affiliations: ['White Feather Clan'],
         currentRank: "Transcendent",
         hasTrueName: true,
         debutVolume: "Volume 3: Prince of Nothing"
@@ -367,7 +367,7 @@ export const characters = {
         gender: 'Male',
         race: 'Human',
         currentRank:  'Dormant',
-        affiliations: 'Han Li Clan',
+        affiliations: ['Han Li Clan'],
         hasTrueName: 'false',
         debutVolume: "Volume 1: Child of Shadows"
     },
@@ -377,9 +377,269 @@ export const characters = {
         gender: 'Male',
         race: 'Human',
         currentRank:  'Transcendent',
-        affiliations: 'Valor Clan',
+        affiliations: ['Valor Clan'],
         hasTrueName: 'true',
-        debutVolume: "Volume 9: Throne off War"
-    }
+        debutVolume: "Volume 9: Throne of War"
+    }, 
+    
+    Ananke: {
+        image: prefix + 'ananke.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: ['Supreme'],
+        affilitations: 'Weave',
+        hasTrueName: false,
+        debutVolume: "Volume 7: Tomb of Ariel"
+    }, 
+
+    Aether: {
+        image: prefix + 'aether.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['House of Night'],
+        hasTrueName: false,
+        debutVolume: "Volume 9: Throne of War"
+    },
+
+    Aiko: {
+        image: prefix + 'aiko.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Awakened',
+        affiliations: ['Shadow Clan, Bright Castle'],
+        hasTrueName: false,
+        debutVolume: "Volume 2: Demon of Change"
+    },
+
+    Ariel: {
+        image: prefix + 'ariel.png',
+        gender: 'Male',
+        race: 'Daemon',
+        currentRank: 'Divine',
+        affiliations: ['Tomb of Ariel'],
+        hasTrueName: false,
+        debutVolume: "Volume 5: Dread Night"
+    },
+
+    Azarax: {
+        image: prefix + 'azarax.png',
+        gender: 'Male',
+        race: 'Unknown',
+        currentRank: 'Supreme',
+        affiliations: ['None'],
+        hasTrueName: false,
+        debutVolume: "Volume 3: Prince of Nothing",
+    },
+
+    Beth: {
+        image: prefix + 'beth.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Dormant',
+        affiliations: ['None'],
+        hasTrueName: false,
+        debutVolume: "Volume 5: Dread Night",
+    },
+
+    Cor: {
+        image: prefix + 'cor.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Government'],
+        hasTrueName: true,
+        debutVolume: "Volume 6: All The Devils Are Here"
+    },
+
+    "Dire Fang": {
+        image: prefix + 'direfang.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Valor Clan'],
+        hasTrueName: true,
+        debutVolume: "Volume 6: All The Devils Are Here"
+    },
+
+    Elyas: {
+        image: prefix + 'elyas.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Awakened',
+        affiliations: ['Ivory City, Red Colosseum'],
+        hasTrueName: false,
+        debutVolume: "Volume 4: Chain Breaker",
+    },
+
+    Eurys: {
+        image: prefix + 'eurys.png',
+        gender: 'Male',
+        race: 'Unknown',
+        currentRank: 'Supreme',
+        affiliations: ['The Nine'],
+        hasTrueName: false,
+        debutVolume:  "Volume 3: Prince of Nothing"
+    },
+
+    Gilead: {
+        image: prefix + 'gilead.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Valor Clan'],
+        hasTrueName: true,
+        debutVolume:  "Volume 6: All The Devils Are Here"
+    },
+
+    Eurys: {
+        image: prefix + 'harus.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Dormant',
+        affiliations: ['Bright Castle'],
+        hasTrueName: false,
+        debutVolume:  "Volume 2: Demon of Change"
+    },
+
+    Julius: {
+        image: prefix + 'julius.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Awakened',
+        affiliations: ['Awakened Academy'],
+        hasTrueName: false,
+        debutVolume:  "Volume 1: Child of Shadows"
+    },
+
+    "Lonesome Howl": {
+        image: prefix + 'lonesome-howl.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Song Clan'],
+        hasTrueName: true,
+        debutVolume:  "Volume 9: Throne of War"
+    },
+
+    Madoc: {
+        image: prefix + 'madoc.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Valor Clan'],
+        hasTrueName: true,
+        debutVolume:  "Volume 5: Dread Night"
+    },
+
+    Moonveil: {
+        image: prefix + 'moonveil.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Song Clan'],
+        hasTrueName: true,
+        debutVolume:  "Volume 9: Throne of War"
+    },
+
+    Naeve: {
+        image: prefix + 'naeve.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Ascended',
+        affiliations: ['House of Night'],
+        hasTrueName: false,
+        debutVolume:  "Volume 5: Dread Night"
+    },
+
+    Nightwalker: {
+        image: prefix + 'nightwalker.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['House of Night'],
+        hasTrueName: true,
+        debutVolume:  "Volume 3: Prince of Nothing"
+    },
+
+    Obel: {
+        image: prefix + 'julius.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Dormant',
+        affiliations: ['None'],
+        hasTrueName: false,
+        debutVolume:  "Volume 3: Prince of Nothing"
+    },
+
+    Roan: {
+        image: prefix + 'roan.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['White Feather Clan'],
+        hasTrueName: false,
+        debutVolume:  "Volume 3: Prince of Nothing"
+    },
+
+    Saint: {
+        image: prefix + 'saint.png',
+        gender: 'Female',
+        race: 'Shadow',
+        currentRank: 'Supreme',
+        affiliations: ['Shadow Clan'],
+        hasTrueName: false,
+        debutVolume:  "Volume 2: Demon of Change"
+    },
+
+    Sid: {
+        image: prefix + 'sid.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Ascended',
+        affiliations: ['Fire Keepers'],
+        hasTrueName: false,
+        debutVolume:  "Volume 2: Demon of Change"
+    },
+
+    Stev: {
+        image: prefix + 'roan.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['White Feather Clan'],
+        hasTrueName: false,
+        debutVolume:  "Volume 3: Prince of Nothing"
+    },
+
+    Telle: {
+        image: prefix + 'telle.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Ascended',
+        affiliations: ['White Feather Clan'],
+        hasTrueName: false,
+        debutVolume:  "Volume 8: Lord of Shadows"
+    },
+
+    "Wind Flower": {
+        image: prefix + 'windflower.png',
+        gender: 'Female',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['Twilight'],
+        hasTrueName: false,
+        debutVolume:  "Volume 7: Tomb of Ariel"
+    },
+
+    "Wind Flower": {
+        image: prefix + 'daeron.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Supreme',
+        affiliations: ['Twilight'],
+        hasTrueName: false,
+        debutVolume:  "Volume 7: Tomb of Ariel"
+    },
 
 } 

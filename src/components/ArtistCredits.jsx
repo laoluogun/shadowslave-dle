@@ -40,7 +40,32 @@ const artists = [
   { character: 'Hope', artist: 'Varyl', url: 'https://x.com/VaryielJadestar/status/1787003979697885301/photo/1'},
   { character: 'Mountain King Larva', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1922517620789518721/photo/1'},
   { character: 'Caster', artist: 'appapie_', url: 'https://www.tiktok.com/@appapie_/photo/7578426621766438177'},
-  { character: 'Jest', artist: 'Unlikely_Editor1602', url: 'https://www.reddit.com/r/ShadowSlave/comments/1m7gpux/cassie_vs_jest/'}
+  { character: 'Jest', artist: 'Unlikely_Editor1602', url: 'https://www.reddit.com/r/ShadowSlave/comments/1m7gpux/cassie_vs_jest/'},
+  { character: 'Naeve', artist: 'mystichromatic', url: 'https://x.com/MystiChromatic/status/2021722862550184351?s=20'},
+  { character: 'Telle', artist: 'Logicsterrr', url: 'https://x.com/Logicsterrr/status/1917967933076029605?s=20'}, 
+  { character: 'Obel and Julius', artist: 'Sayg1500', url: 'https://x.com/sayg15000/status/2012687210617639356?s=20'},
+  { character: 'Aiko', artist: 'L3XARTS', url: 'https://www.tiktok.com/@l3xarts17/photo/7567677999059930376'},
+  { character: 'Azarax', artist: 'whitebeard5793', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1525640441297637577'},
+  { character: 'Sid', artist: 'Unknown', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1332777088641536062'},
+  { character: 'Harus', artist: 'L3XARTS', url: 'https://www.tiktok.com/@l3xarts17/photo/7482319605738917127'},
+  { character: 'Windflower', artist: 'TwilightDraws04', url: 'https://x.com/TwilightDraws04/status/1991396890852880645/photo/1'},
+  { character: 'Stev', artist: 'som_0777', url:'https://discordapp.com/channels/982182985862377522/982239318309474344/1521128806268670225'},
+  { character: 'Madoc', artist: 'drew1975', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1342539692461260811'},
+  { character: 'Gilead', artist: 'genuineelf80093', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1529012984922247318'},
+  { character: 'Lonesome Howl', artist:'sdrav', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1295130542496551003'},
+  { character: 'Moonveil', artist: 'TwilightDraws04', url: 'https://x.com/TwilightDraws04/status/2040875905275310459?s=20'},
+  { character: 'Dire Fang', artist: 'Sh1fted_1', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1457491663868919929'},
+  { character: 'Nightwalker', artist: 'whitebeard5793', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1443013919403802866'},
+  { character: 'Aether', artist: 'whitebeard5793', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1395174870077280508'},
+  { character: 'Roan', artist: 'Bigbistoi', url: 'https://x.com/Bigbistoi/status/2068363765725450643?s=20'},
+  { character: 'Daeron', artist: 'Nowen', url: 'https://www.instagram.com/p/DXFHWdsApvq/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA=='},
+  { character: 'Ananke', artist: 'mimi_06682', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1496772084758741142'},
+  { character: 'Elyas', artist:  'L3XARTS', url: 'https://www.tiktok.com/@l3xarts17/photo/7501625875662687495'},
+  { character: 'Ariel', artist: 'adamthe3rd', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1323600680598114386'},
+  { character: 'Beth', artist: 'TwilightDraws04', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1370196281716244570'},
+  { character: 'Cor', artist: 'mystichromatic', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1442875315633524816'},
+  { character: 'Saint', artist: 'artistpassingby', url: 'https://www.instagram.com/p/Da0HLHoE59f/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA'},
+  { character: 'Eurys', artist: 'dqreaper', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1490828568043847893'}
 ]
 
 function ArtistCredits() {
@@ -64,7 +89,7 @@ function ArtistCredits() {
               <h2 className="text-white font-bold tracking-widest uppercase text-sm">Art Credits</h2>
               <button onClick={() => setOpen(false)} className="text-zinc-400 hover:text-white transition cursor-pointer">✕</button>
             </div>
-            <p className="text-zinc-500 text-xs">All character art belongs to their respective artists. Please support them and their amazing work! Some art was found on pinterest so if I cannot find the direct source the pinterest link will be connected. </p>
+            <p className="text-zinc-500 text-xs">All character art belongs to their respective artists. Please support them and their amazing work! Any art with a discord link is from the Shadow Slave server. Some art was found on pinterest so if I cannot find the direct source the pinterest link will be connected. </p>
             <div className="overflow-y-auto flex flex-col gap-2 pr-6">
               {artists.map(({ character, artist, url }) => (
                 <div key={character} className="flex justify-between items-center border-b border-zinc-800 pb-2">
