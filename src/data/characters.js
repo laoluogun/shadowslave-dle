@@ -632,7 +632,7 @@ export const characters = {
         debutVolume:  "Volume 7: Tomb of Ariel"
     },
 
-    "Wind Flower": {
+    "Daeron": {
         image: prefix + 'daeron.png',
         gender: 'Male',
         race: 'Human',
