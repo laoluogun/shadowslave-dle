@@ -3,6 +3,7 @@ const prefix = 'portraits/'
 export const characters = {
 
     Sunless: {
+        id: 1,
         image: prefix + 'sunless.png',
         gender: 'Male',
         race: 'Shadow',
@@ -13,6 +14,7 @@ export const characters = {
     },
 
     Nephis: {
+        id: 2,
         image: prefix + 'nephis.png',
         gender: 'Female', 
         race: 'Human',
@@ -23,6 +25,7 @@ export const characters = {
     },
 
     Cassie: {
+        id: 3,
         image: prefix + 'cassie.png',
         gender: 'Female',
         race: 'Human',
@@ -33,6 +36,7 @@ export const characters = {
     },
 
     Effie: {
+        id: 4,
         image: prefix + 'effie.png',
         gender: 'Female', 
         race: 'Human',
@@ -43,6 +47,7 @@ export const characters = {
     },
 
     Kai: {
+        id: 5,
         image: prefix + 'kai.png',
         gender: 'Male',
          race: 'Human',
@@ -53,6 +58,7 @@ export const characters = {
     },
 
     Jet: {
+        id: 6,
         image: prefix + 'jet.png',
         gender: 'Female',
         race: 'Human',
@@ -63,6 +69,7 @@ export const characters = {
     },
 
     Rain: {
+        id: 7,
         image: prefix + 'rain.png',
         gender: 'Female',
         race: 'Human',
@@ -73,6 +80,7 @@ export const characters = {
     },
 
     Anvil: {
+        id: 8,
         image: prefix + 'anvil.png',
         gender: 'Male',
         race: 'Human',
@@ -83,6 +91,7 @@ export const characters = {
     },
 
     "Ki Song": {
+        id: 9,
         image: prefix + 'kisong.png',
         gender: 'Female', 
         race: 'Human',
@@ -93,6 +102,7 @@ export const characters = {
     },
 
     Asterion: {
+        id: 10,
         image: prefix + 'asterion.png',
         gender: 'Male',
         race: 'Human',
@@ -103,6 +113,7 @@ export const characters = {
     },
 
     Gunlaug: {
+        id: 11,
         image: prefix + 'gunlaug.png',
         gender: 'Male', 
         race: 'Human',
@@ -113,6 +124,7 @@ export const characters = {
     },
 
     Morgan: {
+        id: 12,
         image: prefix + 'morgan.png',
         gender: 'Female', 
         race: 'Human',
@@ -123,6 +135,7 @@ export const characters = {
     },
 
     Seishan: {
+        id: 13,
         image: prefix + 'seishan.png',
         gender: 'Female', 
         race: 'Human',
@@ -133,6 +146,7 @@ export const characters = {
     },
 
     Tyris: {
+        id: 14,
         image: prefix + 'tyris.png',
         gender: 'Female', 
         race: 'Human',
@@ -143,6 +157,7 @@ export const characters = {
     },
 
     Mordret: {
+        id: 15,
         image: prefix + 'mordret.png',
         gender: 'Male', 
         race: 'Other',
@@ -153,6 +168,7 @@ export const characters = {
     },
 
     Orphne: {
+        id: 16,
         image: prefix + 'orphne.png',
         gender: 'Female',
         race: 'Human',
@@ -163,6 +179,7 @@ export const characters = {
     },
 
     Slayer: {
+        id: 17,
         image: prefix + 'slayer.png',
         gender: 'Female', 
         race: 'Human', 
@@ -173,6 +190,7 @@ export const characters = {
     },
 
     Solvane: {
+        id: 18,
         image: prefix + 'solvane.png',
         gender: 'Female', 
         race: 'Human',
@@ -183,6 +201,7 @@ export const characters = {
     },
 
     Noctis: {
+        id: 19,
         image: prefix + 'noctis.png',
         gender: 'Male', 
         race: 'Unknown',
@@ -193,6 +212,7 @@ export const characters = {
     },
 
     Revel: {
+        id: 20,
         image: prefix + 'revel.png',
         gender: 'Female', 
         race: 'Human',
@@ -203,6 +223,7 @@ export const characters = {
     },
 
     Auro: {
+        id: 21,
         image: prefix + 'auro.png',
         gender: 'Male',
         race: 'Human',
@@ -213,6 +234,7 @@ export const characters = {
     },
 
     Beastmaster: {
+        id: 22,
         image: prefix + 'beastmaster.png',
         gender: 'Female', 
         race: 'Human',
@@ -223,6 +245,7 @@ export const characters = {
     },
 
     Tamar: {
+        id: 23,
         image: prefix + 'tamar.png',
         gender: 'Female', 
         race: 'Human',
@@ -233,6 +256,7 @@ export const characters = {
     },
 
     Samara: {
+        id: 24,
         image: prefix + 'samara.png',
         gender: 'Female', 
         race: 'Human',
@@ -243,6 +267,7 @@ export const characters = {
     },
 
     "Broken Sword": {
+        id: 25,
         image: prefix + 'brokensword.png',
         gender: 'Male', 
         race: 'Human',
@@ -253,6 +278,7 @@ export const characters = {
     },
 
     "Smile of Heaven": {
+        id: 26,
         image: prefix + 'smileofheaven.png', 
         gender: 'Female', 
         race: 'Human',
@@ -263,6 +289,7 @@ export const characters = {
     },
 
     "Soul Stealer": {
+        id: 27,
         image: prefix + 'soul-stealer.png',
         gender: 'None',
         race: 'True Defiled',
@@ -273,6 +300,7 @@ export const characters = {
     }, 
 
     "Dread Lord": {
+        id: 28,
         image: prefix + 'dread-lord.png',
         gender: 'None',
         race: 'True Defiled', 
@@ -283,6 +311,7 @@ export const characters = {
     },
 
     "Undying Slaughter": {
+        id: 29,
         image: prefix + 'undying-slaughter.png',
         gender: 'None',
         race: 'True Defiled',
@@ -293,6 +322,7 @@ export const characters = {
     },
 
     "Devouring Beast": {
+        id: 30,
         image: prefix + 'devouring-beast.png',
         gender: 'None',
         race: 'True Defiled',
@@ -303,6 +333,7 @@ export const characters = {
     },
 
     "Torment": {
+        id: 31,
         image: prefix + 'torment.png',
         gender: 'None',
         race: 'True Defiled',
@@ -313,6 +344,7 @@ export const characters = {
     },
 
     "Mad Prince": {
+        id: 32,
         image: prefix + 'mad-prince.png',
         gender: 'None',
         race: 'True Defiled',
@@ -323,6 +355,7 @@ export const characters = {
     },
 
     "Weaver": {
+        id: 33,
         image: prefix + 'weaver.png',
         gender: 'Unknown',
         race: 'Daemon',
@@ -333,6 +366,7 @@ export const characters = {
     },
 
      "Hope": {
+        id: 34,
         image: prefix + 'hope.png',
         gender: 'Female',
         race: 'Daemon',
@@ -343,6 +377,7 @@ export const characters = {
     },
 
      "Nether": {
+        id: 35,
         image: prefix + 'nether.png',
         gender: 'Male',
         race: 'Daemon',
@@ -353,6 +388,7 @@ export const characters = {
     },
 
     "Mountain King Larva": {
+        id: 36,
         image: prefix + 'mountain-king-larva.png',
         gender: 'None',
         race: 'Nightmare Creature',
@@ -363,6 +399,7 @@ export const characters = {
     }, 
 
     Caster: {
+        id: 37,
         image: prefix + 'caster.png',
         gender: 'Male',
         race: 'Human',
@@ -373,6 +410,7 @@ export const characters = {
     },
 
     Jest: {
+        id: 38,
         image: prefix + 'jest.png',
         gender: 'Male',
         race: 'Human',
@@ -383,16 +421,18 @@ export const characters = {
     }, 
     
     Ananke: {
+        id: 39,
         image: prefix + 'ananke.png',
         gender: 'Female',
         race: 'Human',
-        currentRank: ['Supreme'],
-        affilitations: 'Weave',
+        currentRank: 'Supreme',
+        affiliations: ['Weave'],
         hasTrueName: false,
         debutVolume: "Volume 7: Tomb of Ariel"
     }, 
 
     Aether: {
+        id: 40,
         image: prefix + 'aether.png',
         gender: 'Male',
         race: 'Human',
@@ -403,6 +443,7 @@ export const characters = {
     },
 
     Aiko: {
+        id: 41,
         image: prefix + 'aiko.png',
         gender: 'Female',
         race: 'Human',
@@ -413,6 +454,7 @@ export const characters = {
     },
 
     Ariel: {
+        id: 42,
         image: prefix + 'ariel.png',
         gender: 'Male',
         race: 'Daemon',
@@ -423,6 +465,7 @@ export const characters = {
     },
 
     Azarax: {
+        id: 43,
         image: prefix + 'azarax.png',
         gender: 'Male',
         race: 'Unknown',
@@ -433,6 +476,7 @@ export const characters = {
     },
 
     Beth: {
+        id: 44,
         image: prefix + 'beth.png',
         gender: 'Female',
         race: 'Human',
@@ -443,6 +487,7 @@ export const characters = {
     },
 
     Cor: {
+        id: 45,
         image: prefix + 'cor.png',
         gender: 'Male',
         race: 'Human',
@@ -453,6 +498,7 @@ export const characters = {
     },
 
     "Dire Fang": {
+        id: 46,
         image: prefix + 'direfang.png',
         gender: 'Male',
         race: 'Human',
@@ -463,6 +509,7 @@ export const characters = {
     },
 
     Elyas: {
+        id: 47,
         image: prefix + 'elyas.png',
         gender: 'Male',
         race: 'Human',
@@ -473,6 +520,7 @@ export const characters = {
     },
 
     Eurys: {
+        id: 48,
         image: prefix + 'eurys.png',
         gender: 'Male',
         race: 'Unknown',
@@ -483,6 +531,7 @@ export const characters = {
     },
 
     Gilead: {
+        id: 49,
         image: prefix + 'gilead.png',
         gender: 'Male',
         race: 'Human',
@@ -492,7 +541,8 @@ export const characters = {
         debutVolume:  "Volume 6: All The Devils Are Here"
     },
 
-    Eurys: {
+    Harus: {
+        id: 50,
         image: prefix + 'harus.png',
         gender: 'Male',
         race: 'Human',
@@ -503,6 +553,7 @@ export const characters = {
     },
 
     Julius: {
+        id: 51,
         image: prefix + 'julius.png',
         gender: 'Male',
         race: 'Human',
@@ -513,6 +564,7 @@ export const characters = {
     },
 
     "Lonesome Howl": {
+        id: 52,
         image: prefix + 'lonesome-howl.png',
         gender: 'Female',
         race: 'Human',
@@ -523,6 +575,7 @@ export const characters = {
     },
 
     Madoc: {
+        id: 53,
         image: prefix + 'madoc.png',
         gender: 'Male',
         race: 'Human',
@@ -533,6 +586,7 @@ export const characters = {
     },
 
     Moonveil: {
+        id: 54,
         image: prefix + 'moonveil.png',
         gender: 'Female',
         race: 'Human',
@@ -543,6 +597,7 @@ export const characters = {
     },
 
     Naeve: {
+        id: 55,
         image: prefix + 'naeve.png',
         gender: 'Male',
         race: 'Human',
@@ -553,6 +608,7 @@ export const characters = {
     },
 
     Nightwalker: {
+        id: 56,
         image: prefix + 'nightwalker.png',
         gender: 'Male',
         race: 'Human',
@@ -563,7 +619,8 @@ export const characters = {
     },
 
     Obel: {
-        image: prefix + 'julius.png',
+        id: 57,
+        image: prefix + 'obel.png',
         gender: 'Male',
         race: 'Human',
         currentRank: 'Dormant',
@@ -573,6 +630,7 @@ export const characters = {
     },
 
     Roan: {
+        id: 58,
         image: prefix + 'roan.png',
         gender: 'Male',
         race: 'Human',
@@ -583,6 +641,7 @@ export const characters = {
     },
 
     Saint: {
+        id: 59,
         image: prefix + 'saint.png',
         gender: 'Female',
         race: 'Shadow',
@@ -593,6 +652,7 @@ export const characters = {
     },
 
     Sid: {
+        id: 60,
         image: prefix + 'sid.png',
         gender: 'Female',
         race: 'Human',
@@ -603,7 +663,8 @@ export const characters = {
     },
 
     Stev: {
-        image: prefix + 'roan.png',
+        id: 61,
+        image: prefix + 'stev.png',
         gender: 'Male',
         race: 'Human',
         currentRank: 'Transcendent',
@@ -613,6 +674,7 @@ export const characters = {
     },
 
     Telle: {
+        id: 62,
         image: prefix + 'telle.png',
         gender: 'Female',
         race: 'Human',
@@ -623,6 +685,7 @@ export const characters = {
     },
 
     "Wind Flower": {
+        id: 63,
         image: prefix + 'windflower.png',
         gender: 'Female',
         race: 'Human',
@@ -633,6 +696,7 @@ export const characters = {
     },
 
     Daeron: {
+        id: 64,
         image: prefix + 'daeron.png',
         gender: 'Male',
         race: 'Human',
