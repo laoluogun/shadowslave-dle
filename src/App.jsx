@@ -6,6 +6,7 @@ import HomePage from './pages/HomePage'
 import QuotePage from './pages/QuotePage'
 import ClassicPage from './pages/ClassicPage'
 import FlawsPage from './pages/FlawsPage'
+import TrueNamePage from './pages/TrueNamePage'
 import ArtistCredits from './components/ArtistCredits'
 import fireIcon from './assets/images/fire.png'
 import notesIcon from './assets/images/notes.png'
@@ -49,6 +50,7 @@ function App() {
       <Route path="/quote" element={<QuotePage />} />
       <Route path="/classic" element={<ClassicPage />} />
       <Route path='/flaw' element={<FlawsPage  />} />
+      <Route path='/trueName' element={<TrueNamePage  />} />
     </Routes>
     <ArtistCredits/>
     </>

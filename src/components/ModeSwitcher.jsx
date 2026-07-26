@@ -2,11 +2,13 @@ import { useNavigate, useLocation } from 'react-router-dom'
 import quote from '../assets/images/quote.png'
 import questionSign from '../assets/images/question-sign.png'
 import brokenPlate from '../assets/images/broken-plate.png'
+import signature from '../assets/images/signature.png'
 
 const modes = [
     {    label: 'classic',  path: '/classic', icon: questionSign }, 
     {    label: 'quote', path: '/quote', icon: quote },
-    {    label: 'flaw', path: '/flaw', icon: brokenPlate }
+    {    label: 'flaw', path: '/flaw', icon: brokenPlate },
+    {    label: 'trueName', path: '/trueName', icon: signature }
 ] 
 
 function ModeSwitcher() {
