@@ -18,26 +18,11 @@ import FlawHelp from '../components/FlawHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
 import ModeSwitcher from '../components/ModeSwitcher'
+import { flawSchedule } from '../data/flawSchedule'
 
 
 import signatureIcon from '../assets/images/signature.png'
 import rankIcon from '../assets/images/ranking.png'
-
-
-//Daily index logic to select a flaw based on the current date
-
-function getDailyIndex(arrayLength) {
-  const start = new Date('2026-01-01').getTime()
-  const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
-  const dayNumber = Math.floor((today - start) / 86400000)
-
-  let hash = dayNumber
-  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
-  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
-  hash = (hash >> 16) ^ hash
-
-  return Math.abs(hash) % arrayLength
-}
 
 function FlawsPage() {
   //Set title
@@ -74,8 +59,14 @@ function FlawsPage() {
 
   const navigate = useNavigate()
 
-  //Find the flaw of the day based on the daily index
-  const [currentFlaw] = useState(() => flaws[getDailyIndex(flaws.length)])
+  //Find the flaw of the day
+  const START_DATE = new Date('2026-07-25').getTime()
+  const [currentFlaw] = useState(() => {
+    const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
+    const dayNumber = Math.floor((today - START_DATE) / 86400000)
+    const todaysId = flawSchedule[dayNumber % flawSchedule.length]
+    return flaws.find(f => f.id === todaysId)
+  })
   
   //Extract the relevant information from the current flaw
   const flaw = currentFlaw.flaw

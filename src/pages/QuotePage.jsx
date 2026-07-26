@@ -18,25 +18,10 @@ import QuoteHelp from '../components/QuoteHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
 import ModeSwitcher from '../components/ModeSwitcher'
+import {quoteSchedule} from '../data/quoteSchedule'
 
 import talkIcon from '../assets/images/talk.png'
 import bookIcon from '../assets/images/book.png'
-
-
-//Daily index logic to select a quote based on the current date
-
-function getDailyIndex(arrayLength) {
-  const start = new Date('2026-01-01').getTime()
-  const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
-  const dayNumber = Math.floor((today - start) / 86400000)
-
-  let hash = dayNumber
-  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
-  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
-  hash = (hash >> 16) ^ hash
-
-  return Math.abs(hash) % arrayLength
-}
 
 function QuotePage() {
     //Set title
@@ -72,8 +57,14 @@ function QuotePage() {
   //Create navigation to home page
   const navigate = useNavigate()
 
-  //Find the quote of the day based on the daily index
-  const [currentQuote] = useState(() => quotes[getDailyIndex(quotes.length)])
+    //Find the quote of the day 
+    const START_DATE = new Date('2026-07-25').getTime()
+    const [currentQuote] = useState(() => {
+      const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
+      const dayNumber = Math.floor((today - START_DATE) / 86400000)
+      const todaysId = quoteSchedule[dayNumber % quoteSchedule.length]
+      return quotes.find(f => f.id === todaysId)
+    })
   
 
   //Extract the relevant information from the current quote

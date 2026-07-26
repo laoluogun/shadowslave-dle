@@ -13,21 +13,7 @@ import ClassicHelp from '../components/ClassicHelp'
 import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
 import ModeSwitcher from '../components/ModeSwitcher'
-
-
-//Function for choosing a new character daily
-function getDailyIndex(arrayLength) {
-  const start = new Date('2026-01-01').getTime() //Epoch
-  const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
-  const dayNumber = Math.floor((today - start) / 86400000)
-
-  let hash = dayNumber
-  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
-  hash = ((hash >> 16) ^ hash) * 0x45d9f3b
-  hash = (hash >> 16) ^ hash
-
-  return Math.abs(hash) % arrayLength
-}
+import { classicSchedule } from '../data/classicSchedule'
 
 function ClassicPage() {
   //Set title
@@ -68,7 +54,17 @@ function ClassicPage() {
 
   //State variables to control the logic of the game
 
-  const [answer] = useState(() => characterNames[getDailyIndex(characterNames.length)])
+  const START_DATE = new Date("2026-07-21").getTime()
+
+ const [answer] = useState(() => {
+  const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
+  const dayNumber = Math.floor((today - START_DATE) / 86400000)
+  const todaysId = classicSchedule[dayNumber % classicSchedule.length]
+  
+  // Find the character name whose id matches todaysId
+  return Object.entries(characters).find(([_, c]) => c.id === todaysId)?.[0]
+})
+  
   const [guess, setGuess] = useState('')
   const [notFound, setNotFound] = useState(false)
 
