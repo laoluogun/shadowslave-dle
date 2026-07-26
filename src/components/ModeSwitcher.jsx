@@ -7,8 +7,8 @@ import signature from '../assets/images/signature.png'
 const modes = [
     {    label: 'classic',  path: '/classic', icon: questionSign }, 
     {    label: 'quote', path: '/quote', icon: quote },
+    {    label: 'trueName', path: '/trueName', icon: signature },
     {    label: 'flaw', path: '/flaw', icon: brokenPlate },
-    {    label: 'trueName', path: '/trueName', icon: signature }
 ] 
 
 function ModeSwitcher() {
