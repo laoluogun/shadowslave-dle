@@ -86,7 +86,7 @@ export const characters = {
         race: 'Human',
         affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
         currentRank: "Supreme",
-        hasTrueName: false,
+        hasTrueName: true,
         debutVolume: "Volume 7: The Tomb of Ariel"
     },
 
