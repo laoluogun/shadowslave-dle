@@ -64,7 +64,7 @@ export const characters = {
         race: 'Human',
         affiliations: ['Government', 'First Irregular Company', 'Nephis\' Cohort'],
         currentRank: "Transcendent",
-        hasTrueName: true,
+        hasTrueName: false,
         debutVolume: "Volume 1: Child of Shadows"
     },
 
