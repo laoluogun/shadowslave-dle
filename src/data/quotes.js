@@ -202,6 +202,15 @@ export const quotes = [
     recipient: "Sunless",
     chapter: "Chapter 340 Honor",
     volume: "Volume 2: Demon of Change"
+  },
+
+  {
+    id: 25,
+    quote: "Make no mistake... I have no enemies. I have no rivals, either. All you are is an obstacle, at best.",
+    speaker: "Asterion",
+    recipient: "Nephis",
+    chapter: "Chapter 2757 The Three of Us",
+    volume: "Volume 11: The Song of Ariadne"
   }
 
 
