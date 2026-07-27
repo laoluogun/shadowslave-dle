@@ -249,7 +249,7 @@ export const characters = {
         image: prefix + 'tamar.png',
         gender: 'Female', 
         race: 'Human',
-        currentRank: "Ascended",
+        currentRank: "Awakened",
         affiliations: ['Shadow Clan', 'Tamar\'s Cohort'],
         hasTrueName: false,
         debutVolume: "Volume 8: Lord of Shadows"
