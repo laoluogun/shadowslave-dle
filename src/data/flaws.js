@@ -103,6 +103,12 @@ export const flaws = [
         id: 18,
         character:  "Jest",
         flaw: "You cannot use enchanted items nor possess memories."
+    },
+
+    {
+        id: 19,
+        character:  "Dorn",
+        flaw: "Your body is slowly but constantly growing."
     }
     
     

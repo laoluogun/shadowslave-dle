@@ -65,7 +65,11 @@ const artists = [
   { character: 'Beth', artist: 'TwilightDraws04', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1370196281716244570'},
   { character: 'Cor', artist: 'mystichromatic', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1442875315633524816'},
   { character: 'Saint', artist: 'artistpassingby', url: 'https://www.instagram.com/p/Da0HLHoE59f/?utm_source=ig_web_copy_link&igsh=MzRlODBiNWFlZA'},
-  { character: 'Eurys', artist: 'dqreaper', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1490828568043847893'}
+  { character: 'Eurys', artist: 'dqreaper', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1490828568043847893'},
+  { character: 'Ling', artist: 'denis322q', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1354073701779374181'},
+  { character: 'Harper', artist: 'europas.opal', url: 'https://discordapp.com/channels/982182985862377522/982239318309474344/1505351735776907375'},
+  { character: 'Dorn', artist: 'L3XARTS', url: 'https://www.instagram.com/p/DSGEwX5k-9L/'},
+  { character: 'Bloodwave', artist: 'aeolus.thewindspirit', url :'https://discordapp.com/channels/982182985862377522/982239318309474344/1371026931155341343'}
 ]
 
 function ArtistCredits() {

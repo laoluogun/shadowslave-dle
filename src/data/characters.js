@@ -706,4 +706,48 @@ export const characters = {
         debutVolume:  "Volume 7: Tomb of Ariel"
     },
 
+    Ling: {
+        id: 65, 
+        image: prefix + 'ling.png',
+        gender: 'Male',
+        race: 'Human', 
+        currentRank: 'Transcendent',
+        affiliations: ['None'],
+        hasTrueName: false,
+        debutVolume: "Volume 7: Tomb of Ariel"
+    },
+
+    Bloodwave: {
+        id: 66,
+        image: prefix + 'bloodwave.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Transcendent',
+        affiliations: ['House of Night'],
+        hasTrueName: true,
+        debutVolume: "Volume 5: Dread Night"
+    },
+
+    Dorn: {
+        id: 66,
+        image: prefix + 'dorn.png',
+        gender: 'Male',
+        race: 'Human',
+        currentRank: 'Awakened',
+        affiliations: ['First Irregular Company'],
+        hasTrueName: false,
+        debutVolume: "Volume 5: Dread Night"
+    },
+
+    Harper: {
+        id: 11,
+        image: prefix + 'harper.png',
+        gender: 'Male', 
+        race: 'Human',
+        affiliations: ['Bright Castle', 'Dark City'],
+        currentRank: "Dormant",
+        hasTrueName: false,
+        debutVolume: "Volume 2: Demon of Change"
+    },
+
 } 
