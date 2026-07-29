@@ -87,7 +87,7 @@ export const characters = {
         affiliations: ['Broken Sword\'s Cohort', 'Valor Clan'],
         currentRank: "Supreme",
         hasTrueName: true,
-        debutVolume: "Volume 7: The Tomb of Ariel"
+        debutVolume: "Volume 3: Prince of Nothing"
     },
 
     "Ki Song": {
@@ -98,7 +98,7 @@ export const characters = {
         affiliations: ['Broken Sword\'s Cohort', 'Song Clan'],
         currentRank: "Supreme",
         hasTrueName: true,
-        debutVolume: "Volume 8: The Lord of Shadows"
+        debutVolume: "Volume 3: Prince of Nothing"
     },
 
     Asterion: {
@@ -109,7 +109,7 @@ export const characters = {
         affiliations: ['Broken Sword\'s Cohort'],
         currentRank: "Supreme",
         hasTrueName: false,
-        debutVolume: "Volume 8: The Lord of Shadows"
+        debutVolume: "Volume 3: Prince of Nothing"
     },
 
     Gunlaug: {
