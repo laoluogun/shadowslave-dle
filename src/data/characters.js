@@ -416,7 +416,7 @@ export const characters = {
         race: 'Human',
         currentRank:  'Transcendent',
         affiliations: ['Valor Clan'],
-        hasTrueName: 'true',
+        hasTrueName: true,
         debutVolume: "Volume 9: Throne of War"
     }, 
     
