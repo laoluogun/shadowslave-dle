@@ -729,7 +729,7 @@ export const characters = {
     },
 
     Dorn: {
-        id: 66,
+        id: 67,
         image: prefix + 'dorn.png',
         gender: 'Male',
         race: 'Human',
@@ -740,7 +740,7 @@ export const characters = {
     },
 
     Harper: {
-        id: 11,
+        id: 68,
         image: prefix + 'harper.png',
         gender: 'Male', 
         race: 'Human',
