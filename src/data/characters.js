@@ -141,7 +141,7 @@ export const characters = {
         race: 'Human',
         affiliations: ['Song Clan'],
         currentRank: "Transcendent",
-        hasTrueName: false,
+        hasTrueName: true,
         debutVolume: "Volume 2: Demon of Change"
     },
 
