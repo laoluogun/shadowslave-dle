@@ -52,7 +52,7 @@ export const quotes = [
   },
   {
     id: 7,
-    quote: "This island is our home! It's so nice here, with the three of us together! Why do you want to leave?!,",
+    quote: "This island is our home! It's so nice here, with the three of us together! Why do you want to leave?!",
     speaker: "Cassie",
     recipient: "Sunless",
     chapter: "Chapter 90 Nightfall",
