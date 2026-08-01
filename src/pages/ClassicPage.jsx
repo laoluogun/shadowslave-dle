@@ -56,14 +56,15 @@ function ClassicPage() {
 
   const START_DATE = new Date("2026-07-21").getTime()
 
- const [answer] = useState(() => {
-  const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
-  const dayNumber = Math.floor((today - START_DATE) / 86400000)
-  const todaysId = classicSchedule[dayNumber % classicSchedule.length]
-  
-  // Find the character name whose id matches todaysId
-  return Object.entries(characters).find(([_, c]) => c.id === todaysId)?.[0]
-})
+   //Find the character of the day
+   const [todaysChar] = useState(() => {
+     const today = new Date().toISOString().slice(0, 10)
+     const todaysId = classicSchedule[today]
+
+    if (todaysId) {
+      return Object.entries(characters).find(([_, c]) => c.id === todaysId)?.[0]
+    }
+   })
   
   const [guess, setGuess] = useState('')
   const [notFound, setNotFound] = useState(false)
@@ -119,12 +120,12 @@ function ClassicPage() {
       return
     }
     setNotFound(false)
-    const result = compareCharacters(submittedGuess, answer, characters)
+    const result = compareCharacters(submittedGuess, todaysChar, characters)
     setGuessResults(prev => [result, ...prev])
     setGuessHistory(prev => [...prev, submittedGuess])
     setGuess('')
 
-    if (submittedGuess === answer) {
+    if (submittedGuess === todaysChar) {
       recordWin(guessHistory.length + 1)
       setGameOver(true)
       setShowVictoryModal(true)
@@ -176,7 +177,7 @@ function ClassicPage() {
       </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
       <div className="w-full max-w-5xl bg-black/20 backdrop-blur-3xl border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-4">
-      <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
+      <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Volume 11/Chapter 3000</p>
         {!gameOver && (
           <div className="flex flex-col gap-2">
             {/*Display the input field and the auto-complete suggestions once a user has inputted text */}
@@ -210,8 +211,8 @@ function ClassicPage() {
         {/* Conditionally display winner card once the user found the correct character if the victory modal is not displayed */}
         {gameOver && !showVictoryModal && (
           <WinnerCard
-            speaker={answer}
-            speakerImage={characters[answer]?.image}
+            speaker={todaysChar}
+            speakerImage={characters[todaysChar]?.image}
             totalGuesses={guessHistory.length}
             mode={MODE}
           />
@@ -220,8 +221,8 @@ function ClassicPage() {
       {/* Display victory modal after the user guessed the correct character */}
       {showVictoryModal && (
         <VictoryModal
-          speaker={answer}
-          speakerImage={characters[answer]?.image}
+          speaker={todaysChar}
+          speakerImage={characters[todaysChar]?.image}
           totalGuesses={guessHistory.length}
           onClose={() => setShowVictoryModal(false)}
           mode={MODE}

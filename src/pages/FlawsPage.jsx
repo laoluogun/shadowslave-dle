@@ -59,14 +59,15 @@ function FlawsPage() {
   const navigate = useNavigate()
 
   //Find the flaw of the day
-  const START_DATE = new Date('2026-07-25').getTime()
   const [currentFlaw] = useState(() => {
-    const today = new Date(new Date().toISOString().slice(0, 10)).getTime()
-    const dayNumber = Math.floor((today - START_DATE) / 86400000)
-    const todaysId = flawSchedule[dayNumber % flawSchedule.length]
-    return flaws.find(f => f.id === todaysId)
-  })
+    const today = new Date().toISOString().slice(0, 10)
+    const todaysId = flawSchedule[today]
   
+    if (todaysId) {
+      return flaws.find(f => f.id === todaysId)
+    }
+  })
+
   //Extract the relevant information from the current flaw
   const flaw = currentFlaw.flaw
   const character = currentFlaw.character
@@ -193,7 +194,7 @@ function FlawsPage() {
       <div className="flex items-center justify-center ">
       <div className="w-full max-w-xl min-w-md sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
-              <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
+              <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Volume 11/Chapter 3000</p>
               {/*Display the flaw */}
               <FlawCard flaw={flaw} />
 
