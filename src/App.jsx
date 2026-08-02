@@ -27,6 +27,23 @@ const UI_ICONS = [
 
 function App() {
 
+
+  useEffect(() => {
+    //Preload images for all characters to ensure they display quickly when needed
+    Object.values(characters).forEach(character => {
+      const img = new Image()
+      img.src = character.image
+    })
+
+     // Preload UI icons
+      UI_ICONS.forEach(src => {
+        const img = new Image()
+        img.src = src
+      })
+  }, [])
+
+
+
   return (
     <><Routes>
       <Route path="/" element={<HomePage />} />
