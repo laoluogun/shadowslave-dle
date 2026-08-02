@@ -667,7 +667,7 @@ export const characters = {
         image: prefix + 'stev.png',
         gender: 'Male',
         race: 'Human',
-        currentRank: 'Transcendent',
+        currentRank: 'Dormant',
         affiliations: ['White Feather Clan'],
         hasTrueName: false,
         debutVolume:  "Volume 3: Prince of Nothing"
@@ -755,6 +755,7 @@ export const characters = {
         image: prefix + 'hel.png',
         gender: 'Female',
         race: 'Human',
+        currentRank: "Transcendent",
         affiliations: ['Song Clan'],
         hasTrueName: true,
         debutVolume: "Volume 9: Throne of War"
