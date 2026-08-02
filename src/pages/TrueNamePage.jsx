@@ -23,7 +23,7 @@ import rankIcon from '../assets/images/ranking.png'
 import { trueNameSchedule } from '../data/trueNameSchedule'
 
   const trueNameClues = [
-  { id: 'volume', label: 'Volume Clue', icon: bookIcon, unlockAt: 3 },
+  { id: 'debut', label: 'Debut Clue', icon: bookIcon, unlockAt: 3 },
   { id: 'rank', label: 'Rank Clue', icon: rankIcon, unlockAt: 5 },
 ]
 
@@ -229,7 +229,7 @@ function TrueNamePage() {
 
               {/* Conditionally render the recipient clue and chapter clue based on the activeClue state */}
               
-                <VolumeNoChapterClue volume={characters[character].debutVolume} isActive={activeClue === 'volume'} />
+                <VolumeNoChapterClue volume={characters[character].debutVolume} isActive={activeClue === 'debut'} />
 
                 <RankClue rank={characters[character].currentRank} isActive={activeClue === 'rank'} />
         </div>
