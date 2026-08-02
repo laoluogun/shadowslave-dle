@@ -211,7 +211,7 @@ function QuotePage() {
       />
       </div>
       {/*Main container for the game, centered on the page with a semi-transparent background and rounded corners */}
-      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
+      <div className="w-full max-w-xl bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-6 flex flex-col gap-6">
         <div>
               <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Volume 11/Chapter 3000</p>
               {/*Display the quote */}
