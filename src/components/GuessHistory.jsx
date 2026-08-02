@@ -2,7 +2,7 @@ import {characters} from '../data/characters'
 
 function GuessHistory({ guessHistory, speaker }) {
     return (
-      <ol className="mt-4 space-y-2">
+      <ol className="space-y-2">
                 {/* Display the history of guesses in reverse order, with styling based on correctness */}
                 {[...guessHistory].reverse().map((pastGuess, index) => (
                       <li
