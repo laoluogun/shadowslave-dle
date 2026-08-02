@@ -72,7 +72,7 @@ export default function AboutModal() {
                                 Important!
                             </h3>
                             <p>
-                                I tried to add any character that had fan art created for them, rather than every character listed in the Wiki, so if you find anything missing and feel like it'd be a good addition, let me know!
+                                I tried to add any character that had fan art created for them, rather than every character listed in the Wiki to follow the style of other Wordle variants, so if you find anything missing and feel like it'd be a good addition, let me know!
                                 Also! Please let me know about any quotes you'd want introduced because it is very tedious hand picking them out. 
                                 And let me know about any characters you want introduced! 
                             </p>
