@@ -45,15 +45,16 @@ function App() {
 
 
   return (
-    <><Routes>
+   <div className="min-h-screen flex flex-col">
+    <Routes>
       <Route path="/" element={<HomePage />} />
       <Route path="/quote" element={<QuotePage />} />
       <Route path="/classic" element={<ClassicPage />} />
-      <Route path='/flaw' element={<FlawsPage  />} />
-      <Route path='/trueName' element={<TrueNamePage  />} />
+      <Route path="/flaw" element={<FlawsPage />} />
+      <Route path="/trueName" element={<TrueNamePage />} />
     </Routes>
-    <ArtistCredits/>
-    </>
+    <ArtistCredits />
+  </div>
   )
 }
 export default App

@@ -77,13 +77,15 @@ function ArtistCredits() {
 
   return (
     <>
-      {/* Persistent tab at the bottom */}
-      <button
-        onClick={() => setOpen(true)}
-        className="fixed bottom-0 left-1/2 -translate-x-1/2 bg-zinc-900 border border-zinc-700 border-b-0 text-zinc-400 hover:text-white text-xs tracking-widest uppercase px-6 py-2 transition-colors cursor-pointer"
-      >
-        Art Credits
-      </button>
+      {/* Tab at the bottom of the page, not fixed to viewport */}
+      <div className="flex justify-center mt-auto pt-4">
+        <button
+          onClick={() => setOpen(true)}
+          className="bg-zinc-900 border border-zinc-700 border-b-0 text-zinc-400 hover:text-white text-xs tracking-widest uppercase px-6 py-2 transition-colors cursor-pointer"
+        >
+          Art Credits
+        </button>
+      </div>
 
       {/* Modal */}
       {open && (
