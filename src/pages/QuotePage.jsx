@@ -187,7 +187,7 @@ function QuotePage() {
         QUOTES
       </h1>
        <div className='flex flex-col items-center justify-center'>
-        <p className="font-mountain-king text-zinc-400 text-sm tracking-wide">Data up until Volume 11/Chapter 3000</p>
+        <p className="font-mountain-king text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
       </div>
           <div className="flex flex-row items-center justify-between px-6 py-3 border border-zinc-700 bg-zinc-900/60">
       {/* Bar containing navigation between game modes */}
@@ -214,7 +214,7 @@ function QuotePage() {
       <div className="flex items-center justify-center">
       <div className="w-full max-w-xl min-w-md sm:min-w-lg bg-black/20 backdrop-blur-sm border border-zinc-700 rounded-none shadow-2xl p-8 flex flex-col gap-6">
         <div>
-              <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Chapter 3005</p>
+              <p className="text-zinc-400 font-mountain-king text-sm text-center italic tracking-wide">Data up until Volume 11/Chapter 3000</p>
               {/*Display the quote */}
               <QuoteCard quote={quote} />
 
