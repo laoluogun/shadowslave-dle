@@ -30,11 +30,22 @@ function ClassicPage() {
     const wasWon = localStorage.getItem('classic-gameOver') === 'true'
     const guesses = JSON.parse(localStorage.getItem('classic-guessHistory') || '[]')
 
-    if (!wasWon && guesses.length > 0) {
-      const played = JSON.parse(localStorage.getItem('classic-gamesPlayed') || '0')
+  //Check if more than 1 day has passed (missed a day)
+    const savedMs = new Date(savedDate).getTime()
+    const todayMs = new Date(today).getTime()
+    const daysMissed = Math.floor((todayMs - savedMs) / 86400000)
+    
+    if (daysMissed > 1) {
       localStorage.setItem('classic-currentStreak', '0')
+    } else if (!wasWon && guesses.length > 0) {
+      const played = JSON.parse(localStorage.getItem('classic-gamesPlayed') || '0')
+      const total = JSON.parse(localStorage.getItem('classic-totalGuesses') || '0')
+      const guessCount = JSON.parse(localStorage.getItem('classic-guessCount') || '0')
       localStorage.setItem('classic-gamesPlayed', JSON.stringify(played + 1))
+      localStorage.setItem('classic-totalGuesses', JSON.stringify(total + guessCount))
+      localStorage.setItem('classic-currentStreak', '0')
     }
+
 
     localStorage.removeItem('classic-guessResults')
     localStorage.removeItem('classic-guessHistory')

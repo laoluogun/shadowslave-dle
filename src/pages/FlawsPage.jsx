@@ -31,24 +31,36 @@ function FlawsPage() {
   }, [])
 
     //Reset local storage every day when a new character is selected
-   const today = new Date().toISOString().slice(0, 10)
-   const savedDate = localStorage.getItem('flaw-date')
+    const today = new Date().toISOString().slice(0, 10)
+    const savedDate = localStorage.getItem('flaw-date')
 
-  if (savedDate !== null && savedDate !== today) {
-    const wasWon = localStorage.getItem('flaw-gameOver') === 'true'
-    const guesses = JSON.parse(localStorage.getItem('flaw-guessHistory') || '[]')
+    if (savedDate !== null && savedDate !== today) {
+      const wasWon = localStorage.getItem('flaw-gameOver') === 'true'
+      const guesses = JSON.parse(localStorage.getItem('flaw-guessHistory') || '[]')
 
-    if (!wasWon && guesses.length > 0) {
-      const played = JSON.parse(localStorage.getItem('flaw-gamesPlayed') || '0')
-      localStorage.setItem('flaw-currentStreak', '0')
-      localStorage.setItem('flaw-gamesPlayed', JSON.stringify(played + 1))
+      // Check if more than 1 day has passed (missed a day)
+      const savedMs = new Date(savedDate).getTime()
+      const todayMs = new Date(today).getTime()
+      const daysMissed = Math.floor((todayMs - savedMs) / 86400000)
+
+      if (daysMissed > 1) {
+        // Missed at least one day — streak always resets
+        localStorage.setItem('flaw-currentStreak', '0')
+      } else if (!wasWon && guesses.length > 0) {
+        // Played yesterday but didn't win — streak resets
+        const played = JSON.parse(localStorage.getItem('flaw-gamesPlayed') || '0')
+        const total = JSON.parse(localStorage.getItem('flaw-totalGuesses') || '0')
+        const guessCount = JSON.parse(localStorage.getItem('flaw-guessCount') || '0')
+        localStorage.setItem('flaw-gamesPlayed', JSON.stringify(played + 1))
+        localStorage.setItem('flaw-totalGuesses', JSON.stringify(total + guessCount))
+        localStorage.setItem('flaw-currentStreak', '0')
+      }
+
+      localStorage.removeItem('flaw-guessCount')
+      localStorage.removeItem('flaw-guessHistory')
+      localStorage.removeItem('flaw-gameOver')
     }
-
-    localStorage.removeItem('flaw-guessCount')
-    localStorage.removeItem('flaw-guessHistory')
-    localStorage.removeItem('flaw-gameOver')
-  }
-  localStorage.setItem('flaw-date', today)  
+    localStorage.setItem('flaw-date', today)
 
   //Initialize user stats that should not be reset each day.
   const { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin } = useStats('flaw')

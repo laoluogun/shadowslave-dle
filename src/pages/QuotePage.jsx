@@ -36,10 +36,20 @@ function QuotePage() {
     const wasWon = localStorage.getItem('quote-gameOver') === 'true'
     const guesses = JSON.parse(localStorage.getItem('quote-guessHistory') || '[]')
 
-    if (!wasWon && guesses.length > 0) {
-      const played = JSON.parse(localStorage.getItem('quote-gamesPlayed') || '0')
+   // Check if more than 1 day has passed (missed a day)
+    const savedMs = new Date(savedDate).getTime()
+    const todayMs = new Date(today).getTime()
+    const daysMissed = Math.floor((todayMs - savedMs) / 86400000)
+
+    if (daysMissed > 1) {
       localStorage.setItem('quote-currentStreak', '0')
+    } else if (!wasWon && guesses.length > 0) {
+      const played = JSON.parse(localStorage.getItem('quote-gamesPlayed') || '0')
+      const total = JSON.parse(localStorage.getItem('quote-totalGuesses') || '0')
+      const guessCount = JSON.parse(localStorage.getItem('quote-guessCount') || '0')
       localStorage.setItem('quote-gamesPlayed', JSON.stringify(played + 1))
+      localStorage.setItem('quote-totalGuesses', JSON.stringify(total + guessCount))
+      localStorage.setItem('quote-currentStreak', '0')
     }
 
     localStorage.removeItem('quote-guessCount')
