@@ -187,7 +187,7 @@ function FlawsPage() {
         FLAWS
       </h1>
        <div className='flex flex-col items-center justify-center'>
-        <p className="font-mountain-king text-zinc-400 text-sm tracking-wide">Guess today's Shadow Slave character</p>
+        <p className="font-mountain-king text-zinc-400 text-center text-sm tracking-wide">Guess today's Shadow Slave character</p>
       </div>
           <div className="flex flex-row items-center justify-between px-6 py-3 border border-zinc-700 bg-zinc-900/60">
       {/* Bar containing navigation between game modes */}

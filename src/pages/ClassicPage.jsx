@@ -170,7 +170,7 @@ function ClassicPage() {
       </h1>
       {/* Information on how updated the information used in the game is */}
       <div className='flex flex-col items-center justify-center'>
-        <p className="text-zinc-400 font-mountain-king text-sm tracking-wide">Guess today's Shadow Slave character</p>
+        <p className="text-zinc-400 font-mountain-king text-centertext-sm tracking-wide">Guess today's Shadow Slave character</p>
       </div>
        <div className="flex flex-row items-center justify-between px-6 py-3 border border-zinc-700 bg-zinc-900/60">
       {/* Bar containing navigation between game modes */}
