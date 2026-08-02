@@ -79,6 +79,7 @@ function ClassicPage() {
   
   const [guess, setGuess] = useState('')
   const [notFound, setNotFound] = useState(false)
+  const [alreadyGuessed, setAlreadyGuessed] = useState(false)
 
   //Add local storage to guess results, guess history, and game over state so user can swap between pages.
 
@@ -130,7 +131,12 @@ function ClassicPage() {
       setNotFound(true)
       return
     }
+    if (guessHistory.includes(submittedGuess)) {
+      setAlreadyGuessed(true)
+      return
+    }
     setNotFound(false)
+    setAlreadyGuessed(false)
     const result = compareCharacters(submittedGuess, todaysChar, characters)
     setGuessResults(prev => [result, ...prev])
     setGuessHistory(prev => [...prev, submittedGuess])
@@ -147,6 +153,7 @@ function ClassicPage() {
   function handleChange(e) {
     setGuess(e.target.value)
     setNotFound(false)
+    setAlreadyGuessed(false)
   }
 
   return (
@@ -196,6 +203,11 @@ function ClassicPage() {
             {notFound && (
               <div className="w-full bg-red-900/80 border border-red-700 px-3 py-2 text-white text-sm text-center">
                 No character found.
+              </div>
+            )}
+            {alreadyGuessed && (
+              <div className="w-full bg-yellow-900/80 border border-yellow-700 px-3 py-2 text-white text-sm text-center">
+                You've already guessed that character.
               </div>
             )}
             {guess !== '' && !hasSelectedCharacter && suggestions.length > 0 && (

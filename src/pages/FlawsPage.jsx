@@ -92,7 +92,8 @@ function FlawsPage() {
   //State variables for the game logic
   
   const [guess, setGuess] = useState('')
-  const [notFound, setNotFound] = useState(false) 
+  const [notFound, setNotFound] = useState(false)
+  const [alreadyGuessed, setAlreadyGuessed] = useState(false) 
 
   //Add local storage to guess history, total guesses, and game over state so user can swap between pages without losing progress.
 
@@ -131,6 +132,8 @@ function FlawsPage() {
 
   function handleChange(e) {
     setGuess(e.target.value);
+    setNotFound(false)
+    setAlreadyGuessed(false)
   }
 
    // Filter the character names based on the current guess for suggestions
@@ -151,6 +154,10 @@ function FlawsPage() {
       setNotFound(true)
       return
     }
+    if (guessHistory.includes(submittedGuess)) {
+      setAlreadyGuessed(true)
+      return
+    }
     setNotFound(false)
     const newTotal = guessCount + 1
     setGuessCount(newTotal)
@@ -162,6 +169,7 @@ function FlawsPage() {
     }
     else {
       setGuess('')
+      setAlreadyGuessed(false)
     }
   }
 
@@ -230,6 +238,11 @@ function FlawsPage() {
               {notFound && (
                 <div className="w-full bg-red-900/80 border border-red-700 px-3 py-2 text-white text-sm text-center">
                   No character found.
+                </div>
+              )}
+              {alreadyGuessed && (
+                <div className="w-full bg-yellow-900/80 border border-yellow-700 px-3 py-2 text-white text-sm text-center">
+                  You've already guessed that character.
                 </div>
               )}
             {/* Display suggestions only if the guess is not empty and no character has been selected yet */}
