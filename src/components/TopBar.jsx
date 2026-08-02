@@ -16,32 +16,19 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
 
   return (
     <>
-      <div className="flex items-center justify-center gap-1 px-2 py-1">
+      <div className="flex items-center justify-center gap-2">
         {buttons.map(button => (
         <button
           key={button.id}
           onClick={() => !button.noModal && setOpenModal(button.id)}
-          className={` group relative p-1 rounded-none
+          className={` group relative px-1 py-1 rounded-none
             ${button.noModal 
               ? 'border-transparent cursor-default' 
               : 'transition hover:bg-zinc-600 cursor-pointer hover:scale-105 duration-150'}`}
         >
-          {button.id === 'streak' ? (
-            <div className="relative inline-flex items-center justify-center w-8 h-8">
-              <img 
-                src={button.icon} 
-                alt={button.alt} 
-                className={`w-8 h-8 object-contain ${currentStreak > 0 ? 'brightness-0 invert' : ''}`}
-              />
-              { (
-                <span className="absolute -bottom-1 -right-1 bg-zinc-950 text-white text-[10px] font-bold rounded-full w-4 h-4 flex items-center justify-center leading-none">
-                  {currentStreak}
-                </span>
-              )}
-            </div>
-          ) : (
+         
             <img src={button.icon} alt={button.alt} className="w-8 h-8 object-contain brightness-0 invert" />
-          )}
+    
          { /* Tooltip */}
         <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-zinc-800 border border-zinc-600 text-white text-[10px] uppercase tracking-widest px-2 py-1 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
           {button.alt}
