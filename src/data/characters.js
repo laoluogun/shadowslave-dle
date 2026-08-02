@@ -750,4 +750,14 @@ export const characters = {
         debutVolume: "Volume 2: Demon of Change"
     },
 
+    Hel: {
+        id: 69,
+        image: prefix + 'hel.png',
+        gender: 'Female',
+        race: 'Human',
+        affiliations: ['Song Clan'],
+        hasTrueName: true,
+        debutVolume: "Volume 9: Throne of War"
+    }
+
 } 

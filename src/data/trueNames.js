@@ -88,4 +88,9 @@ export const trueNames = [
         character: "Moonveil",
         trueName: "Black Moon"
     },
+    {
+        id: 16,
+        character: "Hel",
+        trueName: "Deathsinger"
+    }
 ]
