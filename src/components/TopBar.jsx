@@ -25,10 +25,25 @@ function TopBar({ statsContent, currentStreak, patchContent, helpContent }) {
             ${button.noModal 
               ? 'border-transparent cursor-default' 
               : 'transition hover:bg-zinc-600 cursor-pointer hover:scale-105 duration-150'}`}
-        >
-         
+        >{button.id === 'streak' ? (
+            <div className="items-center justify-center">
+              <img 
+                src={button.icon} 
+                alt={button.alt} 
+                className={`w-8 h-8 object-contain ${currentStreak > 0 ? 'brightness-0 invert' : ''}`}
+              />
+              { (
+                <span className="absolute inset-0 flex items-end justify-end">
+                  <span className="bg-zinc-950/90 text-white text-[12px] font-bold leading-none rounded-full w-4 h-4 flex items-center justify-center translate-x-0.5 translate-y-1">
+                  {currentStreak}
+                  </span>
+                </span>
+              )}
+            </div>
+          ) : (
             <img src={button.icon} alt={button.alt} className="w-8 h-8 object-contain brightness-0 invert" />
-    
+          )}
+
          { /* Tooltip */}
         <span className="absolute -bottom-7 left-1/2 -translate-x-1/2 bg-zinc-800 border border-zinc-600 text-white text-[10px] uppercase tracking-widest px-2 py-1 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity pointer-events-none z-10">
           {button.alt}
