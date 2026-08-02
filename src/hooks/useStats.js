@@ -34,15 +34,17 @@ export function useStats(prefix) {
     localStorage.setItem(`${prefix}-maxStreak`, JSON.stringify(newMax))
   }
 
-  function recordLoss() {
+  function recordLoss(guessCount) {
     const newPlayed = gamesPlayed + 1
+    const newTotal = totalGuesses + guessCount
     setGamesPlayed(newPlayed)
     setCurrentStreak(0)
     localStorage.setItem(`${prefix}-gamesPlayed`, JSON.stringify(newPlayed))
     localStorage.setItem(`${prefix}-currentStreak`, JSON.stringify(0))
+    localStorage.setItem(`${prefix}-totalGuesses`, JSON.stringify(newTotal))
   }
 
-  const avgGuesses = gamesWon > 0 ? (totalGuesses / gamesWon).toFixed(1) : '—'
+  const avgGuesses = gamesPlayed > 0 ? (totalGuesses / gamesWon).toFixed(1) : '—'
   const winRate = gamesPlayed > 0 ? Math.round((gamesWon / gamesPlayed) * 100) : 0
 
   return { gamesPlayed, gamesWon, avgGuesses, winRate, currentStreak, maxStreak, recordWin, recordLoss }
