@@ -21,6 +21,7 @@ import ModeSwitcher from '../components/ModeSwitcher'
 import bookIcon from '../assets/images/book.png'
 import rankIcon from '../assets/images/ranking.png'
 import { trueNameSchedule } from '../data/trueNameSchedule'
+import ArtistCredits from '../components/ArtistCredits'
 
   const trueNameClues = [
   { id: 'debut', label: 'Debut Clue', icon: bookIcon, unlockAt: 3 },
@@ -175,7 +176,7 @@ function TrueNamePage() {
 
   return (
 
-    <div className="min-h-screen flex flex-col items-center p-4 gap-6">
+    <div className="min-h-screen flex flex-col items-center p-4 pb-0 gap-6">
       <button
         onClick={() => navigate('/')}
         className="self-start text-zinc-400 hover:text-white text-sm transition"
@@ -278,6 +279,7 @@ function TrueNamePage() {
           mode={MODE}
         />
       )}
+      <ArtistCredits />
    </div> 
   )
 }

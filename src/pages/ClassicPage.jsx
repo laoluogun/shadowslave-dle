@@ -14,6 +14,7 @@ import { useStats } from '../hooks/useStats'
 import StatsDisplay from '../components/StatsDisplay'
 import ModeSwitcher from '../components/ModeSwitcher'
 import { classicSchedule } from '../data/classicSchedule'
+import ArtistCredits from '../components/ArtistCredits'
 
 
 function ClassicPage() {
@@ -157,7 +158,7 @@ function ClassicPage() {
   }
 
   return (
-    <div className="min-h-screen flex flex-col items-center p-4 gap-6">
+    <div className="min-h-screen flex flex-col items-center p-4 pb-0 gap-6">
       <button
         onClick={() => navigate('/')}
         className="self-start text-zinc-400 hover:text-white text-sm transition"
@@ -251,6 +252,7 @@ function ClassicPage() {
           mode={MODE}
         />
       )}
+      <ArtistCredits />
     </div>
   )
 }
