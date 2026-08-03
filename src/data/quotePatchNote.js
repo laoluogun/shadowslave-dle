@@ -1,3 +1,3 @@
-const patchnotetext = 'There are no current patchnotes for the quote mode! This project is currently in development.'
+const patchnotetext = 'August 3rd 2026 - V1.0.0 Released!'
 
 export default patchnotetext
