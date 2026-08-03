@@ -5,6 +5,7 @@ import questionSign from  '../assets/images/question-sign.png'
 import brokenPlate from '../assets/images/broken-plate.png'
 import signature from '../assets/images/signature.png'
 import AboutModal from '../components/AboutModal'
+import ArtistCredits from '../components/ArtistCredits'
 
 const modes = [
   {
@@ -51,7 +52,8 @@ function HomePage() {
   }, [])
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center p-6 gap-8">
+    <div className="min-h-screen flex flex-col">
+    <div className="flex-1 flex flex-col items-center justify-center p-6 gap-8">
       <div className="text-center">
         {/* Display main title and subtitle */}
         <h1 className="font-mountain-king text-5xl font-bold tracking-widest text-white uppercase">
@@ -61,8 +63,7 @@ function HomePage() {
           Test Your Shadow Slave Knowledge
         </p>
       </div>
-
-      {/* Display the two modes that ShadowSlaveDle currently has */}
+      {/* Display the four modes that ShadowSlaveDle currently has */}
       <div className="flex flex-col gap-4 w-full max-w-md">
         {modes.map(mode => (
           <button
@@ -88,6 +89,8 @@ function HomePage() {
       </div>
       {/* Include an about button that opens up a modal with some additional information on the project for users */}
       <AboutModal />
+      </div>
+      <ArtistCredits />
     </div>
   )
 }

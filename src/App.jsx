@@ -53,7 +53,6 @@ function App() {
       <Route path="/flaw" element={<FlawsPage />} />
       <Route path="/trueName" element={<TrueNamePage />} />
     </Routes>
-    <ArtistCredits />
   </div>
   )
 }

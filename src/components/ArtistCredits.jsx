@@ -78,7 +78,7 @@ function ArtistCredits() {
   return (
     <>
       {/* Tab at the bottom of the page, not fixed to viewport */}
-      <div className="flex justify-center mt-auto pt-4">
+      <div className="flex justify-center">
         <button
           onClick={() => setOpen(true)}
           className="bg-zinc-900 border border-zinc-700 border-b-0 text-zinc-400 hover:text-white text-xs tracking-widest uppercase px-6 py-2 transition-colors cursor-pointer"
