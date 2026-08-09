@@ -325,7 +325,7 @@ export const quotes = [
 
   {
     id: 39,
-    quote: "...I faield again. But I won't fail anymore.",
+    quote: "...I failed again. But I won't fail anymore.",
     speaker: "Anvil",
     recipient: "Jest",
     chapter: "Chapter 2173 Paper Armor",
