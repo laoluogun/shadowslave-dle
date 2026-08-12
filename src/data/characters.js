@@ -678,7 +678,7 @@ export const characters = {
         image: prefix + 'telle.png',
         gender: 'Female',
         race: 'Human',
-        currentRank: 'Ascended',
+        currentRank: 'Awakened',
         affiliations: ['White Feather Clan'],
         hasTrueName: false,
         debutVolume:  "Volume 8: Lord of Shadows"
